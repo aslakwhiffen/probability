@@ -1,0 +1,28 @@
+
+In order to calculate the variance, we need to show that the expectation value $ \E X$ and the value
+$ \E X^2$ both need to exist. In the first part, we showed that $ \E X$ exists so we just need
+to show that $ \E X^2$ exists.
+
+\begin{align*}
+    \int_{-\infty}^{\infty} |x^2| f_{X} (x) dx &= \int_{-\infty}^{\infty} x^2 f_{X} (x)dx\\
+					       &= \int_{-\infty}^{\infty} x^2 \left( \frac{1}{2b}
+					       e^{-|x|/b}  \right) dx\\
+					       &= 2\int_{0}^{\infty} \frac{x^2}{2b}  e^{-x/b} dx\\
+					       &= b \int_{0}^{\infty} \frac{x^2}{b^2} e^{-x/b	}
+					       dx\\
+					       &= b^2 \int_{0}^{\infty} x^2 e^{-x} dx \, \mbox{using u
+					       sub $ u = x/b$} \\
+					       &= b^2 \cdot 2 \cdot \int_{0}^{\infty} x e^{-x} dx
+					       \, \mbox{using the formula from week 5 ex 5} \\
+					       &= b^2 \cdot 2 \cdot 1 \cdot \int_{0}^{\infty} e^{-x}
+					       dx\\
+					       &= 2b^2 < \infty
+\end{align*}
+Now that we know that $ \E X^2$ exists, we can compute the variance
+
+\begin{align*}
+    \mathrm{Var(X)} &= \E X^2 - (\E X)^2\\
+	    &= 2b^2 - b^2 \\
+	    &= b^2
+\end{align*}
+and the standard deviation is then $ \sigma_{X} = \sqrt{\mathrm{Var(X)}} = b$.

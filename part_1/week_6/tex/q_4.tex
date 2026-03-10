@@ -1,0 +1,40 @@
+
+Let's assume that the moment generating function exists. Then, by Theorem 7.4
+
+\begin{align*}
+    M_{X} (t) &= \E e^{tX} \\
+	      &= \int_{-\infty}^{\infty} e^{tx} f_{X} (x) dx\\
+	      &= \int_{-\infty}^{\infty} e^{tx } \frac{1}{\sqrt{2\pi \sigma^2}} e^{-
+	  \frac{(x-\mu)^2}{2\sigma^2}} dx \\ 
+\end{align*}
+It would be nice if we could isolate $ t$ from $ x$. If we complete the square for the exponent, we
+can accomplish this, namely
+
+\begin{align*}
+    tx - \frac{(x- \mu)^2}{2 \sigma ^2} &= -\left( \frac{(x- \mu - \sigma^2 t)^2}{2 \sigma^2}  - \mu
+	t - \frac{\sigma^2}{2} t \right)\\
+\end{align*}
+Thus
+
+\begin{align*}
+    M_{X} (t) &= \frac{1}{\sqrt{2\pi \sigma^2}}	e^{\mu t + \frac{\sigma^2}{2} t}
+    \int_{-\infty}^{\infty} e^{- \frac{(x-\mu -\sigma^2 t)^2 }{2\sigma^2} } dx \\
+\end{align*}
+Using the hint, for each $ a \in \R$, and any (integrable) function $ f:\R \to \R$, we have that 
+
+\begin{align*}
+    \int_{-\infty}^{\infty} f(x+a) dx = \int_{-\infty}^{\infty} f(x)dx
+\end{align*}
+so 
+
+\begin{align*}
+\int_{-\infty}^{\infty} e^{ - \frac{(x-\mu - \sigma^2 t)^2}{2 \sigma^2} } &=  \int_{-\infty}^{\infty} e^{- \frac{x^2}{2\sigma^2}} dx\\
+    &= \sqrt{2 \sigma^2} \int_{-\infty}^{\infty} e^{-x^2} dx \mbox{using u-sub } \\
+    &= \sqrt{2\sigma^2} \sqrt{\pi}
+\end{align*}
+meaning that 
+
+\begin{align*}
+    M_{X} (t) &= \frac{1}{\sqrt{2 \pi \sigma^2}} e^{\mu t + \frac{\sigma^2}{2} t} \sqrt{2 \sigma^2}\sqrt{\pi}\\
+	      &= e^{\mu t + \frac{\sigma^2}{2} t}. 
+\end{align*}

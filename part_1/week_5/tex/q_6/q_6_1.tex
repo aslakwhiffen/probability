@@ -1,0 +1,25 @@
+
+Using Proposition 7.5, we can find out the value of $ \E S_{n} $ using the linearity property of the
+expectation value, but we need to first show that the random variables $ X_1, \dots, X_{n} $ have
+expectation values that exist. Let's first prove that the expectation values $\E X_1, \dots, \E
+X_{n} $ exist. 
+
+Take the random variable $ X_{j} $ and let's check that $ \sum_{k \in {-1,1}}^{} k p_{X_{j} }(k) <
+\infty  $
+
+\begin{align*}
+    \sum_{k \in \{ -1,1 \} } k  p_{X_{j} } (k) &=  -1 \cdot 1/2 + 1 \cdot 1/2\\
+					       &= 0\\
+					       &<\infty
+\end{align*}
+and we see that $ \E X_{j} $ exists and at the same time we find that $ \E X_{j} = 0 $ for all $ j
+\in 1,\dots, n$.
+
+Now, using Proposition 7.5 (3) we see that
+
+\begin{align*}
+    \E S_{n} &= \E ( \frac{1}{n} \sum_{j=1}^{n} X_{j} )\\
+             &= \frac{1}{n} \sum_{j=1}^{n} \E (X_{j} )\\
+	     &=  \frac{1}{n} \sum_{j=1}^{n} (0)\\
+	     &= 0.
+\end{align*}

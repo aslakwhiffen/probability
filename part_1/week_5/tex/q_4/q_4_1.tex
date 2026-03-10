@@ -1,0 +1,17 @@
+
+We need to show that the function $ p(k)$ satisfies the conditions of proposition 3.14 for a
+discrete probability distribution, namely $ p(k) \geq 0$ and $ \sum_{k=0}^{n-1} p(k) = 1$. 
+
+\textbf{$ p(k) \geq 0$}. If $ 0 < q < 1$, then $ q -1 < 0$ and $ q^{n} -1 < 0$. Dividing two
+negative numbers gives a positive number. Also, $ q^{k} > 0$ and the product of two positive number
+is positive meaning that all in all $ p(k) > 0$ which satisfies $ p(k) \geq 0$. If $ 1 < q$, then $
+q-1 > 0	$, $ q^{n} -1 > 0 $ and $ q^{k} > 0$ so all in all $ p(k) > 0$.
+
+\textbf{ $ \sum_{}^{} p(k) = 1$}. 
+
+\begin{align*}
+    \sum_{k=0}^{n-1} \frac{q-1}{q^{n} -1} q^{k} &= \frac{q-1}{q^{n} -1 } \sum_{k=0}^{n-1} q^{k}	\\
+						&= \frac{q-1}{q^{n} -1} \frac{q^{n} -1}{q-1} \\
+						&= 1
+\end{align*}
+where we used that fact that $ \sum_{k=0}^{n-1} q^{k} = (q^{n} -1 )/(q-1) $. 

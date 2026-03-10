@@ -1,0 +1,13 @@
+
+We want to find out whether $ \P(X_1 \in A_1, X_3\in A_3) = \P(X_1 \in A_1)\P(X_3 \in A_3 )$. 
+Take $ A_1 = \{ X_1 = 1 \} $ and $ A_3 = \{ X_3 = 0 \} $. Then the probability $ \P(X_1 = 1, X_3 =
+0)$ is equal to 
+
+\begin{align*}
+    \P(X_1 = 1, X_3 = 0	) &= \P( (U > 1/2) \cap (1/2 \geq U > 1/4))\\
+			  &= \P(1/2 \geq U > 1/4)\\
+			  &= 1/4.
+\end{align*}
+
+But $ \P(X_1 = 1) = \P( U > 1/2) = 1/2$ and $ \P( X_3 = 0) = \P(1/2 \leq U > 1/4) = 1/4$, and we see
+that $ \P(X_1 = 1) \P(X_3 = 0) = 1/8 \neq 1/4 = \P(X_1=1, X_3=0)$.

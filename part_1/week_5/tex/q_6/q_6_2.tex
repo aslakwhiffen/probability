@@ -1,0 +1,41 @@
+
+In the first part of this exercise, we showed that the random variables $ X_{1}, \dots, X_{n}:
+\Omega \to E = \{ -1,1 \}    $
+have well-defined expectation values $ E_1, \dots, E_{n} $. In this part, we need to show that $
+\E  X_{j} ^2$ exists and that $ \E X_{i} X_{j}  $ exists for $ i \neq j$. 
+
+Let's check that $ \sum_{y \in X_{j}^2}^{} y p_{X_{j} ^2}(y) =  \sum_{x \in E}^{} x^2 p_{X_{j}  } (x) < \infty$
+(by Theorem 7.4 (1) $ \E g(X) = \sum_{x\in E}^{} g(X) p_{X} (x)$)
+
+\begin{align*}
+    \sum_{y \in X_{j}^2}^{} y p_{X_{j} ^2}(y) &=  \sum_{x \in E= \{ -1,1 \} }^{} x^2 p_{X_{j}  } (x)\\
+					      &= 1\cdot 1/2 + 1 \cdot 1/2\\
+					      &= 1 < \infty
+\end{align*}
+thus we have shown that the expectation value $ \E X_{j}^2 $ is well defined and is in fact equal to
+1, namely $ E X_{j}^2 = 1 $, for all $ j \in 1, \dots, n$.
+
+Now, $ \E (X_1 \cdot X_2)$ exists because by Proposition 7.5 (6) we have that $ \E (X_1 X_2) =
+\E(X_1) \E (X_2) = 0 \cdot 0 < \infty$. 
+
+We have now the ingredients to find out what the expectation for the random variable $ S_{n}^2$ is.
+Let's expand the random variable $ S_{n}^2$
+
+\begin{align*}
+    S_{n} ^2 &= \left(  \frac{1}{n} \sum_{j=1}^{n} X_{j} \right)^2\\
+	     &= \frac{1}{n^2} \left( \sum_{j=1}^{n} X_{j}^2 + 2 \sum_{j=1}^{n} \sum_{i < j}^{} 
+	     X_{i} X_{j} \right) \\
+\end{align*}
+
+We see that since the expectation values of $ E(X_{i} X_{j} )$ and $ E(X_{i}^2) $ exist, we can use
+the linearity property of Proposition 7.5 (3)
+
+\begin{align*}
+    \E S_{n} ^2 &= \frac{1}{n^2} \sum_{j=1}^{n} \E X_{j}^2 + 2 \sum_{j=1}^{n} \sum_{i < j}^{}
+    \E(X_{i} X_{j})\\
+		&= \frac{1}{n^2} \left( \sum_{j=1}^{n} \E X_{j}^2 \right) + 0 \\
+		&= \frac{n}{n^2} \\
+		&= \frac{1}{n} 
+\end{align*}
+
+

@@ -1,0 +1,33 @@
+
+Before computing the expectation value $ \E X$, let's check to see whether it is defined, namely
+whether
+
+\[
+    \sum_{x\in E}^{} |x| p_{X} (x) < \infty
+.\] 
+
+We see that $ |x| = x$ since $ x \in E = \{ 0,\dots, n-1 \} $ we get
+
+\begin{align*}
+    \sum_{x \in E}^{} x p_{X} (x) &= \sum_{x \in E}^{} x \frac{q-1}{q^{n} -1} q^{x}\\
+				  &= \frac{q-1}{q^{n} -1}  \sum_{x\in E}^{} k q^{k} \\
+				  &\leq \frac{q-1}{q^{n} -1} \sum_{x\in E} (n-1) q^{k} \\
+				  &= (n-1)\\
+				  &< \infty
+\end{align*}
+which means that $ \E X$ is defined.
+
+Let's calculate the expectation
+
+\begin{align*}
+    \E X &= \sum_{k=0}^{n-1} k p(k) \\
+	 &= \sum_{k=0}^{n-1} k \frac{q-1}{q^{n} -1} q^{k} \\
+	 &= \frac{q-1}{q^{n} -1} \sum_{k=0}^{n-1} k q^{k} \\
+	 &=  \frac{q-1}{q^{n} -1} \cdot q \cdot \sum_{k=0}^{n-1} k q^{k-1}\\
+	 &= \frac{q-1}{q^{n} -1} \cdot q \cdot \frac{d}{dq} \sum_{k=1}^{n-1} q^{k} \\
+	 &= q\cdot \frac{q-1}{q^{n} -1} \frac{d}{dq} ( \frac{q^{n} -1}{q-1} -1) \\
+	 &= q \cdot \frac{q-1}{q^{n} -1} \left( \frac{n q^{n-1} (q-1) - (q^{n} -1)(1)}{(q-1)^2}
+	 \right) \\
+	 &= q \cdot \frac{n  q^{n} - n q^{n-1} - q^{n} +1 }{(q^{n} -1)(q-1)}\\
+	 &= \frac{n q^{n} }{q^{n} -1} - \frac{q}{q-1} 
+\end{align*}

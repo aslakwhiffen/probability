@@ -1,0 +1,41 @@
+
+With $ \mu = 0$, the moment generating function $ M_{X} (t) $ is
+
+\[
+    M_{X} (t) = e^{ \frac{\sigma^2}{2} t} 
+.\] 
+
+We can expand the exponential into a power series
+
+\begin{align*}
+    e^{ \frac{\sigma^2}{2} t} &= \sum_{n=0}^{\infty} \frac{1}{n!} \left( \sigma^2 \frac{t^2}{2}
+    \right)^{n} \\
+			      &= 1 + 0 + \frac{1}{2!} \left( \frac{\sigma^2}{2}  \right)^2 t^{2}  +
+			      0 \dots
+\end{align*}
+
+Based on our assumption 
+
+\[
+    M_{X} (t) = \sum_{n=0}^{\infty} \frac{1}{n!} \E(X^{n} ) t^{n}  
+\] 
+and the fact that two power series represent the same function only if they
+have the same coefficients, we get that for even $ n$ (considering the term with $ t^{n} $ in both
+power series)
+
+\begin{align*}
+    \frac{1}{n!} t^{n}  \E X^{n} &= \frac{1}{(n/2)!} t^{n} \left( \frac{\sigma^2}{2}  \right)^{n/2}  
+\end{align*}
+and for odd $ n$
+
+\begin{align*}
+    \frac{1}{n!} t^{n} \E X^{n} &= 0. 
+\end{align*}
+This means that 
+
+\begin{align*}
+    \E X^{n} &= \begin{cases}
+	0 & , n \, \mbox{is odd} \\
+	\sigma^{2k} \frac{(2k)!}{2^{k} k!} &, n = 2k \, \mbox{is even} 
+    \end{cases}
+\end{align*}

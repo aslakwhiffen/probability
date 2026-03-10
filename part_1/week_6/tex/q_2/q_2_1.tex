@@ -1,0 +1,21 @@
+
+For the expectation value $ \E X$ to exist, we need
+
+\[
+    \sum_{x \in \N}^{} |x| \P_{X} (x) < \infty
+.\] 
+
+\begin{align*}
+    \sum_{x\in \N}^{} |x| \frac{\lambda^{x} e^{-\lambda} }{x!} &= \sum_{x \in \N}^{} x \frac{\lambda^{x} e^{-\lambda} }{x!} \\
+							       &= 0 +  \lambda \sum_{x\in \N_{\geq
+								   1} }^{} x \lambda^{x-1}
+							       \frac{e^{-\lambda}}{x!}\\
+							       &= \lambda e^{-\lambda} \sum_{x\in \N_{\geq 1} }^{} \frac{d}{d\lambda} \frac{\lambda^{x} }{x!}  \\
+							       &= \lambda e^{-\lambda}\frac{d}{d\lambda} e^{\lambda} \\
+							       &= \lambda e^{-\lambda} e^{\lambda}\\
+							       &= \lambda < \infty
+\end{align*}
+We find that the expectation value $ \E X$ exists and at the same time we find that $ \E X =
+\lambda$.
+
+

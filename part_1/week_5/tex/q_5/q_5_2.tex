@@ -1,0 +1,44 @@
+
+Let's see what the probability distribution of the random variable $ g(X)$ ($ g: \Omega \to \R$) is 
+
+Assume that $ 0 \leq a \leq b$, then
+\begin{align*}
+\P_{g(X)} (A = (a,b)) &= \P( g(X) \in (a,b))\\
+			  &= \P( X \in g^{-1} (a,b))\\
+			  &= \P( X \in (-\sqrt{b}, -\sqrt{a}) \cup (\sqrt{a}, \sqrt{b}))\\
+			  &= \P(X \in (-\sqrt{b}, -\sqrt{a})) + \P((\sqrt{a}, \sqrt{b}))\\
+			  &= 0 + \int_{\sqrt{a}}^{\sqrt{b}} f_{X} (x) dx\\
+			  &= \int_{a}^{b} \frac{1}{2\sqrt{x}} e^{-\sqrt{x}} dx.
+\end{align*}
+
+Noticing the pattern, we see that
+
+\begin{align*}
+    \P_{g(X) (a,b)} &= \begin{cases}
+	\int_{a}^{b} \frac{1}{2\sqrt{x}} e^{-\sqrt{x}} dx & 0 \leq a \leq b\\
+	\int_{0}^{b} \frac{1}{2\sqrt{x}} e^{-\sqrt{x}} dx & a \leq 0 \leq b\\
+	0						  &  b \leq 0
+    \end{cases}  
+\end{align*}
+thus we can let the density function of $ \P_{g(X)} $ be
+
+\begin{align*}
+    f_{g(X)} (x) &= \begin{cases}
+	\frac{1}{2\sqrt{x}} e^{-\sqrt{x}} dx & 0 \leq x\\
+	0				     & x < 0 
+    \end{cases}  
+\end{align*}
+making the probability distribution of $ g(X)$ a continuous distribution.
+
+Now, let's see whether the expectation value $ \E g(X) = \E X^2$ is defined
+
+\begin{align*}
+    \E X^2 &= \int_{-\infty}^{\infty} y f_{X^2} y dy\\
+	   &= 0 + \int_{0}^{\infty} y \frac{1}{2\sqrt{y}} e^{-\sqrt{y}} dy\\
+	   &= \int_{0}^{\infty} x^2 e ^{-x} dx\\
+	   &= (2+1) \int_{0}^{\infty} x e^{-x} dx\\
+	   &= 2 \cdot \left[ 1 \cdot  \int_{0}^{\infty} e^{-x}dx \right] \\
+	   &= -2 \left[ e^{-\infty} - e^{-0}  \right] \\
+	   &= 2
+\end{align*}
+

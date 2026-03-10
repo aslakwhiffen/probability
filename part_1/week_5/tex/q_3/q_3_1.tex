@@ -1,0 +1,22 @@
+
+By Definition 6.10, two random variables (defined on the same domain $ \Omega$) are independent if
+
+\[
+    \P(X_1 \in A_1, X_2 \in A_2) = \P(X_1\in A_1) \P(X_2 \in A_2)
+\] 
+for any sets $ A_1 \in E_1$, $ A_2 \in E_2$, where $ X_1: \Omega \to E_1$, and $ X_2: \Omega \to
+E_2$.
+
+We will show that they are not independent. Take $ A_1 = \{ 0 \} $ and $ A_2 = \{ 0 \} $. The
+probability $ \P(X_1 \in A_1, X_2 \in A_2)$ is equal to
+
+\begin{align*}
+    \P(X_1 \in A_1, X_2 \in A_2) &= \P( X_1= 0, X_2 = 0)\\
+				 &= \P( \1_{U \leq 1/2} = 0, \1_{U > 1/2} = 0)\\
+				 &= \P(\omega > 1/2, \omega \leq 1/2)\\
+				 &= \P(\emptyset)\\
+				 &= 0.
+\end{align*}
+
+But we see that $ \P(X_1 \in A_1) = \P(\omega > 1/2)= 1/2$ and $ \P(X_2 \in A_2) = \P(\omega \leq
+1/2) = 1/2$ and clearly $ 1/4 \neq 0$.

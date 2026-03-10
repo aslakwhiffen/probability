@@ -1,0 +1,21 @@
+
+Before computing the moment generating function $ M_{X} $ of $ X$, we need to show that $
+\int_{-\infty}^{\infty} |e^{tX} | f_{X} (x)dx < \infty$ for some $ t$. If for some $ t_{0} > 0 $ we
+have that$ \E e^{t_{0} }|X| $ exists, 
+namely $ \int_{-\infty}^{\infty} |e^{t|X|} | f_{X} (x) dx < \infty$, then for all $ t \in [-t_{0},
+t_{0} ]	 $ we have that $ \E e^{t X } $ exists. We take for granted that $ \E e^{t_{0} |X|} $
+exists.
+Let's compute the moment generating function $ M_{X} $ of $ X$
+
+\begin{align*}
+    M_{X} (t) &= \E e^{tX} \\
+	      &= \int_{-\infty}^{\infty} e^{tX} f_{X} (x) dx \mbox{ by Theorem 7.4} \\
+	      &= \int_{-\infty}^{0} e^{tx} f_{X} (x) dx + \int_{0}^{\infty} e^{tx} f_{X} (x) dx\\
+	      &= 0 + \lambda \int_{0}^{\infty} e^{(t-\lambda)x} dx \, \mbox{assume that} \, t <
+	      \lambda \\
+	      &= \lambda \cdot \frac{1}{t - \lambda} \left[ e^{(t-\lambda)x}  \right]_{0}^{\infty}
+	      \\
+	      &= -\frac{\lambda}{t-\lambda} \\
+	      &= \frac{1}{1-2t} 
+\end{align*}
+If $ t \geq \lambda$, then the integral diverges to infinity. Thus, we need $ t < \lambda$. 

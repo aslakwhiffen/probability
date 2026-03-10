@@ -1,0 +1,29 @@
+
+Let's see if the expectation value exists
+
+\begin{align*}
+    \int_{-\infty}^{\infty} |x| f_{X} (x) dx &= \int_{-\infty}^{\infty} |x| \frac{1}{2b} e^{-
+    \frac{|x- \mu|}{b} } dx\\
+					     &= \frac{1}{2b} \int_{-\infty}^{\infty} |x| e^{-
+					     \frac{|x|}{b} } dx\\
+					     &= 2 \cdot \frac{1}{2b} \int_{0}^{\infty} x e^{-
+					     \frac{x}{b} } dx\\
+					     &= \int_{0}^{\infty} \left( \frac{x}{b}  \right)
+					     e^{-(x/b)} dx\\
+					     &= \int_{0}^{\infty} bx e^{-x}  dx \, \mbox{using u-sub}
+					     \\
+					     &= b(1+0) \int_{0}^{\infty} e^{-x} dx \, \mbox{using the
+					     result of exercise 5 week 5} \\
+					     &= b < \infty
+\end{align*}
+Therefore the expectation value exists. Let's compute it
+
+\begin{align*}
+    \E (X) &= \int_{-\infty}^{\infty} x f_{X} (x) dx\\
+	   &= \int_{-\infty}^{\infty} x \frac{1}{2b} e^{-|x|/b} dx\\
+\end{align*}
+we see that $ (x/2b) e^{-|x|/b} $ is an odd function so integrating over the whole real line gives
+zero as the result. 
+\[
+    \E X = 0
+.\] 

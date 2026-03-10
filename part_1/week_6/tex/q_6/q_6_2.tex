@@ -1,0 +1,27 @@
+
+To calculate the moment generating function $ M_{X} (t) = M_{Z_1^2 + Z_2^2}(t) $ it would be
+convenient if we could use Theorem 8.18 that allows us to split it into a product $ M_{X} (t) =
+M_{Z_1^2} \cdot M_{Z_2^2} $, but we need $ Z_1^2$ and $ Z_2^2$ to be independent. Since $ Z_1$ and
+$ Z_2$ are independent then based on Proposition 6.17, we have that $ Z_1^2$ and $ Z_2^2$ are
+independent. Let's now find $ M_{Z_1^2} (t)$ and $ M_{Z_2^2}(t) $
+
+\begin{align*}
+    M_{Z_1^2} (t) &=  \E e^{t Z_1^2} \\
+		  &= \int_{-\infty}^{\infty} e^{t x^2} f_{Z_1} (x) dx \, \mbox{Theorem 7.4 (2)} \\
+		  &= \int_{-\infty}^{\infty} e^{tx^2} \frac{1}{\sqrt{2\pi \sigma^2}} e^{-
+		  \frac{x^2}{2} } dx\\
+		  &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{- \frac{(\sqrt{1-2t}) x^2}{2}
+		  }  dx\\
+		  &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} \frac{1}{\sqrt{1-2t}}e^{-
+		  \frac{u^2}{2} } du\\
+		  &= \frac{1}{\sqrt{2\pi}} \frac{1}{1-2t} \cdot \sqrt{2\pi}\\
+		  &= \frac{1}{\sqrt{1-2t}}.
+\end{align*}
+We get the same result for $ M_{Z_2^2}(t) = 1/(\sqrt{1-2t}) $. By Theorem 8.18, $M_{X} (t) =
+M_{Z_1^2 + Z_2^2}(t) $ exists in the interval $ [-t_0,t_0]$ and is equal to
+
+\[
+    M_{X} (t) = M_{Z_1^2 + Z_2^2} (t) = \frac{1}{1-2t} 
+\] 
+when $ M_{Z_1^2} $ and $ M_{Z_2^2} $ exist in the interval $ [-t_0, t_0]$.
+

@@ -1,0 +1,343 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Ratkaisu:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Todennäköisyyslaskenta II a, 2022 -- Viikon 5 harjoitustehtävät}
+
+%\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+
+
+\begin{document}
+
+\maketitle
+
+Tämän viikon tehtävät koskevat riippumattomuutta ja odotusarvoa. Tehtävät 3 ja 4 ovat ehkä hieman työläämpiä kuin muut, mutta kuitenkin kannattaa yrittää niitäkin (pisteitä saa edelleen järkevistä yrityksistä). Kannattaa ehkä kuitenkin tehdä muut tehtävät ensin. Muista kysyä apua Telegramissa, jos siltä tuntuu.
+
+Muista palauttaa tehtävät  Moodlessa (Digest työpajaan) pe 14.10. klo 23.59 mennessä.
+
+\medskip 
+
+Taas aloitetaan lämmittelemällä ja käsitteiden kertauksella. 
+\begin{Exercises}{Käsitteiden kertausta}{1}
+Mitkä seuraavista väitteistä pitävät paikkansa (ei tarvitse perustella)? 
+\begin{enumerate}
+\item  Diskreettien satunnaislukujen $X$ ja $Y$ (yhteis)pistemassafunktiosta voi päätellä, että ovatko satunnaisluvut riippumattomat vai ei.
+\input{./tex/q_1/q_1_1.tex} 
+\item Jos satunnaisluvut $X$ ja $Y$ ovat riippumattomat, myös niiden muunnokset $g(X)$ ja $h(Y)$ ovat riippumattomat (mielivaltaisilla $g,h:\R\to \R$). 
+
+\input{./tex/q_1/q_1_2.tex} 
+\item Riippumattomien diskreettien satunnaislukujen $X_1,...,X_n$ yhteisjakauma $\P_{(X_1,...,X_n)}$ määräytyy satunnaislukujen reunajakaumista $\P_{X_1},...,\P_{X_n}$.
+
+\input{./tex/q_1/q_1_3.tex} 
+
+\item Jos $E\subset \R$ on jokin äärellinen joukko, ja $X$ on jokin $E$-arvoinen satunnaismuuttuja, jonka jakauma on $\P_X$, niin $X$:n odotusarvo $\E X$ on aina määritelty.  
+
+\input{./tex/q_1/q_1_4.tex} 
+\item Jos $\E X=0$ ja $Y$ on vakiosatunnaisluku $Y=0$, niin $\E (X+aY)=0$ jokaisella $a\in \R$.
+
+\input{./tex/q_1/q_1_5.tex} 
+\item Jos satunnaisluvuille $X$ ja $Y$ pätee $\E(XY)=\E X \E Y$, niin satunnaismuuttujat $X$ ja $Y$ ovat riippumattomat.
+
+\input{./tex/q_1/q_1_6.tex} 
+\end{enumerate}
+{\bf Vihjeitä:} kannattaa lähinnä muistuttaa mieliin keskeisimmät määritelmät ja selailla muutenkin materiaalia. 
+\end{Exercises}
+
+Seuraavan tehtävän on tarkoitus kartuttaa hieman rutiinia riippumattomien satunnaismuuttujien kanssa. 
+
+\begin{Exercises}{Riippumattomia eksponenttijakautuneita}{2}
+Olkoon $X$ eksponenttijakautunut satunnaismuuttuja parametrilla $\lambda_1>0$ ja olkoon $Y$ riippumaton $X$:stä ja eksponenttijakautunut parametrilla $\lambda_2>0$, eli niiden jakaumilla on tiheysfunktiot $f_X$ ja $f_Y$, ja 
+\[
+f_X(x)=\begin{cases}
+\lambda_1 e^{-\lambda_1x}, & x\geq 0\\
+0, & x<0
+\end{cases} \qquad \text{ja} \qquad f_Y(x)=\begin{cases}
+\lambda_2 e^{-\lambda_2 x}, x\geq 0\\
+0, & x<0
+\end{cases}
+\]
+Laske satunnaismuuttujan 
+\[
+\min(X,Y)=\begin{cases}
+X, & X\leq Y\\
+Y, & X>Y
+\end{cases}
+\]
+jakauman kertymäfunktio.
+
+\medskip
+
+{\bf Vihje:} Kannattaa lähteä liikkeelle huomaamalla, että $\P(\min(X,Y)> x)=\P(X> x, Y> x)$.
+
+\input{./tex/q_2.tex}
+
+\end{Exercises}
+
+Seuraava tehtävä on hieman työläämpi (erityisesti kohta (2)) harjoitus riippumattomuuteen liittyen. Se on kuitenkin ihan terveellinen harjoitus, joten kannattaa yrittää.
+
+\begin{Exercises}{Riippumattomuutta vai ei?}{3}
+Olkoon $U$ satunnaisluku, jonka jakauma on välin $[0,1]$ tasajakauma. 
+\begin{enumerate}
+\item Muodostetaan tästä uudet satunnaisluvut muunnoksella: 
+\[
+X_1=\mathbf 1\{U\leq \tfrac{1}{2}\}=\begin{cases}
+1, & U\leq \frac{1}{2}\\
+0, & U>\frac{1}{2}
+\end{cases}
+\]
+ja 
+\[
+X_2=\mathbf 1\{U> \tfrac{1}{2}\}=\begin{cases}
+0, & U\leq \frac{1}{2}\\
+1, & U>\frac{1}{2}
+\end{cases}.
+\]
+Ovatko $X_1,X_2$ riippumattomat?
+\input{./tex/q_3/q_3_1.tex}
+\item 
+Muodostetaan vielä kolmas satunnaisluku
+\[
+X_3=\mathbf 1\{U\leq \tfrac{1}{4} \text{ tai } \tfrac{1}{2}<U\leq \tfrac{3}{4}\}=\begin{cases}
+1, & U\leq \tfrac{1}{4} \text{ tai } \tfrac{1}{2}<U\leq \tfrac{3}{4}\\
+0, & \text{muuten}
+\end{cases}.
+\]
+Ovatko $X_1$ ja $X_3$ riippumattomat?
+\input{./tex/q_3/q_3_2.tex}
+\end{enumerate}
+{\bf Vihje:} jos haluat näyttää, että satunnaisluvut $X_1$ ja $X_2$ eivät ole riippumattomat, sinun riittää löytää joukot $A_1,A_2$, joilla $\P(X_1\in A_1,X_2\in A_2)\neq \P(X_1\in A_1)\P(X_2\in A_2)$. Joskus (ei aina), on helppo löytää joukot $A_1,A_2$, joilla vasen puoli on nolla, mutta oikea ei. Toinen vaihtoehto riippumattomuuden tutkimiseen on yrittää laskea (yhteis)pistemassafunktio (huomaa, että $X_i$ ovat diskreettejä satunnaislukuja) -- tämä saattaa toimia toisessa kohdassa. Erityisesti, saattaa olla hyödyllistä muodostaa taulukko, jossa esiintyy $U$:n, $X_1$:n ja $X_3$:n arvot. Esimerkiksi tähän tapaan:
+\begin{center}
+  \begin{tabular}{ | l | c | c | c | c |}
+    \hline
+    $U$ & $[0,\frac{1}{4}]$ & $(\frac{1}{4},\frac{1}{2}]$ & $(\frac{1}{2}, \frac{3}{4}]$ & $(\frac{3}{4},1]$ \\ \hline
+    $X_1$ & 1 & 1 & 0 & 0 \\ \hline
+    $X_3$ & 1 & 0 & 1 & 0 \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\end{Exercises}
+
+Seuraavassa tehtävässä harjoitellaan odotusarvon laskemista diskreetille satunnaismuuttujalle. 
+Jälkimmäinen kohta on ehkä hieman työläähkö, mutta ei kannata pelästyä sitäkään. 
+
+\begin{Exercises}{Eräs diskreetti odotusarvo}{4}
+Olkoon $q>0$ jokin luku (merkintöjen yksinkertaistamisen vuoksi, sovitaan $q\neq 1$) ja $n\geq 1$ jokin positiivinen kokonaisluku. 
+\begin{enumerate}
+\item Osoita, että 
+\[
+p(k)=\frac{q-1}{q^n-1} q^k
+\]
+on jonkin jakauman pistemassafunktio joukolla $\{0,1,...,n-1\}$. 
+\input{./tex/q_4/q_4_1.tex}
+\item Olkoon $X$ satunnaismuuttuja, jonka jakauma on edellisen kohdan jakauma. Laske odotusarvo
+\[
+\E X.
+\]
+\input{./tex/q_4/q_4_2.tex}
+\end{enumerate}
+
+{\bf Vihje:} ensimmäiseen kohtaan kannattaa muistaa geometrisen summan kaava:
+\[
+\sum_{k=0}^{n-1}q^k =\frac{q^n-1}{q-1}.
+\]
+Toisessa kohdassa saattaa olla kätevää huomata, että 
+\[
+\sum_{k=0}^{n-1}k q^k=q \sum_{k=1}^{n-1}k q^{k-1}=q \frac{d}{dq}\sum_{k=1}^{n-1}q^k, 
+\]
+ja käyttää taas geometristä summaa.
+\end{Exercises}
+
+Seuraava tehtävä koskee jatkuvan satunnaismuuttujan sekä sen muunnoksen odotusarvoa.
+
+\begin{Exercises}{Jatkuvan jakauman odotusarvo}{5}
+
+Olkoon $X$ satunnaismuuttuja, jonka jakauma on eksponenttijakauma parametrilla $1$, eli 
+\[
+f_X(x)=\begin{cases}
+e^{- x}, & x\geq 0\\
+0, & x<0
+\end{cases}.
+\]
+
+\begin{enumerate}
+\item Laske odotusarvo 
+\[
+\E X.
+\]
+\input{./tex/q_5/q_5_1.tex}
+\item Laske muunnoksen $g(X)=X^2$ odotusarvo $\E X^2$.
+\input{./tex/q_5/q_5_2.tex}
+\end{enumerate}
+
+{\bf Vihje:} jos osittaisintegrointi on tuttua, sitä kannattaa käyttää tässä. Jos se ei ole tuttua, voit suoraan käyttää (osittaisintegroimalla todistettavaa) kaavaa 
+\[
+\int_0^\infty x^{n+1} e^{-x}dx=(n+1)\int_0^\infty x^n e^{-x}dx
+\]
+kullakin kokonaisluvulla $n\geq 0$.
+Jos sinulla on muita temppuja taskussa, voit toki käyttää niitäkin (esim. Gamma-funktion ominaisuudet, tai jos tunnet jo generoivan funktion käsitteen).
+\end{Exercises}
+
+Lopuksi harjoitellaan hieman odotusarvon yleisiä ominaisuuksia tehtävällä, joka koskee riippumattomien satunnaismuuttujien summaa. 
+
+\begin{Exercises}{Riippumattomien samoin jakautuneiden satunnaismuuttujien summa}{6}
+Olkoon $X_1,...,X_n$ riippumattomia satunnaismuuttujia, joilla kunkin $X_i$:n jakauma on joukon $\{-1,1\}$ tasajakauma. Määritellään 
+\[
+S_n=\frac{1}{n}\sum_{j=1}^n X_j.
+\]
+\begin{enumerate}
+\item Laske $\E S_n$. 
+\input{./tex/q_6/q_6_1.tex}
+\item Laske $\E S_n^2$.
+\input{./tex/q_6/q_6_2.tex}
+\end{enumerate}
+{\bf Vihje:} Kannattaa ehkä yrittää käyttää odotusarvon yleisiä ominaisuuksia mahdollisimman paljon -- Propositio 7.5 on varmasti avuksi useampaan otteeseen.
+\end{Exercises}
+
+
+\end{document}

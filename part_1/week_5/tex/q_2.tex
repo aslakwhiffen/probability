@@ -1,0 +1,33 @@
+
+Let's calculate the cumulative distribution function of the random variable 
+
+\[
+    \min(X,Y) = \begin{cases}
+	X & , X\leq Y\\
+	Y & , X > Y
+    \end{cases}
+.\] 
+
+Using the hint, let's calculate the probability $ \P(\min(X,Y) > x)$ in order to find the cumulative
+distribution function $ \P(\min(X,Y)\leq x) $. 
+
+\begin{align*}
+    \P(\min(X,Y) > x) &= \P(X > x, Y > x)\\
+		      &= \P(X > x) \P(Y > x) \, \mbox{independence} \\
+		      &= ( \int_{x}^{\infty} \lambda_1 e^{-\lambda_1} dx) ( \int_{x}^{\infty}
+		      \lambda_2 e^{-\lambda_2 x} dx) \\
+		      &= \lambda_1 (- \frac{1}{\lambda_1} )\left[e^{-\lambda_1 x}\right]_{x}^{\infty}
+		      \lambda_2 (- \frac{1}{\lambda_2}) \left[ e^{-\lambda_2 x}
+		      \right]_{x}^{\infty}\\
+		      &= - \left[ 0 - e^{-\lambda_1 x}  \right] \cdot (-1) \left[ 0 - e^{-\lambda_2
+		      x}  \right] \\
+		      &= e^{(-\lambda_1 + \lambda_2)x} 
+\end{align*}
+
+Thus,
+
+\begin{align*}
+    F_{\min(X,Y)} (x) &= \P(\min(X,Y) \leq x)\\
+		      &= 1- \P(\min(X,Y) > x)\\
+		      &= 1- e^{- (\lambda_1 + \lambda_2) x} 
+\end{align*}

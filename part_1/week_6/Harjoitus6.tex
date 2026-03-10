@@ -1,0 +1,338 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Vihjeitä}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Vihjeitä:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Todennäköisyyslaskenta II a, 2022 -- Viikon 6 harjoitustehtävät}
+
+%\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+
+
+\begin{document}
+
+\maketitle
+
+Tämän kerran harjoitukset koskevat jakauman tunnuslukuja sekä momentit generoivaa funktiota. Muista kysyä neuvoa ohjauksissa tai telegramissa, jos tehtävät tuntuvat vaikeilta. 
+
+Muista palauttaa tehtävät Moodlessa (Digest työpajaan) pe 21.10. klo 23.59 mennessä.
+
+
+{\bf Tällä kertaa vihjeet ovat tehtävätiedoston lopussa.}
+\medskip 
+
+Taas aloitetaan lämmittelemällä ja käsitteiden kertauksella. 
+\begin{Exercises}{Käsitteiden kertausta}{1}
+Mitkä seuraavista väitteistä pitävät paikkansa (ei tarvitse perustella)? 
+\begin{enumerate}
+\item Satunnaisluvun $X$ varianssi $\mathrm{Var}(X)$ ei voi koskaan olla negatiivinen luku.
+\input{./tex/q_1/q_1_1.tex}
+\item Kahden satunnaisluvun $X,Y$ välinen kovarianssi $\mathrm{Cov}(X,Y)$ ei voi koskaan olla negatiivinen luku.
+
+\input{./tex/q_1/q_1_2.tex}
+\item Jos kahden satunnaisluvun $X,Y$ välinen kovarianssi $\mathrm{Cov}(X,Y)$ on nolla, niin satunnaisluvut $X$ ja $Y$ ovat riippumattomat. 
+
+\input{./tex/q_1/q_1_3.tex}
+\item Jokaisella satunnaisluvulla on olemassa momentit generoiva funktio. 
+
+\input{./tex/q_1/q_1_4.tex}
+\item  Jos satunnaisluvut $X$ ja $Y$ ovat riippumattomat, niiden momentit generoivat funktiot $M_X$ ja $M_Y$ toteuttavat
+\[
+M_X(t)+M_Y(t)=M_{X+Y}(t)
+\] 
+jokaisella $t$, joilla funktiot ovat olemassa.
+
+\input{./tex/q_1/q_1_5.tex}
+\item Jos satunnaismuuttuja $X$:n momentit generoiva funktio $M_X$, on derivoituva jossakin pisteen $0$ ympärisössä, niin pätee $\E X=M_X'(0)$.
+
+\input{./tex/q_1/q_1_6.tex}
+\end{enumerate}
+\end{Exercises}
+
+Seuraavassa tehtävässä lasketaan Poisson jakauman kahta ensimmäistä momenttia ja varianssia.
+
+\begin{Exercises}{Poisson-jakauman momentteja sekä varianssi}{2}
+Tutkitana Poisson-jakaumaa parametrilla $\lambda>0$, eli todennäköisyysjakaumaa (joukolla $\N=\{0,1,2,...\}$), jonka pistemassafunktio on 
+\[
+p_\lambda(n)=\frac{\lambda^n e^{-\lambda}}{n!}.
+\]
+Olkoon $X$ satunnaismuuttuja, jonka jakauma on tämä Poisson-jakauma (parametrilla $\lambda$). 
+\begin{enumerate}
+\item Osoita, että 
+\[
+\E X=\lambda.
+\]
+\input{./tex/q_2/q_2_1.tex}
+\item Osoita, että 
+\[
+\E X^2=\lambda+\lambda^2.
+\]
+\input{./tex/q_2/q_2_2.tex}
+\item Laske $\mathrm{Var}(X)$. 
+\input{./tex/q_2/q_2_3.tex}
+\end{enumerate}
+\end{Exercises}
+
+Seuraavaksi harjoitellaan vastaavaa erään jatkuvan jakauman yhteydessä.
+
+\begin{Exercises}{Laplacen jakauman momentteja ja varianssi}{3}
+Jakaumaa, jonka tiheysfunktio on 
+\[
+f(x)=\frac{1}{2b}e^{-\frac{|x-\mu|}{b}}, \qquad \text{kun} \qquad x\in \R
+\]
+missä $\mu\in \R$ ja $b>0$ ovat parametreja, kutsutaan Laplacen jakaumaksi. Tässä tehtävässä keskitytään tapaukseen $\mu=0$.
+
+\medskip 
+
+Olkoon siis $X$ satunnaismuuttuja, jonka jakauma on Laplacen jakauma tapauksessa $\mu=0$, ja $b>0$ mielivaltainen. 
+\begin{enumerate}
+\item Laske $X$:n odotusarvo $\E X$. 
+\input{./tex/q_3/q_3_1.tex}
+\item Laske $X$:n keskihajonta.
+\input{./tex/q_3/q_3_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+Kahdessa seuraavassa tehtävässä tutkitaan normaalijakaumaa. Ensin lasketaan momentit generoiva funktio.
+
+\begin{Exercises}{Normaalijakauman momentit generoiva funktio}{4}
+Olkoon $X$ normaalijakautunut odotusarvolla $\mu$ ja keskihajonnalla $\sigma>0$, eli $X$:n jakauman tiheysfunktio on 
+\[
+f_X(x)=\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \qquad x\in \R.
+\]
+Osoita, että $X$:n momentit generoiva funktio on 
+\[
+M_X(t)=e^{\mu t+\frac{\sigma^2}{2}t^2}.
+\]
+Voit ohittaa tarkastelun siitä, että miksi generoiva funktio on olemassa. 
+
+\input{./tex/q_4.tex}
+\end{Exercises}
+
+Sitten lasketaan momentit generoivasta funktiosta momentit.
+
+\begin{Exercises}{Normaalijakauman momentit}{5}
+Tutkitaan edellisen kohdan tilannetta, eli normaalijakaumaa, mutta oletetaan, että $\mu=0$. Olettaen, että pätee
+\[
+M_X(t)=\sum_{n=0}^\infty \frac{1}{n!}\E (X^n) t^n,
+\]
+osoita edelliseen tehtävään nojautuen (tai muulla tapaa, jos keksit sellaisen), että 
+\[
+\E (X^n)=\begin{cases}
+0, & n \text{ on pariton}\\
+\sigma^{2k}\frac{(2k)!}{2^k k!}, & n=2k \text{ on parillinen}
+\end{cases}.
+\]
+\input{./tex/q_5.tex}
+\end{Exercises}
+
+Lopuksi lasketaan kahden (eri?) jakauman momentit generoivat funktiot.
+
+\begin{Exercises}{Kahden jakauman momentit generoiva funktio}{6}
+\begin{enumerate}
+\item Muistutukseksi, eksponenttijakauman (parametrilla $\lambda$) tiheysfunktio on 
+\[
+f(x)=\begin{cases}
+\lambda e^{-\lambda x}, & x\geq 0\\
+0, & x<0
+\end{cases}.
+\]
+\input{./tex/q_6/q_6_1.tex}
+Olkoon $X$:n jakauma eksponenttijakauma parametrilla $1/2$. Laske $X$:n momentit generoiva funktio $M_X(t)$. 
+\item Mikäli $Z_1,...,Z_k$ ovat riippumattomia ja normaalijakautuneita satunnaismuuttujia, kullakin odotusarvo nolla ja varianssi $1$, niin satunnaismuuttujan $Z_1^2+...+Z_k^2$ jakaumaa kutsutaan $\chi^2$-jakaumaksi $k$:lla vapausasteella. Olkoon satunnaismuuttujan $X$ jakauma $\chi^2$-jakauma kahdella vapausasteella. Laske $X$:n momentit generoiva funktio.
+\input{./tex/q_6/q_6_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+\begin{Solution}
+\begin{enumerate}
+\item Ensimmäisessä tehtävässä kannattaa ihan vain kertailla määritelmiä. 
+\item Toisessa tehtävässä saattaa olla hyödyllistä huomata, että 
+\[
+\frac{n}{n!}=\begin{cases}
+0, & n=0\\
+\frac{1}{(n-1)!}, & n\geq 1
+\end{cases}
+\]
+ja vastaavasti 
+\[
+\frac{n^2}{n!}=\begin{cases}
+0, & n=0\\
+\frac{n-1}{(n-1)!}+\frac{1}{(n-1)!}, & n\geq 1
+\end{cases}.
+\]
+\item Kolmannessa tehtävässä kannattaa ehkä tehdä muuttujan vaihdos: $x=bu$. Jos tämä ei ole tuttua, saat käyttää kaavaa 
+\[
+\int_{0}^\infty x^2 e^{-\frac{x}{b}}dx=b^3 \int_0^\infty u^2 e^{-u}du.
+\]
+Tämän viimeisen integraalin laskemiseen, kannattaa palauttaa mieleen viime viikon tehtävät.
+\item Neljännessä tehtävässä on pari temppua, mitä kannattaa käyttää. Ensinäkin, voi olla kätevää ``täydentää neliöksi'', eli kirjoittaa 
+\[
+\frac{(x-\mu)^2}{2\sigma^2}-tx=\frac{(x-\mu-\sigma^2 t)^2}{2\sigma^2}-\mu t-\frac{\sigma^2}{2}t.
+\]
+Myöskin kannattaa muistaa, että jokaisella $a\in \R$ ja mille tahansa (integroituvalle) funktiolle $f:\R\to \R$ pätee 
+\[
+\int_{-\infty}^\infty f(x+a)dx=\int_{-\infty}^\infty f(x)dx.
+\]
+\item Viidennessä tehtävässä kannattaa kirjoittaa (eksponenttifunktion sarjakehitelmää käyttäen)
+\[
+e^{\frac{\sigma^2}{2}t^2}=\sum_{n=0}^\infty \frac{1}{n!} \left(\frac{\sigma^2}{2}t^2\right)^n 
+\] 
+ja samaistaa tämä sarjan
+\[
+\sum_{k=0}^\infty \frac{1}{k!}t^k \E X^k
+\]
+kanssa. Muista, että kaksi potenssisarjaa suppenevat samaan funktioon vain jos niillä on samat kertoimet.
+\item Kuudennen tehtävän ensimmäisessä kohdassa saatat törmätä integraaliin muotoa $\int_0^\infty e^{-(\frac{1}{2}-t)x}dx$. Huomaa, että kun $t<\frac{1}{2}$‚ tämä on normalisaatiovakiota vaille eksponenttijakauman tiheysfunktio parametrilla $\frac{1}{2}-t$, joten integraali on helppo laskea (toki se olisi monelle helppoa suoraankin). Vastaavasti toisessa kohdassa, sen jälkeen kun olet käyttänyt hyväksesi riippumattomuutta, saatat törmätä integraaliin muotoa 
+\[
+\int_{-\infty}^\infty e^{-(\frac{1}{2}-t)x^2}dx.
+\]
+Huomaa, että kun $t<\frac{1}{2}$ tämä on normalisaatiovakiota vaille erään normaalijakauman tiheysfunktio, joten osaat laskea integraalin.
+\end{enumerate}
+\end{Solution}
+
+
+\end{document}
