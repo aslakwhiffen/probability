@@ -1,0 +1,495 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Ratkaisu:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Todennäköisyyslaskenta II a, 2022 -- Viikon 2 harjoitustehtävät}
+
+%\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+
+
+\begin{document}
+
+\maketitle
+
+Tämän viikon harjoituksissa ({\bf 6 tehtävää}) syvennytään hieman enemmän todennäköisyysjakaumiin ja harjoitellaan riippumattomuutta ja ehdollista todennäköisyyttä. Ellei tehtävässä muuten mainita,  {\bf kaikki ratkaisut pitää aina perustella}. Perustele päättelysi joko määritelmästä (esim. luentomuistiinpanot), lemmasta tai muusta tuloksesta, tai jostakin ``yleisesti tunnetusta" faktasta, tai sitten jostakin aiemmin päättelemästäsi. {\bf Muista kuitenkin, että pisteitä saa järkevistä yrityksistä (kaiken ei tarvitse olla pilkulleen oikein), ja kannattaa kirjoittaa relevantit määritelmät näkyviin.}
+
+Palauta ratkaisusi Moodlessa pe 23.9. klo 23.59 mennessä (DIGEST työpajaan).
+
+\medskip
+
+ {\bf Muista kysyä apua laskareissa ja Telegramissa, jos tehtävät tuntuvat vaikeilta!}
+
+
+\medskip 
+
+Taas aloitetaan lämmittelemällä ja käsitteiden kertauksella. 
+\begin{Exercises}{Käsitteiden kertausta}{1}
+Mitkä seuraavista väitteistä pitävät paikkansa (ei tarvitse perustella)? 
+\begin{enumerate}
+\item  Jakaumalla on aina joko tiheysfunktio tai pistemassafunktio.
+
+    False
+\item Olkoon $\P$ todennäköisyysjakauma perusjoukolla $\Omega=\R$, ja $f$ jakauman tiheysfunktio. Tällöin pätee $f(x)\leq 1$ jokaisella $x\in \R$.
+
+    False
+\item Jos $\P$ on jakauma, jolla on pistemassafunktio $(p_\omega)_{\omega\in \Omega}$, niin jokaisen tapahtuman $A\subset \Omega$ todennäköisyys $\P(A)$ voidaan lausua pistemassafunktion $(p_\omega)_{\omega\in \Omega}$ avulla.
+
+    True
+\item Heitetään kolikkoa kaksi kertaa: $\Omega=\{\text{kruuna, klaava}\}^2$ ja olkoon $\P$ tasajakauma perusjoukolla $\Omega$. Tapahtumat $A=\{\omega=(\omega_1,\omega_2)\in \Omega: \omega_1=\text{kruuna}\}$ ja $B=\{\omega=(\omega_1,\omega_2)\in \Omega: \omega_2=\text{klaava}\}$ ovat riippumattomat.
+
+    True
+\item Jos $\P(A)>0$ ja $\P(B)>0$, niin aina $\P(A|B)>0$.
+
+    False
+\item Kaikilla tapahtumilla $A$ ja $B$ (joka toteuttaa $\P(B)>0$) pätee 
+\[
+\P(A)\geq \P(A|B).
+\]
+
+    False
+\end{enumerate}
+{\bf Vihjeitä:} kannattaa lähinnä muistuttaa mieliin keskeisimmät määritelmät. Kahdessa viimeisessä tapauksessa kannattaa kokeilla muutamia erilaisia esimerkkejä, jos saisi hieman kosketusta kysymykseen.
+\end{Exercises}
+
+
+Seuraavan tehtävän pointti on harjoitella (äärettömiin) diskreetteihin jakaumiin liittyviä käsitteitä. Mitään erityisen syvällistä tässä ei ole. Pääasiallinen syy tehdä tätä on rutiinin kartuttaminen ja käsitteiden hanskaaminen.
+
+\begin{Exercises}{Todennäköisyyksiä summista}{2}
+Olkoon $\Omega=\N=\{0,1,2,3,...\}$ luonnollisten lukujen joukko. Olkoon myös $q\in (0,1)$ ja määritellään kullakin $\omega \in \Omega$‚ 
+\[
+p_\omega=(1-q) q^\omega.
+\]
+\begin{enumerate}
+\item Osoita, että tämä on jonkin jakauman pistemassafunktio (eli toteuttaa Lauseen 2.14 ehdot).
+
+    Let's first show that $ p_{\omega} \geq 0$ for all events $ \omega \in\Omega$. Since $ (1-q)$
+    and $ q$ are non-negative numbers, we have that the product $ (1-q)(q)^{\omega} $ is
+    non-negative as well so $ p_{\omega} \geq 0$.
+
+    Now, let's show that $ \sum_{i=1}^{\infty} p_{i} = 1$ or in this case in a different notation $
+    \sum_{\omega \in \Omega}^{} p_{\omega} = 1$. 
+    \begin{align*}
+	\sum_{\omega \in \Omega}^{} p_{\omega} &= \sum_{\omega \in \Omega}^{} (1-q) q^{\omega} \\
+					       &= \sum_{i=0}^{\infty} (1-q) q^{i} \\
+					       &= \sum_{i=0}^{\infty} q^{i} - q^{i+1} 
+    \end{align*}
+    Since $ q \in (0,1) $, we have that $ \sum_{i=0}^{\infty} q_{i} $ and $ \sum_{i=0}^{\infty}
+    q^{i+1}  $ converge and so $ \sum_{i=0}^{\infty} q^{i} - q^{i+1}  = \sum_{i=0}^{\infty} q^{i} -
+    \sum_{i=0}^{\infty} q^{i+1} $, and we see that 
+    \begin{align*}
+	\sum_{i=0}^{\infty} (q^{i} - q^{i+1} ) &= \sum_{i=0}^{\infty} q_{i} - \sum_{i=0}^{\infty}
+	q^{i+1} = \frac{1}{1-q} - \frac{q}{1-q}\\ 
+					       &= \frac{1-q}{1-q} = 1. 
+    \end{align*}
+\item Laske tapahtuman
+\[
+A=\bigcup_{n=0}^\infty \{2n+1\}
+\]
+
+    Since $ p_{\omega} $ is a point mass function, we have that by proposition 2.14,
+    the probability of event $ A \subset \Omega$ is 
+
+    \begin{align*}
+	\P(A) &= \sum_{i: \omega_{i} \in A}^{} p_{i}. \\
+    \end{align*}
+    Let's calculate specifically the probability of event $ A = \cup_{n=0}^{\infty} \{ 2n+1 \}	$ as
+    follows:
+
+    \begin{align*}
+	\P(A) &= \P(\cup_{n=0}^{\infty} \{ 2n+1 \}) \\
+	      &= \sum_{\omega \in A}  p_{\omega} \\
+	      &= \sum_{\omega \in A} (1-q)q^{\omega} \\
+	      &= \sum_{i=0}^{\infty} (1-q) q^{2i+1} \\
+	      &= \sum_{i=0}^{\infty} q^{2i+1} - q^{2i+2} \\
+    \end{align*}
+    Again, since $ q \in (0,1)$ implies that $ q^{2} \in (0,1)$ as well, we have that the sums $ \sum_{i=0}^{\infty} q^{2i+1} $ and
+    $ \sum_{i=0}^{\infty} q^{2i+2} $ converge so we get  
+
+    \begin{align*}
+	\P(A) &= \sum_{i=0}^{\infty} q^{2i+1} - \sum_{i=0}^{\infty} q^{2i+2} \\
+	      &= q \cdot \frac{1}{1-q^2} - q^2 \frac{1}{1-q^2} \\
+	      &= \frac{q-q^2}{1-q^2}\\
+	      &= \frac{q}{1+q}.
+    \end{align*}
+    
+todennäköisyys tässä jakaumassa.\footnote{Vaikka se ei ole tehtävän kannalta varsinaisesti olennaista, ajatus on, että jos poimimme tämän jakauman mukaan satunnaisen luonnollisen luvun, niin tapahtuma $A$ on, että saatu luku on pariton.}
+\end{enumerate}
+{\bf Vihje:} Tässä kannattaa muistuttaa mieliin geometrinen sarja. Jos $|x|<1$, niin 
+\[
+\sum_{k=0}^\infty x^k=\frac{1}{1-x}.
+\]
+Huomaa myös, että saamasi todennäköisyys tulee riippumaan parametrista $q$.
+\end{Exercises}
+
+
+Seuraavassa tehtävässä taas harjoitellaan integrointia, eli tutkitaan erästä jatkuvaa jakaumaa. Tehtävän rooli on hyvin samanlainen kuin edellisenkin.
+
+\begin{Exercises}{Integrointia ja todennäköisyyksiä}{3}
+Olkoon $\Omega=[0,\infty)$ ja $r>0$. Määritellään kullakin $\omega\in \Omega$, 
+\[
+f(\omega)=re^{-r\omega}.
+\]
+\begin{enumerate}
+\item Osoita, että $f$ on jonkin jakauman tiheysfunktio (eli toetuttaa Lauseen 2.16 ehdot\footnote{Tarkalleen ottaen tässä lauseessa puhutaan tapauksesta $\Omega=\R$‚ mutta voimme määritellä, että $f(x)=0$, kun $x\notin [0,\infty)$ ja palauttaa tähän tapaukseen halutessamme.}).
+
+    Let's show that $ f$ is a density function for some probability distribution. We need $ f(x)
+    \geq 0$ for all $ x \in \Omega = \R^{+} $ and $ \int_{\Omega} f(x) dx = 1$. 
+
+    For the first condition, we see that since $ r > 0$ and the exponential function is a positive
+    function the function $ f(x) = r e^{-rx} > 0$ for all $ x \in \Omega = \R^{+}$, which
+    satisfies $ f(x) \geq 0$. 
+
+    For the second condition, we calculate
+
+    \begin{align*}
+	\int_{\Omega} f(x) dx &= \int_{0}^{\infty} r e^{-rx} dx\\
+			      &= r \cdot (-1/r) \cdot \left[e^{-rx}  \right]_{0}^{\infty} \\
+			      &= - \left[ e^{-r(\infty)} - e^{-r(0)}  \right] \\
+			      &= - [0-1] \\
+			      &= 1.
+    \end{align*}
+\item Laske todennäköisyys
+\[
+\P([0,1]).
+\]
+
+    By Theorem 2.16, there is a unique probability distribution for all $ a,b \in \R$, where $ a <
+    b$ i.e.
+
+    \[
+	\P((a,b)) = \int_{a}^{b} f(x) dx  
+    .\]
+
+    In this case $ a = 0$ and $ b=1$ and even though $ [0,1]$ is a closed interval, the properties
+    of the integral ensure that $ \P([0,1]) = \P((0,1))$. Let's calculate $ \P([0,1])$ 
+
+    \begin{align*}
+	\P([0,1]) &= \int_{0}^{1} f(x) dx \\
+		  &= \int_{0}^{1} r e^{-rx} \\
+		  &= r \cdot (-1/r) \cdot \left[  e^{-rx}\right]_{0}^{1} \\
+		  &= - \left[ e^{-r(1)} - e^{-r(0)}  \right] \\
+		  &= - \left[ e^{-r} -1 \right] \\
+		  &= 1 - e^{-r}. 
+    \end{align*}
+\item Olkoon 
+\[
+A=\bigcup_{n=0}^\infty [2n,2n+1].
+\]
+
+    Since $ \P$ is a probability distribution, $ \P$ has additive properties, namely, for disjoint
+    sets $ A_{1} , A_{2}, \dots $
+    \[
+	\P(\cup_{i=}^{\infty} A_{i}  ) = \sum_{i=1}^{\infty} \P(A_{i} )   
+    .\] 
+    The events $ [2n, 2n+1]$ are disjoint since assuming without loss of generality that $ k< j$ 
+    we have that either $ j = k+1$ or $ j > k+1 $ and so the intersection
+    of any two such sets $ [2k, 2k+1] \cup [2j, 2j+1] $ would be empty. 
+
+    Let's now calculate $ \P( \cup_{i=1}^{\infty} A_{i} )$
+
+    \begin{align*}
+	\P( \cup_{i=1}^{\infty} A_{i} ) &= \sum_{i=1}^{\infty} \P(A_{i} )\\
+					&= \sum_{n=0}^{\infty} \P([2n,2n+1])\\
+					&= \sum_{n=0}^{\infty} \int_{2n}^{2n+1} f(x) dx\\
+					&= \sum_{n=0}^{\infty} \int_{2n}^{2n+1} r e^{-rx} dx\\
+					&= \sum_{n=0}^{\infty} r \cdot (-1/r) \cdot \left[ e^{-rx}
+					\right]_{2n}^{2n+1} \\
+					&= \sum_{n=0}^{\infty} - \left( e^{-r(2n+1)} - e^{-r (2n) }
+				    \right) 
+    \end{align*}
+
+    We know that the sums $ \sum_{n=0}^{\infty} e^{-2nr} $ and $ \sum_{n=0}^{\infty} e^{-2nr -r} $
+    both converge since $ e^{-1}  \in (0,1)$ and $ e^{-2r} \in (0,1)$ as well so 
+
+    \begin{align*}
+	\P( \cup_{i=1}^{\infty} A_{i} ) &= \sum_{n=0}^{\infty} (e^{-2r} )^{n} - \sum_{n=0}^{\infty}
+	(e^{-2r})^{n} \cdot e^{-r} \\
+					&= \frac{1}{1- e^{-2r} } - e^{-r} \frac{1}{1-e^{-2r} } \\
+					&= \frac{e^{2r} }{e^{2r} -1} - e^{-r} \frac{e^{2r} }{e^{2r}
+					-1} \\
+					&= \frac{1}{1+ e^{-r} }.
+    \end{align*}
+Laske todennäköisyys
+\[
+\P(A).
+\]
+\end{enumerate}
+{\bf Vihjeitä:} Kannattaa muistaa joitakin integrointiin liittyviä perusjuttuja: jos $F$ on jokin derivoituva funktio, niin analyysin peruslause sanoo, että $\int_a^b F'(x)=F(b)-F(a)$. Huomaa myöskin, että funktio $F(\omega)=-e^{-r\omega}$ toteuttaa $F'(\omega)=f(\omega)$, joten osaat laskea todennäköisyyden $\P([a,b])$. Viimeisen kohdan ratkaisussa myös erillisyys ja geometrinen summa tulevat avuksi.
+\end{Exercises}
+
+
+Seuraavaksi kertaillaan riippumattomuutta. Tehtävän on tarkoitus osoittaa, että riippumattomuus on ehkä monimutkaisempi käsite kuin miltä päällepäin näyttää.
+
+\begin{Exercises}{Riippumattomuudesta}{4}
+Olkoon $\Omega=\{1,2,3,4\}$ ja $\P$ diskreetti tasajakauma joukolla $\Omega$. Olkoon $A=\{1,2\}$, $B=\{2,3\}$ ja $C=\{3,4\}$.
+\begin{enumerate}
+\item  Ovatko tapahtumat $A$ ja $B$ riippumattomat?
+
+    Let's calculate $ \P(A)$, $ \P(A) = |A| / |\Omega| = 2 /4 = 1 /2$. Let's calculate $ \P(B) $, $
+    \P(B) = |B| / |\Omega| = 2/4 = 1/2$. 
+
+    Now, let's calculate $ \P(A \cup B) $, $ \P(A \cup B) = \P( \{ 1,2 \} \cap \{ 2,3 \}) = \P ( \{
+    2\}	) = | \{ 2 \}|/ |\Omega| = 1/4 $. 
+
+    We see that $ \P(A) \cdot \P(B) = 1/2 \cdot 1/2 = 1/4 = \P(A \cup B)$ so $ A$ and $ B$ are
+    independent. 
+\item Ovatko tapahtumat $A$ ja $C$ riippumattomat?
+
+    Let's see what $ A \cap C$ is. $ A \cap C = \{ 1,2 \} \cap \{ 3,4 \} = \emptyset$. Since $ \P(A)
+    > 0$ and $ \P(C) >0$ we see that $ \P(A) \cdot \P(C) > 0 \neq 0 = \P(\emptyset)$. And so $ A $
+    and $ C$ are not independent. 
+\item Ovatko tapahtumat $A,B,C$ keskenäisesti riippumattomat?
+
+    Let's calculate $ \P(A \cap B \cap C) = \P( \{ 1,2 \} \cap \{ 2,3 \} \cap \{ 3,4 \}	) =
+    \P( \emptyset)$ and since $ \P$ is a probability distribution, by proposition 2.11 we have that
+    $ \P(\emptyset) = 0$. But $ \P(A), \P(B), \P(C) >0$ and so their product $ \P(A) \P(B) \P(C) > 0
+    \neq 0 = \P(\emptyset)$. This means that $ A, B $ and $ C$ are not mutually independent.
+
+\end{enumerate}
+
+{\bf Vihje:} Kannattaa kertailla määritelmiä.
+\end{Exercises}
+
+Seuraavan tehtävän pointti on olla pieni teoreettinen tarkastelu riippumattomuuteen liittyen. Ajatus on, että kehitetään hieman teoreettista osaamista ja määritelmien omaksumista.
+
+\begin{Exercises}{Riippumattomuutta ja erillisyyttä}{5}
+Olkoon $\Omega$ jokin perusjoukko, $\mathbb P$ todennäköisyysjakauma sillä, ja $A,B\subset \Omega$ tapahtumia. 
+\begin{enumerate}
+\item Osoita, että jos $A$ on riippumaton itsestään, niin pätee $\P(A)=0$ tai $\P(A)=1$.
+
+    If $ A$ is independent of itself then
+    \[
+        \P(A \cap A) = \P(A) \cdot \P(A)
+    \] 
+    but $ \P(A \cap A) = \P(A)$ so $ \P(A) \cdot \P(A) = \P(A) $ which means 
+    that $ \P(A) = \P(A)^2$. If $ \P(A) = 0$, then obviously $ \P(A) = 0$. If $ \P(A) > 0$, then
+    we can divide by $ \P(A) $ to get $ \P(A) = 1$. Therefore, $ \P(A) $ can either be equal to 0 or
+    equal to 1.
+\item Osoita, että jos $A$ ja $B$ ovat sekä riippumattomat, että erilliset, niin pätee $\P(A)=0$ tai $\P(B)=0$.
+
+    According to Theorem 3.1 (3), we have that 
+    \[
+        \P(A \cup B) + \P(A\cap B) = \P(A) + \P(B)
+    .\] 
+    Since $ A$ and $ B$ are disjoint and independent, we have that 
+    $ \P(A \cap B) = \P(A) \cdot \P(B)$ and $ \P(A \cup B) = \P(A) + \P(B)$.
+
+    \begin{align*}
+	\P(A \cup B) + \P(A\cap B) &= \P(A) + \P(B)\\
+				   &= \P(A \cup B) \\
+    \end{align*}
+    since probabilities assume finite values we can minus $ \P(A \cup B)$ on both sides of the
+    equation and wee see that 
+
+    \begin{align*}
+	\P(A) \cdot \P(B) &= \P(A \cap B) = 0
+    \end{align*}
+    meaning that either $ \P(A) = 0$ or $ \P(B)= 0$.
+\end{enumerate}
+{\bf Vihje:}  Ensimmäistä kohtaa varten kannattaa miettiä, että osaatko ratkaista yhtälön $x=x^2$, ja mitä tällä mahtaisi olla tekemistä tehtävän kanssa. Toisessa kannattaa kerrata erillisyyden ja riippumattomuuden määritelmät, sekä muistaa, että $\P(\emptyset)=0$ (ja ehkä tulon nollasääntö).
+\end{Exercises}
+
+
+Viimeisessä tehtävässä harjoitellaan vähän ehdollista todennäköisyyttä. Tämäkin on monella tapaa ehkä jopa lukiotiedoilla tehtävissä, mutta ajatus on saada konkretiaa ehdollisen todennäköisyyden määritelmään.
+
+\begin{Exercises}{Ehdollista todennäköisyyttä}{6}
+Kuvitellaan, että meillä on tavallinen korttipakka\footnote{Korttipakassa on 52 korttia. Kussakin kortissa on sekä maa (hertta, ruutu, risti tai pata) sekä luku (1,2,3,...,13). Kutakin maa-/lukuyhdistelmää on pakassa vain yksi.} kädessä. Sekoitamme sitä, ja vedämme pakasta umpimähkään kortin. Mallinnetaan tätä todennäköisyyslaskennan keinoin: olkoon $\Omega=\{\omega=(l,m): l\in \{1,...,13\} , m\in \{\text{hertta, ruutu, risti, pata}\}\}$ ja $\P$ diskreetti tasajakauma tällä joukolla. 
+
+\begin{enumerate}
+\item Mikä on todennäköisyys, että vetämämme kortti on ässä (eli kortissa oleva luku on $1$ -- tässä tehtävässä emme välitä siitä, että joskus ässä voi myös olla 14)? Toisin sanoen, laske $\P(A)$, kun $A=\{(1,m): m\in \{\text{hertta, ruutu, risti, pata}\}\}$.
+
+    There are only four elements in the set $ A$ so $ |A| = 4$. Since $ \P$ is a uniform
+    distribution, we see that $ \P(A) = |A|/|\Omega| = 4/52 = 1/13$.
+\item Ajatellaan, että laitamme ensimmäisen kortin takaisin pakkaan, sekoitamme pakan uudelleen, vedämme uuden kortin, ja näytämme sitä (katsomatta) kaverillemme. Hän kertoo meille, että kortti on hertta (eikä valehtele). Mikä on tämän tiedon valossa todennäköisyys, että kortti on ässä? Eli toisin sanoen, laske $\P(A|B)$, missä $A$ on kuten yllä ja $B=\{(l,\text{hertta}): l\in \{1,2,...,13\}\}$. 
+
+    To find $ \P(A | B)$, we need to know something about $ \P(A \cap B)$. Let's see what $ A \cap
+    B$ is
+
+    \begin{align*}
+	A \cap B &= \{ (1,m): m \in \{ \mbox{hearts, diamonds, clubs, spades}  \} \cap \{ (l,
+	\mbox{hearts} ): l \in \{ 1,2,\dots,13 \}  \}  \} \\
+		 &= \{ (1,m) \cap (l, \mbox{hearts}, m \in  \mbox{hearts, diamonds, clubs, spades}
+	     \}  , l \in \{ 1,2,\dots,13 \} \} \\
+		 &= \{ (1, \mbox{hearts} )  \}  
+    \end{align*}
+    and so the probability is $ \P(A \cap B) = |A \cap B| /|\Omega| = 1/52$.  
+
+    The probability of $ B$ is $ \P(B) = |B|/|\Omega| = 13/52 = 1/4$. Finally, the probability $
+    \P(A |B) = \P(A\cap B)/\P(B) = 1/13$.
+\item Toistetaan sama temppu kuin yllä. Hän kertoo meille nyt (edelleen valehtelematta), että kortissa esiintyvä luku on korkeintaan neljä. Mikä on tämän tiedon valossa todennäköisyys, että kortti on ässä? Eli toisin sanoen, laske $\P(A|C)$, missä $A$ on kuten yllä ja $C=\{(l,m): l\in \{1,2,3,4\}, m\in \{\text{hertta, ruutu, risti, pata}\}\}$.  
+
+    It turns out that the set $ A$ is a subset of  $ C$  because any element of $ A$  can have any
+    suite but its card number must be 1 and this is contained in the set $ C$  which is the set of
+    cards with the only requirement that the card number must be less than 4. 
+
+    So far, we know $ \P(A \cap C) = \P(A)$, but we are missing $ \P(C)$  to calculate $ \P(A|C)$ . 
+
+    To calculate $ \P(C)$ , we can split the event $ C$  into four disjoint events $ C_{1} , \dots,
+    C_{4} $, which are specifically $ C_{i} = \{ (l,m): m \in \mbox{hearts, diamonds, clubs, spades}, l = i \} $ 
+    and $ \cup_{i=1}^{4} C_{i} = C$. 
+
+    Let's calculate $ \P(C_{i})$ 
+
+    \begin{align*}
+	\P(C_{i}) = \frac{|C_{i}|}{ |\Omega|} = \frac{4}{52} = \frac{1}{13} .   
+    \end{align*}
+
+    Since $ \P$ is a probability distribution, and $ C_{1}, \dots C_{4} $ are disjoint sets, by
+    proposition 2.11 (2), i.e. by the finite countable additivity property disjoint sets, we see
+    that $ \P(C) = \sum_{i=1}^{4} \P(C_{i} ) = \sum_{i=1}^{4} 1/13 = 4/13  $.  
+
+    Finally,
+   \[
+        \P(A|C) = \P(A \cap C)/\P(C) = \P(A) / \P(C) = \frac{1/13}{4/13} =  1/4
+   .\]  
+\end{enumerate}
+
+{\bf Vihje:}  tämä menee toivottavasti pitkälti ehdollisen todennäköisyyden määritelmällä.
+\end{Exercises}
+
+\end{document}
