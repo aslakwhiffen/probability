@@ -1,0 +1,58 @@
+
+
+The distribution $ \P_{X} $ of the random variable $ X$ is defined on the probability distribution
+$ \P$ defined in part 1 of this exercise.
+
+We would like to show that $ \P_{X} $ is a discrete distribution and its probability mass function is 
+$ \sum_{n \in \Z} p_{n} p_{x-n}  $.
+
+Starting with the definition of a distribution of a random variable, take $ A \subset E = \Z$,
+
+\begin{align*}
+    P_{X} (A) &:= \P(\omega \in \Omega: X(\omega) \in A)\\ 
+	      &= \P( \{ (\omega_1, \omega_2) \in \Z \times \Z: \omega_1+ \omega_2 \in A \} \\
+\end{align*}
+Since $ A $ is a subset of $ \Z$ (which is countable) we have that $ A$ is also countable. This
+means that the set $ \{ (\omega_1, \omega_2) \in \Z \times \Z: \omega_1+ \omega_2 \in A \} $ 
+can be written as 
+\[
+    \{ (\omega_1, \omega_2) \in \Z \times \Z: \omega_1+ \omega_2 \in A \}  = \bigcup_{x_{i} \in A}
+    \{ (\omega_1, \omega_2) \in \Z \times \Z: \omega_1+ \omega_2 = x_{i}  \} 
+.\] 
+Let's rewrite the set $ S = \{ (\omega_1, \omega_2) \in \Z \times \Z: \omega_1+ \omega_2 \in A \} $ one more time
+
+\begin{align*}
+   S &=  \bigcup_{x_{i}\in A}  \bigcup_{n \in \Z}  \{ (\omega_1, \omega_2) \in \Z \times \Z: \omega_1 = n, \, \omega_2 =
+	 x_{i} -n \} \\
+     &= \bigcup_{n \in \Z} \bigcup_{x_{i} \in A } (\{ (\omega_1, \omega_2) \in \Z \times \Z: \omega_1 = n, \, \omega_2 =
+	 x_{i} -n \}) \\
+\end{align*}
+and the sets $ \bigcup_{x_{i} \in A} \{ (\omega_{1} , \omega_2): \omega_1= n, \omega_2 = x_{i} -n
+\}$ are disjoint for different $ n$ since $ \omega_{1} = n $ is different
+    for two sets with different $ n $. I am not sure how to prove that 
+    we can change the order for two countable unions but in the finite case it is clear
+    that it is possible to change the order of two finite unions.
+
+
+We can apply the disjoint countable union property of probability distribution to get that 
+
+
+\begin{align*}
+    \P_{X}(A) &= \sum_{n \in \Z} \P( \bigcup_{x_{i} \in A} \{ (\omega_1, \omega_2): \omega_1 = n,
+    \omega_2 = x_{i} -n \} )\\
+\end{align*}
+Similarly, the sets $ \{   (\omega_1, \omega_2): \omega_1 = n,
+    \omega_2 = x_{i} -n\} $ are disjoint for different $ x_{i} $ since $ \omega_{2} = x_{i} -n $ is different
+    for two sets with different $ x_{i} $s.
+
+\begin{align*}
+    \P_{X}(A) &= \sum_{n \in \Z} \sum_{x_{i}  \in A} \P( \{ (\omega_1, \omega_2): \omega_1 = n,
+    \omega_2 = x_{i} -n \} )\\
+	      &= \sum_{n \in \Z} \sum_{x_{i} \in A} p_{n}\cdot p_{x_{i} -n} \\
+	      &= \sum_{x \in A} \sum_{n \in \Z} p_{n} p_{x-n} 
+\end{align*}
+where $ \P( \{ (\omega_1, \omega_2): \omega_1 = n,\omega_2 = x_{i} -n \} ) = p_{n} \cdot p_{x_{i}-n } $
+by the definition of the probability distribution $ \P$.
+
+We see that $ \P_{X} $ is a discrete distribution whose probability mass function is $ \sum_{n\in \Z} p_{n} p_{x-n}
+$.

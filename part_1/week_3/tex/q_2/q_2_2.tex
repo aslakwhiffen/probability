@@ -1,0 +1,50 @@
+
+
+$ X$ is a random variable with a distribution $ \P_{X} $ which is a continuous distribution with
+density $ f$ so for the subsets $ A \subset E = \R$ which are open intervals $ (a,b)$ we
+have that $ \P_{X}(A)  = \P(A) = \int_{a}^{b} f(x) dx$. 
+Notice that $ f = f_{X} $, that is the density function  $ f_{X} $ of the distribution
+$ \P_{X} $ is equal to the density function $ f $ of the distribution $ \P$.
+The cumulative distribution function $ F_{X}
+$ for the random variable $ X$ is then 
+
+\[
+    F_{X} (x) = \int_{-\infty}^{x} f_{X} (y) dy = \P_{X}((-\infty,x)) = \P((-\infty, x))
+.\] 
+
+We have three cases to consider when $ x \in (-\infty, 0]$, $ x \in (0, \pi) $ and $ x \in (\pi, \infty)$. 
+
+If $ x \in (-\infty, 0] $ then 
+\begin{align*}
+    \int_{-\infty}^{x} f(x) = \int_{-\infty}^{x} (0) dx = 0
+\end{align*}
+
+If $ x \in (0, \pi) $, then 
+\begin{align*}
+    \int_{-\infty}^{\infty}f(x) dx &= \int_{-\infty}^{0} (0) dx + \int_{0}^{x<\pi} \frac{1}{\pi}
+    (1+ \cos(x))dx\\
+				   &= 0 + \frac{1}{\pi} \left( \int_{0}^{x} 1 dx + \int_{0}^{x}
+				   \cos(x)dx \right)\\
+				   &= \frac{1}{\pi} \left( (x-0) + (\sin(x)- \sin(0))  \right) \\
+				   &= \frac{1}{\pi} (x+ \sin x) 
+\end{align*}
+
+If $ x \in (\pi , \infty)$, then
+\begin{align*}
+    \int_{-\infty}^{x} f(x) dx &= \int_{-\infty}^{\pi} f(x) dx+ \int_{x}^{\pi}f(x) dx\\
+			       &= \int_{-\infty}^{0} (0) dx + \int_{0}^{\pi} f(x) dx +
+			       \int_{x}^{\pi} (0) dx \\
+			       &= 0 + 1 + 0\\
+			       &= 1
+\end{align*}
+where $ \int_{0}^{\pi} f(x) dx = 1$ was shown in the first part of exercise 2. 
+
+
+
+
+
+
+
+
+
+

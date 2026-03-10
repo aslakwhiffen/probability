@@ -1,0 +1,31 @@
+
+Since $ X$ is a random variable with a uniform distribution, by lemma 3.5, we have that 
+for $ A \subset E$
+\[
+    \P_{X} (A) = \frac{|A|}{|E|} = \frac{|A|}{n} 
+.\] 
+The cumulative distribution function of the distribution of $ X$ is $\P_{X} (X \leq x)$, or more
+specifically $ \P_{X} (e \in E: e \leq x)$
+ 
+We see that clearly for $ x< 1$ $ F_{X}(x) = 0 $ since there are no elements of $ E$ that are
+smaller
+$ 1$. 
+
+When $ x \in \R	$ is contained within $ [1,n)$, then there are at least some values of $ E$ that are 
+smaller or equal to $ x$. Let's say that $ x \in [j, j+1)$, where $ j$ are natural numbers between
+$ 1$ and $ n$. Let's see what the value of $ F_{X} $ is then in this case
+
+\[
+    F_{X} (x) = \P_{X} (e \in E : e \leq x) = \P_{X} (e \in E: e < j+1)  
+.\] 
+
+Using the fact that $ P_{X} $ is a uniform distribution, we get that 
+
+\begin{align*}
+    \P_{X} (e \in E: e < j+1) = \frac{| \{ e \in E: e < j+1 \} |}{n} = \frac{j}{n}  
+\end{align*}
+
+When $ x \in \R$ is greater or equal to $ n$ then all values of $ E$ are less than $ x$ meaning that 
+\[
+    \P_{X} (e \in E: e < n \leq x) = \frac{|e \in E: e < n|}{n} = \frac{n}{n} = 1
+.\] 

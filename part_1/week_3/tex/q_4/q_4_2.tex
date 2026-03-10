@@ -1,0 +1,23 @@
+
+Using definition 4.3, let $ \Omega $ ($ = E$) be the basic set, $ \P$ a probability distribution over $
+\Omega $ ($ =E$) and $ A$ ($ = \{ X \geq x+y \} $ and $ B$ ($ = \{ X \geq x \} $) events for which
+$ \P(B) > 0$, then 
+\[
+    \P(A |B) = \frac{\P(A \cap B)}{\P(B)} 
+.\] 
+Since for $ x > 0$ we have that $ \P(B) = \P( \{ X \geq x \} ) = e^{-\lambda x} > 0 $,
+conditional probability is well defined for our sets $ A$ and $ B$, and 
+
+\[
+    \P( X \geq x+y | X \geq x) = \frac{\P((X \geq x+y)\cap(X \geq x))}{\P(X \geq x) } 
+.\] 
+We notice that on the numerator, the intersection of the sets reduces to $ \{ X \geq x+y \} $ since
+$ x > 0$ and $ y > 0$ so $ x+y > x$ and $ \{ X \geq x+y \} \subset \{ X \geq x \}  $.
+
+Thus, 
+
+\begin{align*}
+    \P(X \geq x+y | X \geq x) &= \frac{\P(X \geq x+y)}{\P(X\geq x)}\\
+			      &= \frac{e^{-\lambda(x+y)}}{e^{-\lambda x} }\\
+			      &= e^{-\lambda y} 
+\end{align*}

@@ -1,0 +1,29 @@
+
+There are a countable number of $ \omega \in \Omega = \Z \times \Z$ since the cardinality of $ \Z
+\times \Z$ is equal to the cardinality of the natural numbers $ \N$ (you can find a bijection 
+between $ \Z \times \Z $ and $ \N$).  For $ \omega = (\omega_1, \omega_2 ) \in \Omega$,
+we are given that $ h_{\omega_1}, h_{\omega_{2} } \geq 0 $ and $ \sum_{\omega_{1} \in \Z }
+p_{\omega_1} = 1$ and $ \sum_{\omega_2 \in \Z} p_{\omega_2} = 1$. We just need to show the two
+conditions of proposition 2.14 (for countable sets), namely that for all $\omega \in \Omega $, 
+$ p_{\omega} \geq 0  $ and $ \sum_{\omega \in \Omega} p_{\omega} = 1  $
+
+Clearly, $ p_{\omega}:= p_{\omega_1} p_{\omega_2} \geq 0  $ since it is a product of two
+non-negative numbers.
+
+Let's show that $ \sum_{\omega \in \Omega} p_{\omega} = 1$. 
+
+\begin{align*}
+    \sum_{\omega \in \Omega} p_{\omega} &:= \sum_{\omega_1 \in \Z, \omega_{2} \in \Z }
+    p_{\omega_1}p_{\omega_2}\\
+					&= \sum_{\omega_{1} \in \Z} \sum_{\omega_{2} \in \Z}
+					p_{\omega_{1} } p_{\omega_{2} }  
+\end{align*}
+The order of the summation doesn't matter for a countable number elements when
+the elements inside the sum are non-negative. 
+We get then that 
+\begin{align*}
+    \sum_{\omega \in \Omega} p_{\omega} &= \sum_{\omega_1 \in \Z} p_{\omega_1} \sum_{\omega_{2} \in
+    \Z} p_{\omega_{2} }\\
+					&= \sum_{\omega_{1} \in \Z } (p_{\omega_1} \cdot 1 )\\
+					&= 1
+\end{align*}

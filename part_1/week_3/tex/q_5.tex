@@ -1,0 +1,47 @@
+
+Let n denote the cardinality of the set $ E $ which is finite (and non-empty).
+$ X$ is a $ E$-valued random variable. The function $ \P_{X} $ defined using a discrete distribution
+$ \P$ is also a distribution over the set $ E$ by lemma 5.5. Fix $ A \subset E$,
+
+\begin{align*}
+    \P_{X}(A) &= \P( \{ \omega \in \Omega: X(\omega) \in A \} )  \\
+\end{align*}
+Since the set $ E $ is finite, any subset $ A $ is also finite so 
+we can express the set $  A = \bigcup_{J \subset \{ 1,\dots,n \} , \, j \in J} x_{j}$. 
+Using set operations, one can show that 
+
+\[
+    \{ \omega \in \Omega: X(\omega) \in \bigcup_{j \in J }  x_{j}  \} = \bigcup_{j \in J} \{ \omega
+    \in [0,1): X(\omega) \in \{ x_{j}  \}   \}  
+.\] 
+
+The sets in the union above are disjoint. To see this, take $ \{ \omega \in [0,1): X(\omega) =
+x_{k}  \} $ and $ \{ \omega \in [0,1): X(\Omega) = x_{i}  \} $ for $ k\neq i$. 
+Then $ \omega \in [ \sum_{j=1}^{k-1} p_{j}, \sum_{j=1}^{k} p_{j} )  $ and $ \omega \in [
+\sum_{j=1}^{i-1} p_{j}, \sum_{j=1}^{i} p_{j})  $ and these sets are disjoint whenever $ k \neq i$.
+
+Since the sets in the union are disjoint, we can use the additive property of probability
+distributions for countable unions (the union $ \bigcup_{J \subset \{ 1,\dots,n \} \, j \in J} $ is
+for sure countable since it is finite):
+
+\begin{align*}
+    \P_{X} (A) &= \P(\bigcup_{J, j\in J}  \{ \omega \in \Omega: X(\omega) = x_{j}  \} )\\
+	       &= \sum_{J, j\in J} \P(\{ \omega \in \Omega: X(\omega) = x_{j}  \} )
+\end{align*}
+which is the same as saying 
+\[
+    \P_{X} (A) = \sum_{x_{j} \in A } \P(\{ \omega \in \Omega: X(\omega) = x_{j}  \} 
+.\]
+and we can let $ p_{X}(x_{j})   $ be the probability mass function for the distribution $ P_{X} $. 
+
+Let's show that $ p_{X}(x_{j})=p_{j} $ for each $ j = 1,\dots,n$. Since $ \P$ is a uniform
+distribution on $ \Omega$, we have that the probability of any event $ A \subset \Omega$ is 
+$ \P(A) = |A|/|\Omega|$. Let's compute $ \P ( \{ \omega \in \Omega: X(\omega) = x_{j}  \} ) $
+
+\begin{align*}
+    \P ( \{ \omega \in \Omega: X(\omega) &= x_{j}  \} ) = \frac{|\{ \omega \in \Omega: X(\omega) = x_{j}
+    \} |}{|\Omega|} \\
+					 &= \frac{|\left[ \sum_{i=1}^{j-1} p_{i}, \sum_{i=1}^{j}
+					 p_{i}  \right)|}{1} \\
+					 &= p_{j} 
+\end{align*}

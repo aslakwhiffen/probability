@@ -1,0 +1,52 @@
+
+The random variable $ g(X)$ is a mapping $ g(X): E \to S$, where $ E = \{ 1,\dots, 2n \} $
+and $ S = \{ 0,1 \} $. Let's find the distribution of the random variable $ g(X)$. 
+
+Take a subset $ A \subset S = \{ 0,1 \} $
+\begin{align*}
+    \P_{g(X)} (A) &= \P(g(X) \in A) \\
+		  &= \P(\bigcup_{m\in A \subset \{ 0,1 \} } \{ g(X) = m \} )\\
+		  &= \sum_{m\in A \subset \{ 0,1 \} } \P( \{ g(X) = m \} )
+\end{align*}
+where the final line comes from the fact that the sets $ \{ g(X) = m \} $ are disjoint for different
+$ m \in \{ 0,1 \} $. 
+
+If $ m= 0$, then by the definition of the random variable $ g(X)$ we have that $ X \leq n$. 
+Let's calculate the probability $ \P( \{ g(X) = 0 \}) $
+
+\begin{align*}
+    \P( \{ g(X) = 0 \} )&= \P( X(\omega) \leq n \}\\
+			&= \P( \{1 \leq X \leq n\} \cup \{ X < 1 \} )\\
+			&= \P( \{ 1 \leq X \leq n \} + \P( \{ X < 1 \} 	)
+\end{align*}
+where the last line follows since $ \{ 1 \leq X \leq n \} $ and $ \{ X <1 \} $ are disjoint. 
+We see that since the random variable $ X$ is a mapping	$ X: \Omega \to E = \{ 1,\dots,n \} 
+$ we have that the set $ \{ X < 1 \} $ is empty, and the probability of an empty set is zero.
+Thus, the probability $ \P( \{ g(X) = 0 \} )$ reduces to
+
+\begin{align*}
+    \P( \{ g(X) = 0 \}) &= \P( \{ 1 \leq X \leq n \})\\
+			&= \P( \bigcup_{k=1}^{n} \{ X = k \}\\
+			&= \sum_{k=1}^{n} \P( \{ X = k \} ) \\
+			&= \sum_{k=1}^{n} \frac{1}{2n} \\
+			&= 1/2
+\end{align*}
+where we used the fact that the sets $ \{ X= k \} $ are disjoint for different $ k$ and that the
+random variable $ X$ has a uniform distribution on $ \{ 1,\dots, 2n \} $.
+
+If $ m = 1$, then using a similar argument we see that $ X > n$ and so 
+
+\begin{align*}
+    \P ( \{ g(X) = 1 \}	) &= \P( \{ X > n \} )\\
+			  &= \P( \bigcup_{k=n+1}^{2n} \{ X= k \}    )\\
+			  &= \sum_{k=n+1}^{2n} \P(X =k)\\
+			  &= \sum_{k=n+1}^{2n} \frac{1}{2n}\\
+			  &= 1/2
+\end{align*}
+
+All in all, the probability distribution $ P_{g(X)} $ is
+
+\begin{align*}
+    P_{g(X)} (A) = \frac{1}{2} |A|
+\end{align*}
+where $ |A| $ is the size of the subset $ A$, which can have zero, one or two elements.

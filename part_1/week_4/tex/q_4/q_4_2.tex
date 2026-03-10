@@ -1,0 +1,49 @@
+
+We know that $ U$ is a random variable whose distribution is the uniform distribution on $ [0,1]$.
+That is $ U$ is a mapping $ U: \Omega \to E$, with the following distribution 
+
+\begin{align*}
+    \P_{U} (A=(a,b)) = 
+    \begin{cases}
+	\int_{a}^{b} 1 dx & \mbox{if} \, a \geq 0 \, \mbox{and} \, b \leq 1\\
+	0 & \mbox{else} 
+    \end{cases}
+\end{align*}
+.
+The quantile function or the inverse cumulative function is a mapping $ F^{-1}: (0,1) \to \R $,
+meaning that we need to restrict the co-domain of $ U$ so that $ F^{-1}(U) $ is meaningful.
+Thus, we have that now $ U: \Omega \to (0,1)$, and the distribution of $ \P_{U} $ is now never zero
+since the we have restricted ourselves to the intervals $ (a,b)$ that are subsets of $ (0,1)$.
+
+Like any other random variable $ F^{-1} (U)$ has a distribution that we can define. Let's find the
+distribution of $ F^{-1} (U)$.
+
+\begin{align*}
+    \P_{F^{-1} (U)} (A) &= \P ( \{ \omega \in \Omega: F^{-1} (U(\omega) \in (a,b)) \} )\\
+			&= \P( \{ \omega \in \Omega: U(\omega) \in (F(a),F(b)) \} 
+\end{align*}
+The last line follows from the fact that $ F^{-1} $ is a strictly increasing function so if
+$ F^{-1} (U) > a$ then it implies that $ U > F(a)$.
+
+We notice that $\P( U \in (F(a),F(b)) \}  $ is the same as the probability $ \P_{U} ((F(a), F(b))
+$.
+
+We get the following
+\begin{align*}
+    \P_{F^{-1}(U) } (A= (a,b)) &= \P_{U} ((F(a), F(b)))\\
+			       &= \P_{U} ((e^{- e^{-a} }, e^{- e^{-b} }  ))\\
+			       &= e^{-e^{-b} } - e^{-e^{-a} } \\
+			       &= F(b) - F(a)
+\end{align*}
+.
+The definition of a cumulative distribution function is implicitly assuming that there exists a
+random number $ X$ such that $ X $ is a mapping $ X: \Omega \to E \subset \R$
+\[
+    F(x) = F_{X} (x) = \P_{X} ((-\infty, x])
+.\] 
+By Lemma 5.13, we have that
+
+\[
+    \P_{X} ((a,b)) = \P(X \in (a,b)) = F(b) -F(a) 
+\] 
+so we see that the probability distribution of $ F^{-1}(U)$ is the Gumbel distribution $ P_{X} $.

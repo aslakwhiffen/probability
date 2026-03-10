@@ -1,0 +1,29 @@
+
+Let's study the cumulative distribution function of the random variable $ F_{X} (X)$. Since $
+F_{X}(X)
+$ is mapping $ F_{X} (X): \omega \to (0,1)$, we only consider $ x \in (0,1)$ for the cumulative
+distribution function of $ F_{X} (X)$
+
+\[
+    F_{F_{X}(X) } = \P( F_{X} (X) \leq x) 
+.\] 
+
+Since $ f_{X} $ is continuous and positive, we have that the integral $ F_{X}(x) =
+\int_{-\infty}^{x} f_{x}dx$ is continuous and strictly increasing. This means that the inverse $
+F_{X}^{-1}(x)  $ exists for $ x \in (0,1)$. Thus, the set $ \{ F_{X} (X) \leq x  \} \implies \{ X
+\leq F_{X}^{-1}(x)  \} $. 
+
+We see that 
+
+\begin{align*}
+    \P(F_{X} (X) \leq x) &= \P(X \leq F_{X}^{-1}(x))\\
+			 &= F_{X} (F_{X}^{-1}(x)  )\\
+			 &= x
+\end{align*}
+by Theorem 5.10 we have that the density function of $ F_{X} $ is 
+
+\[
+    f_{F_{X} }(x) = 1 
+\] 
+where $ x \in (0,1)$.
+Thus, the probability distribution of $ F_{X} $ is the uniform distribution on $ (0,1)$.

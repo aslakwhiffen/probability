@@ -1,0 +1,21 @@
+
+The probability $ \P(X \geq x) $ is defined as 
+\[
+    \P(X \geq x) = \P( \{ \omega \in \Omega: X(\omega) \geq x \} )
+.\] 
+Since $ X$ is a random variable with a probability  
+distribution $ \P_{X} $  that is continuous, we 
+have that the distribution $ \P_{X} $  is defined on the intervals $ (a,b) \subset E = \R$
+for which it holds that 
+
+\[
+    \P_{X}((a,b)) = \int_{a}^{b} f_{X} (x) dx \quad \mbox{by Theorem 2.16} 
+.\] 
+
+\begin{align*}
+    \P_{X} (X \geq x) &= \int_{x}^{\infty} f_{X} (x) dx \\
+		      &= \int_{x}^{\infty} \lambda e^{-\lambda u} du\\
+		      &= \lambda \left(- \frac{1}{\lambda}  \right) \left[ e^{-\lambda u}
+		  \right]_{x}^{\infty} \\
+		      &= (-1) (0 - e^{\lambda x} ) = e^{-\lambda x} \quad \mbox{for} \, x > 0
+\end{align*}

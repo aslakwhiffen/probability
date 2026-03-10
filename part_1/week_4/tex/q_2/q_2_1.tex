@@ -1,0 +1,55 @@
+
+The distribution of the random variable $ g(X): E \to S$ is defined as 
+
+\[
+    \P_{g(X)} (A) = \P ( \{ \omega \in \Omega: g(X(\omega)) \in A \} )
+\] 
+for subsets $ A$ of $ S = \{ 1,\dots,n \} $.
+
+We see that the event $ A$ is a subset of $ \{ 1,\dots, n \} $. Thus, the set 
+$\{ \omega \in \Omega: g(X(\omega)) \in A \}  $  can be rewritten as 
+
+\begin{align*}
+    \{ \omega \in \Omega: g(X(\omega)) \in A \} &= \bigcup_{k \in A} \{ \omega \in \Omega: g(X(\omega))
+= k\}
+\end{align*}
+
+So since each set $ \{ \omega \in \Omega: g(X(\omega)) = k \} $ is disjoint for different $ k$,
+we have that
+
+\begin{align*}
+    \P_{g(X)} (A) &= \P(\bigcup_{k \in A} \{ \omega \in \Omega: g(X(\omega)) = k\})\\
+		  &= \sum_{k \in A} \P( \{ \omega \in \Omega: g(X(\omega)) = k \} )
+\end{align*}
+
+Now all that remains is find out what $ \P( \{ \omega \in \Omega: g(X(\omega)) = k \} $ is.
+Let's investigate $ \P( \{ \omega \in \Omega: g(X(\omega)) = k \} $. 
+
+The definition of the random variable $ g$ tells us that $ g(X) = k $ implies that
+
+\[
+    g(X) = k \implies X(\omega) = n+1 - g(X(\omega)) = n+1 -k
+.\] 
+
+Thus, the set $ \{ g(X) = k \} $ is equivalent to $ \{ X(\omega) = n+1-k \} $.
+Now, we can use the fact that $ X$ is random variable whose distribution is the uniform
+distribution and we get
+
+\begin{align*}
+    \P (X(\omega) = n+1-k) = 
+    \begin{cases}
+	1/n & \mbox{if} \, n+1 -k \leq n, \, n+1-k \geq 1 \implies  1 \leq k \leq n\\
+	0 & \mbox{otherwise} 
+    \end{cases}
+\end{align*}
+.
+Since $ k \in A \subset \{ 1,\dots, n \} $, we have that automatically $ 1\leq k \leq n$, and so
+going back to $ \P_{g(X)} (A)$ we see that
+
+\begin{align*}
+    \P_{g(X)} (A) &= \sum_{k\in A}^{} \P(X(\omega) = n+1-k)\\
+		  &= \sum_{k \in A} (1/n)\\
+		  &= \frac{|A|}{n} 
+\end{align*}
+
+

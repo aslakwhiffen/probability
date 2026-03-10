@@ -1,0 +1,105 @@
+
+We split into different cases. 
+
+\textit{(i) $ x < 0$ or $ y < 0$}. 
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P(X \leq x, Y \leq y)\\
+		    &= \P(X < 0, Y < 0)\\
+		    &= \P(\emptyset)
+\end{align*}
+where the last line holds because the random variable $ X$ is a mapping $ X: \Omega \to E = \{ 0,1 \} $ 
+so there are no $ \omega$ such that $ X(\omega) < 0$ (the same can be said to $ Y$ whose co-domain
+is the set $ \{ 0,1,2 \} $.
+
+\textit{(ii) $ x \in [0,1)$, $ y \in [0,1)$}.
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P(X \leq x, Y \leq y)\\
+		    &= \P( \{ X \leq x < 1, Y \leq y < 1 \} )\\
+		    &= \P(X < 1, Y< 1)\\
+		    &= \P(X \in \{ 0 \} , Y \in	\{ 0 \} )\\
+		    &= \P_{(X,Y)} (A = ( \{ 0 \} , \{ 0 \}))
+\end{align*}
+and since $ (X,Y)$ is a random vector whose distribution is the uniform distribution on $ \{ 0,1 \}
+\times \{ 0,1,2 \} = E $, we have that by Lemma 3.5
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P_{(X,Y)} (A = (\{ 0 \}, \{ 0 \}) )\\
+		    &= \frac{|A|}{|E|}\\
+		    &= \frac{|( \{ 0 \}, \{ 0 \})  |}{| \{ 0,1 \} \times \{ 0,1,2 \}|  }\\
+		    &= \frac{1}{6} 
+\end{align*}
+
+\textit{(iii) $ x \in [0,1) , y \in [1,2)$}
+
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P(X \leq x, Y \leq y)\\
+		    &= \P(X < 1, Y<2)\\
+		    &= \P(X \in \{ 0 \} , Y \in \{ 0,1 \})\\
+		    &= \P_{(X,Y)} (A = ( \{ 0 \} , \{ 0,1 \} )) \\
+		    &= \frac{1 \times 2}{6} \\
+		    &= \frac{1}{3} 
+\end{align*}
+
+\textit{(iv) $ x \in [0,1)$, $ y \geq 2$}
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P( X\leq x, Y \leq y)\\
+		    &= \P(X < 1, Y \leq 2)\\
+		    &= \frac{1\times 3}{6} \\
+		    &= \frac{1}{2} 
+\end{align*}
+
+\textit{(v) $ x < 0, y \geq 0$}
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P( X\leq x, Y \leq y)\\
+                    &= \P(X < 0, Y \geq 0)\\
+		    &= \P(\emptyset)\\
+		    &= 0
+\end{align*}
+where the last line holds because there is no $ \omega \in \Omega$ such that $ X(\omega) < 0$,
+we need $ X(\omega) \in \{ 0,1 \} $.
+
+\textit{(vi) $ x \geq 0 y < 0$}
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P( X\leq x, Y \leq y)\\
+		    &= \P(X \leq x, Y  \leq y < 0)\\
+		    &= \P(\emptyset)\\
+		    &= 0
+\end{align*}
+where there is no $ \omega$ such that $ Y(\omega) < 0$.
+
+
+\textit{(vii) $x \geq 1, y \in [0,1) $}
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P( X\leq x, Y \leq y)\\
+		    &= \P(X \leq 1, Y < 1)\\
+		    &= \P(X = \{ 0,1 \} , Y = \{ 0 \} )\\
+		    &= \frac{2 \times 1}{6} \\
+		    &= \frac{1}{3} 
+\end{align*}
+
+\textit{(viii)} $ x \geq 1$, $ y \in [1,2)$
+	
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P(X \leq 1, Y < 2)\\
+		    &= \P(X = \{ 0,1 \} , Y = \{ 0,1 \} )\\
+		    &= \frac{2\times 2}{6} \\
+		    &= \frac{2}{3} 
+\end{align*}
+
+\textit{(ix)} $ x \geq 1$, $ y \geq 2$
+
+\begin{align*}
+    F_{(X,Y)} (x,y) &= \P(X \leq 1, Y \leq 2)\\
+		    &= \P(X = \{ 0,1 \} , Y = \{ 0,1,2 \} )\\
+		    &= \frac{6}{6} \\
+		    &= 1
+\end{align*}
+
+
+ 
