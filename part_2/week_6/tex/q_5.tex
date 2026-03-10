@@ -1,0 +1,31 @@
+
+We can rewrite the expression inside the probability as
+
+\begin{align*}
+    - n^{1/2} a_{n} &\leq K_{n} - n/2 \leq n^{1/2} a_{n}  \\
+              -a_{n}& \leq \frac{K_{n} -n/2}{n^{1/2} } \leq a_{n} \\
+	      -2 a_{n} & \leq \frac{K_{n} -n/2}{1/2 n^{1/2} } \leq 2 a_{n} 
+\end{align*}
+and we see that this looks similar to a standard normal variable $ Z_{n} $. Looking at Theorem 15.2,
+we notice that $ n/2 = n \mu$, where $ \mu = p = 1/2$ and $ \mathrm Var(X_{i} ) = pq = 1/4$ so the
+probability can be written as
+\begin{align*}
+    \P ( -2 a_{n} \leq \frac{\sum_{j=1}^{n} X_{j} - n \mu}{\sigma \sqrt{n} \leq 2 a_{n} } 
+\end{align*}
+Since $ \lim_{n \to \infty} a_{n} = \infty$, we have that for any finite number $ M > 0$, we can
+choose $ n$ to be so large that $ 2a_{n} > M $ and so
+\begin{align*}
+    \P(-2 a_{n} \leq Z_{n} \leq 2 a_{n} ) \geq \P(-M \leq Z_{n} \leq M) \geq \P( Z_{n} \leq M) 
+\end{align*}
+and using the central limit theorem (Theorem 15.2) we see that 
+\begin{align*}
+    \lim_{n \to \infty} \P( z_{n} \leq M)  = \int_{-\infty}^{M} \frac{1}{\sqrt{2\pi}}e^{-x^2/2} dx
+    \approx 1 
+\end{align*}
+where since $ M$ was arbitrarily chosen, it can be as large as we want. This means that the only
+permissible value for 
+\[
+    \lim_{n \to \infty} \P( -2 a_{n} \leq Z_{n} \leq 2 a_{n} ) \geq \lim_{n \to \infty} \P( z_{n} \leq M)
+\] 
+is 1.
+

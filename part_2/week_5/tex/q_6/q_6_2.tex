@@ -1,0 +1,20 @@
+
+By Theorem 14.7 (Statistics of the normal distribution and the moment generating function), we have
+that the covariance matrix $ \mathrm{Cov}(X,Y)$
+
+\[
+    \mathrm{Cov}(X,Y) = \begin{bmatrix}
+	\mathrm{Var}(X) & \mathrm{Cov}(X,Y)\\
+        \mathrm{Cov}(Y,X) & \mathrm{Var}(Y)
+    \end{bmatrix} = \Sigma = \frac{1}{3}  \begin{bmatrix}
+	2 & -1 \\
+	-1 & 2
+    \end{bmatrix}
+.\]
+In the previous part we showed that the expectation value of $ (X,Y)$ is the zero vector meaning
+that the expectation values $ \E(X)$ and $ \E (Y)$ are equal to zero. This means that 
+
+\[
+    -\frac{1}{3} = \mathrm{Cov}(X,Y) = \E(XY) - \E(X) \E(Y) = \E(XY) 
+\]
+and so $ \E(XY) = -1/3$.

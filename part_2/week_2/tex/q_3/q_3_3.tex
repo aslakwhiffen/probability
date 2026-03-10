@@ -1,0 +1,33 @@
+
+From part (1) of this exercise, we know that the moment generating function $ M_{Y_{n} } (t) $exists for all $ t \in
+\R$. By Theorem 10.9 (Chernoff's estimate), for $ t \in [0, t_0]$ ($ t_0 = \infty$ for this case)
+we get that 
+
+\[
+    \P( Y_{n } \geq \delta) \leq \min_{t\in [0,t_0]} e^{-t \delta} M_{Y_{n} } (t)
+.\] 
+
+To find the minimum, we investigate what happens at the extreme points of the interval, namely when
+$ t = 0$ and when $ t = \infty$.
+
+\[
+    f(0) = e^{-(0)\delta} M_{Y_{n} } (0) = 1
+\] 
+and
+\begin{align*}
+    \lim_{t \to \infty} f(t) &= \lim_{t \to \infty} 1/2^{n} e^{-t(\delta + 1/2)} (1+ e^{t/n} )^{n} \\
+			     &\geq \lim_{t \to \infty} 1/2^{n} e^{-t(\delta +1/2)} (1 + n (e^{t/n})^{n} )\\
+			     &= \lim_{t \to \infty} n/2^{n} e^{-t(\delta - 1/2}  \\
+\end{align*}
+so if $ \delta \in (0, 1/2)$ then we see that $ e^{-t(\delta - 1/2}$ grows to infinity and so the
+limit of the function $ \lim_{t \to \infty} f(t) = \infty$. 
+Now let's compare these two extreme values with the value of the function $ f(t)$ at the root of the
+derivative $ f'(t)$. Using the result from part (2) of this exercise, we find that the root 
+is $ T = n \ln ((1/2 + \delta)/(1/2 - \delta)$ and inserting into $ f(t)$ we get
+that $ f(T) = e^{-2n \delta^2} $. Clearly $ f(T) \leq 1, \infty$, and so we see that
+
+\[
+    \P(Y_{n} \geq \delta) \leq \min_{t \in [0, \infty)} e^{-t\delta} M_{Y_{n} } (t) = e^{-2n
+    \delta^2} 
+.\] 
+

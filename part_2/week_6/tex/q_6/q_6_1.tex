@@ -1,0 +1,13 @@
+
+For each $ t \in (-\sqrt{n} t_0, \sqrt{n}t_0)$, we have that
+
+\begin{align*}
+    M_{Z_{n} } (t) &= \E e^{t Z_{n}  } \\
+		   &= \E e^{t 1/\sqrt{n} \sum_{j=1}^{n} X_{j} }\\
+		   &= \E \Pi_{j=1}^{n}   e^{t X_{j} /\sqrt{n}}\\
+		   &= \Pi_{j=1}^{n} \E e^{t X_{j} /\sqrt{n}}\quad \mbox{independence property} \\
+		   &= \left( \E e^{t X_1 /\sqrt{n}}  \right)^{n} \quad \mbox{identically
+		   distributed}\\
+		   &= \left( M_{X} \left( \frac{t}{\sqrt{n}}  \right)  \right)^{n} 
+\end{align*}
+

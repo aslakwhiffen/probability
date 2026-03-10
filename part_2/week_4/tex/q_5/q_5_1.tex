@@ -1,0 +1,30 @@
+
+By definition 13.2
+\begin{align*}
+    f_{Y|X} (y|x) &= \frac{f_{(X,Y)} (x,y)}{f_{X} (x)} \\
+\end{align*}
+when $ f_{X} (x) > 0$.
+
+Let's calculate $ f_{X} (x) $
+
+\begin{align*}
+    f_{X} (x) &= \int_{-\infty}^{\infty} f_{(X,Y)} (x,y) dy\\
+	      &= \int_{-\infty}^{\infty} 2 e^{-x} e^{-y} 1_{0 \leq x \leq y} dy 
+\end{align*}
+here we use the fact that $ 1_{A} 1_{B}  = 1_{A \cap B} $ so that $ 1_{0 \leq x \leq y} $ becomes $
+1_{0 \leq x} 1_{x \leq y} $
+
+\begin{align*}
+    f_{X} (x) &= 2 e^{-x} 1_{0 \leq x}  \int_{x}^{\infty} e^{-y} dy\\
+	      &= 2 e^{-x} [(-e^{-y} )]_{x}^{\infty} 1_{0 \leq x} \\
+	      &= 2e^{-x} [0+ e^{-x} ] 1_{0 \leq x} \\
+	      &= 2 e^{-2x} 1_{0 \leq x}  
+\end{align*}.
+
+Now let's calculate $ f_{Y|X} (y|x)$
+
+\begin{align*}
+     f_{Y|X} (y|x) &= \frac{f_{(X,Y)} (x,y)}{f_{X} (x)} \\
+		   &= \frac{2 e^{-x} e^{-y} 1_{0 \leq x \leq y}  }{2 e^{-2x} 1_{0 \leq x}  }\\
+		   &= e^{x-y} 1_{0 \leq x \leq y} 
+\end{align*}

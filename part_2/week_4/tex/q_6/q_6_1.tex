@@ -1,0 +1,18 @@
+
+From the previous exercise (5) we showed that the marginal distribution $ f_{Y} (y)$ is
+
+\[
+    f_{Y} (y) = \int_{\R}  f_{(X,Y)} (x,y) dx = 2e^{-y} (1- e^{-y} ) 1_{0 < y}   
+.\] 
+
+By definition 13.2, the conditional probability 
+
+\[
+    f_{X|Y} (x|y) = \frac{f_{(X,Y)} (x,y)}{f_{Y} (y)} 
+\] 
+whenever $ f_{Y} (y) > 0$. Dividing we get the following
+
+\begin{align*}
+    f_{X|Y} (x|y) &= \frac{2 e^{-x} e^{-y} 1_{0 \leq x \leq y} }{2 e^{-y} (1-e^{-y} )1_{0 < y}  } \\
+		  &= \frac{e^{-x} e^{y} }{e^{y} -1} 1_{0 \leq x \leq y} 1_{0 < y}  
+\end{align*}

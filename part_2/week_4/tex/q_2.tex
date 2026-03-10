@@ -1,0 +1,20 @@
+
+By definition 12.12, letting $ g(X,Y) = X$,
+
+
+\begin{align*}
+    \E(X) &= \int_{E} x f_{(X,Y)} (x,y) dx dy\\
+	  &= \int_{[0,1]\times [0,2]} x ( x^2 y + \frac{1}{12} y^{3} )dx dy\\
+	  &= \int_{[0,1]} \int_{[0,2]} x^{3} y + \frac{xy^{3} }{12}  dy dx\\
+	  &= \int_{[0,1]}  x^{3} [y^2/2]_{0}^{2} + x/12 [y^{4}/4]_{0}^{2} dx\\
+	  &= \int_{[0,1]} 2x^{3} + x/3 dx \\
+	  &= 2 [1^{4}/4 - 0^{4}/4] + [1^2/6 - 0^2/6] = 2/4 + 1/6 = 2/3. 
+\end{align*}
+A similar calculation can be shown for $ \E Y$, but letting $ g(X,Y) = Y$ instead so we instead
+calculate 
+
+\[
+    \E(X) = \int_{E} y f_{(X,Y)} (x,y) dx dy
+\] 
+I just didn't have the energy to write the calculations for $ \E Y$. 
+

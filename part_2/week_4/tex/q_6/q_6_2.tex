@@ -1,0 +1,31 @@
+
+We consider two cases for the value of $ y$, (1) $ y > a$ and (2) $ y \leq a$. 
+
+(1). If $ y > a$ then the LHS is
+
+\begin{align*}
+    \int_{0}^{a} f_{X |Y} (x|y) dx &= \int_{0}^{a} \frac{e^{-x} e^{y} }{e^{y} -1} 1_{0 \leq x \leq
+    y} 1_{0 < y} dx\\
+				   &= \int_{0}^{a} \frac{e^{-x} e^{y} }{e^{y} -1} 1_{0 < y} dx\\
+				   &= \frac{e^{y} (1-e^{-a} )}{e^{y} -1} 1_{0 < y} 
+\end{align*}
+and the RHS is (notice that $ \P(V \leq y) > 0$ since $ y > a > 0$)
+
+\begin{align*}
+    \P_{V \leq a | V \leq y} &= \frac{\P(V \leq a \cap V \leq y}{\P(V \leq y)}\\
+			     &= \frac{\P(V \leq a}{\P(V \leq y)}\\
+			     &= \frac{\int_{-\infty}^{a} e^{-x}1_{[0, \infty)} dx}{
+			     \int_{-\infty}^{y} e^{-x} 1_{[0, \infty)}dx} \\
+			     &= \frac{1-e^{-a} }{1-e^{-y} } 
+\end{align*}
+which simplifies to the LHS.
+
+(2). If $ y \leq a$, then the LHS equals to 1 since $ f_{X|Y} (x|y)$ is a continuous probability
+density function so 
+
+\begin{align*}
+    \int_{0}^{a} f_{X |Y} (x|y) dx &= \int_{0}^{y} f_{X|Y} (x|y) dx\\
+				   &= \int_{-\infty}^{\infty} f_{X|Y} (x|y) dx=1
+\end{align*}
+and the RHS is also equal to 1 since if we already know that $ V\leq y$, then since $ y$ is less
+than $ a$ it is certain that $ V \leq a$.

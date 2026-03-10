@@ -1,0 +1,32 @@
+
+We want to show that 
+\[
+    \lim_{n \to \infty} M_{Z_{n} } (t) = e^{1/2 t^2 } 
+.\] 
+Using the hints, we rewrite $ M_{Z_{n} } $  as
+\[
+    M_{Z_{n} } (t) = e^{n \log (1+ t^2/2n + R_{n} (t))j} 
+.\] 
+Now manipulating this to get a formula in the form
+\[
+    \frac{1}{a_{n} } \log(1+ a_n) 
+\] 
+we get 
+\begin{align*}
+    M_{Z_{n} } (t) &= \exp{ t^2/2 + n R_{n} (t) \cdot \frac{1}{t^2/2n +  R_{n} (t)} \cdot
+    \log(1+t^2/2n + R_{n} (t) }
+\end{align*}
+where $ a_{n} = t^2/2n + R_{n} (t)$. Thus, if $ \lim_{n\to \infty} a_{n} = 0  $, then 
+\[
+    \lim_{n \to \infty} \frac{1}{a_{n} } \log(1+a_{n} ) =1
+.\] 
+Thus, 
+
+\begin{align*}
+    \lim_{n\to \infty} M_{Z_{n} } (t) &= \lim_{n \to \infty} \exp{ (t^2/2 + n R_{n} (t)) \cdot
+    \frac{1}{a_{n} } \log(1+a_{n} ) }\\
+				      &= \lim_{n \to \infty} \exp{ \frac{t^2}{2}  + n R_{n} (t)}\\
+				      &= e^{t^2/2} 
+\end{align*}
+since $ R_{n} $ grows less than $ n^{-3/2} $ so $ n R_{n} $ goes to zero as $ n \to \infty$.
+

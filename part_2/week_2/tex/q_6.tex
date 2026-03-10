@@ -1,0 +1,13 @@
+
+By Theorem 11.10, since $ A$ can be written in the form $ A = \{ x \in [a_1,b_1], y \in [a_2(x),
+b_2(x)	] \} $, we get that 
+
+\begin{align*}
+    \int_{A}^{} f(x,y) dy &= \int_{0}^{1} \int_{0}^{x} x^2 \sin (\pi xy) dy dx\\
+			  &= \int_{0}^{1} x^2 \int_{0}^{x} \sin(\pi x y) dy dx\\
+			  &= \int_{0}^{1} x^2 \frac{1}{\pi x}\left[ (-\cos (\pi xy)) \right]_{0}^{x}
+			  dx\\
+			  &= \int_{0}^{1} \frac{x}{\pi} (-\cos(\pi x^2) + \cos(0)) dx\\
+			  &= \frac{1}{\pi} \left[ x^2/2 - 1/(2\pi) \sin (\pi ^2) \right]_{0}^{1} \\
+			  &= \frac{1}{2\pi} 
+\end{align*}

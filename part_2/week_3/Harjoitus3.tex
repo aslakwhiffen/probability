@@ -1,0 +1,309 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Vihjeitä:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Todennäköisyyslaskenta II b, 2022 -- Viikon 3 harjoitustehtävät}
+
+%\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+
+
+\begin{document}
+
+\maketitle
+
+Muista kysyä neuvoa ohjauksissa, telegramissa, luennoilla tai kavereilta, jos tehtävät tuntuvat haastavilta. Pisteitä voi saada, vaikka ratkaisut eivät olisikaan täydellisiä.  Muista palauttaa tehtävät Moodlessa (Viikon 3 Digest työpajaan) pe 25.11 klo 23.59 mennessä.
+
+\medskip 
+
+Tämän viikon harjoituksissa tutkitaan useampiulotteisia jatkuvia todennäköisyysjakaumia sekä jatkuvia satunnaisvektoreita. Erityisesti tehtävä 6 saattaa olla hieman työläs tällä viikolla.
+
+ {\bf Tiedoston lopussa on taas vihjeitä.}
+\medskip 
+
+Aloitetaan kertaamalla viikon keskeisiä asioita.
+\begin{Exercises}{Keskeisten asioiden kertaus}{1}
+Mitkä seuraavista väitteistä pitävät paikkansa? Anna yhden virkkeen perustelu -- esim. ``Totta koska Lauseessa X.X. sanotaan ...". Pisteeseen riittää kuitenkin oikea vastaus. 
+\begin{enumerate}
+\item Olkoon kullakin $\Omega\subset \R^n$, $|\Omega|=\int_\Omega 1 dx$ joukon $\Omega$ $n$–ulotteinen tilavuus. Tällöin jokaisella $\Omega\subset \R^n$, voidaan määritellä alueen $\Omega$ jatkuva tasajakauma, jonka tiheysfunktio on $f:\Omega\to \R$, 
+\[
+f(x)=\frac{1}{|\Omega|}.
+\]
+True. It satisfies the property of being non-negative and being normalized so that integrating over
+the whole domain $ \R^{n} $ gives us $ 1$. 
+\item Jatkuvan satunnaisvektorin kertymäfunktio on jatkuva funktio.
+True. There is a theorem that says that if the random vector is continuous then the cumulative
+distribution function is also continuous.
+\item Jatkuvan satunnaisvektorin jakauman tiheysfunktio on aina jatkuva funktio. 
+False. The probability density function does not necessarily need to be continuous, for example it
+could be piece-wise continuous and we would still be able to integrate it.
+\item Mikäli $X=(X_1,X_2)$ on satunnaisvektori, jonka jakauma on joukon $[0,1]^2$ tasajakauma, niin satunnaisluvun $X_2$ (reuna)jakauma on välin $[0,1]$ tasajakauma.
+True. Integrating over the first variable $ X_{1} $ to get the marginal distribution of the second
+variable $ X_{2} $, $ f_{X_2} (x) = \int f_{(X_1, X_2)} dx_1 = \int 1_{0 \leq x_1 \leq 1} \cdot 1_{0
+\leq x_{2} \leq 1} dx_1 = 1_{0 \leq x_2 \leq 1}  $.
+\item Mikäli satunnaisvektorin $X=(X_1,X_2)$ reunajakaumat ovat jatkuvia, niin $X$ on jatkuva.
+False. If the random vectors $ X_1$ and $ X_2$ are maximally dependent as in Example 12.10 (2) then
+the joint random vector $ X = (X_1, X_2)$ cannot be a continuous random vector.
+\item Mikäli satunnaisvektorin $X=(X_1,...,X_n)$ komponentit $X_1,...,X_n$ ovat riippumattomia ja jatkuvia, niin $X$ on jatkuva.
+True. This is stated in Theorem 12.11.
+\end{enumerate}
+\end{Exercises}
+
+Seuraavassa tehtävässä on tarkotus muistuttaa mieleen, että mikä on useampiulotteinen tiheysfunktio, sekä kerryttää hieman integraalilaskennan rutiinia.
+
+\begin{Exercises}{Eräs tiheysfunktio}{2}
+Olkoon $\Omega=[0,1]\times [0,2]$ ja $f:\Omega\to \R$, 
+\[
+f(x,y)= x^2 y+\frac{1}{12} y^3.
+\]
+Osoita, että $f$ on erään jatkuvan kaksiulotteisen jakauman tiheysfunktio.
+\input{./tex/q_2.tex}
+\end{Exercises}
+
+Seuraavassa tehtävässä taas on tarkoitus laskea tietynlainen todennäköisyys jatkuvalle jakaumalle.
+
+
+\begin{Exercises}{Eräs todennäköisyys}{3}
+Olkoon $X=(X_1,X_2)$ kakisulotteinen jatkuva satunnaisvektori, jonka jakauman tiheysfunktio on 
+\[
+f_X(x,y)=\frac{1}{2\pi}e^{-\frac{x^2+y^2}{2}} \qquad \text{kun} \qquad (x,y)\in \R^2.
+\]
+Huomaa, että tämä todella on tiheysfunktio esimerkiksi Lauseen 12.11 nojalla ($X_1,X_2$ ovat riippumattomia standardinormaalijakautuneita). Laske kullakin $R>0$ todennäköisyys 
+\[
+\P(X_1^2+X_2^2\leq R^2).
+\] 
+\input{./tex/q_3.tex}
+\end{Exercises}
+
+Seuraavassa tehtävässä tutkitaan jatkuvan satunnaisvektorin reunajakaumia sekä pohditaan reunajakaumien yhteyttä riippumattomuuteen.
+
+
+\begin{Exercises}{Jatkuvan satunnaisvektorin reunajakaumat}{4}
+Olkoon $X=(X_1,X_2)$ jatkuva $2$-ulotteinen satunnaisvektori, jonka jakauman tiheysfunktio on (alueessa $[0,1]\times[0,2]$) Harjoitustehtävän \ref{Exercises:2} tiheysfunktio, eli 
+\[
+f_{X}(x,y)=\begin{cases}
+x^2y +\frac{1}{12}y^3, & (x,y)\in [0,1]\times [0,2]\\
+0, & \text{muuten}
+\end{cases}.
+\] 
+\begin{enumerate}
+\item Laske satunnaislukujen $X_1,X_2$ (reuna)jakaumien tiheysfunktiot.
+\input{./tex/q_4/q_4_1.tex}
+\item Ovatko satunnaisluvut $X_1$ ja $X_2$ riippumattomat? 
+\input{./tex/q_4/q_4_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+Seuraavassa tehtävässä jatketaan rutiinin kartuttamista ja lasketaan jatkuvan satunnaisvektorin kertymäfunktio.
+
+\begin{Exercises}{Eräs kertymäfunktio}{5}
+\begin{enumerate}
+\item Olkoon $f:\R^2\to \R$,
+\[
+f(x,y)=\begin{cases}
+x+\frac{3}{2}y^2, & x,y\in [0,1]\\
+0, & \text{muuten}
+\end{cases}.
+\]
+Osoita, että $f$ on erään jatkuvan $2$-ulotteisen jakauman tiheysfunktio.
+\input{./tex/q_5/q_5_1.tex}
+\item Olkoon $X$ jatkuva satunnaisvektori, jonka jakauman tiheysfunktio on $f_X=f$ ((1)-kohdasta). Laske $X$:n kertymäfunktio.
+\input{./tex/q_5/q_5_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+Tämän viimeisen tehtävän pointti on nähdä esimerkki esimerkki useampiulotteisesta jatkuvasta jakaumasta, joka ei ole tasajakauma eikä normaalijakauma, ja jota oikeasti käytetään esim. tilastotieteessä. Tämä tehtävä on kuitenkin hieman haastava.
+
+\begin{Exercises}{Dirichlet-jakauma}{6}
+Olkoon $n\geq 2$ jokin positiivinen kokonaisluku, $\alpha_1,...,\alpha_n>0$ positiivisia reaalilukuja, ja olkoon presujoukkomme $\Omega\subset \R^{n-1}$ määritelty ehdolla 
+\[
+\Omega=\{(x_1,...,x_{n-1})\in \R^{n-1}: x_1\in [0,1], x_2\in [0,1-x_1], ...,x_{n-1}\in [0,1-x_1...-x_{n-2}]\}.
+\]
+Olkoon sitten $g:\Omega\to [0,\infty)$, 
+\[
+g(x_1,...,x_{n-1})=\left(\prod_{j=1}^{n-1}x_j^{\alpha_j-1}\right)\cdot \left(1-\sum_{j=1}^{n-1}x_j\right)^{\alpha_n-1}. 
+\]
+\begin{enumerate}
+\item Olkoon 
+\[
+Z(\alpha_1,...,\alpha_n)=\int_0^1\left( \int_0^{1-x_1}\left(\cdots\left(\int_0^{1-x_1-...-x_{n-2}}g(x_1,...,x_{n-1})dx_{n-1}\right)\cdots \right)dx_2\right)dx_1 
+\]
+Osoita, että  $f:\Omega\to \R$, 
+\[
+f(x_1,...,x_{n-1})=\frac{1}{Z(\alpha_1,...,\alpha_n)}g(x_1,...,x_{n-1})
+\]
+on erään jatkuvan todennäköisyysjakauman tiheysfunktio.
+\input{./tex/q_6/q_6_1.tex}
+\item Osoita (esimerkiksi induktiolla), että 
+\[
+Z(\alpha_1,...,\alpha_n)=\prod_{j=1}^{n-1} \int_0^1 u^{\alpha_j-1}(1-u)^{\sum_{k=j+1}^n \alpha_k-1}du
+\]
+\item Osoita, että
+\[
+Z(\alpha_1,...,\alpha_n)=\frac{\prod_{j=1}^n \Gamma(\alpha_j)}{\Gamma\left(\sum_{j=1}^n \alpha_j\right)},
+\]
+missä $\Gamma$ on A-osalta ``tuttu'' Gammafunktio (ks Kappale 9.2.1 muistiinpanoissa). ({\bf Voit taas saada täydet pisteet tästä tehtävästä ilman esimerkiksi tätä kohtaa, jos Gammafunktio ei ole riittävän tuttu})
+\input{./tex/q_6/q_6_3.tex}
+\end{enumerate}
+\end{Exercises}
+
+\begin{Solution}
+\begin{enumerate}
+\item 1. Kannattaa miettiä, että onko kaikilla mahdollisilla $\Omega$ tämä todella tiheysfunktio. 2. Lauseesta 12.7 saattaa olla apua tässä. 3. Kannattaa katsoa esimerkiksi Lausetta 12.2. Puhutaanko tässä tiheysfunktion jatkuvuudesta? 4. Esimerkistä 12.10 saattaa olla apua tässä. 5. Tässäkin saattaa Esimerkistä 12.10 olla apua.  6. Kannattaa ehkä tutkia Lausetta 12.11.
+\item Lauseesta 12.2 pitäisi olla apua. Joudut ehkä laskemaan erään integraalin ja tässä kannattaa muistuttaa mieleen, että kuinka tällaisia integraaleja laskettiinkaan.
+\item Kannattaa kirjoittaa haluttu todennäköisyys 2-ulotteisena integraalina ja tehdä sitten napakoordinaattimuunnos -- Esimerkistä 11.13 saattaa löytyä neuvoa tähän.
+\item Lause 12.9 pitäisi olla hyödyllinen reunajakauman tiheysfunktion laskemiseen. Lause 12.11 pitäisi puolestaan olla höydyllinen riippumattomuutta varten.
+\item Tässä pitäisi taas Lauseesta 12.2 olla apua kun selvitetään, että onko jokin tiheysfunktio. Kertymäfunktiota varten kannattaa ehkä katsoa Lausetta 12.7 ja Esimerkkiä 12.8 (erityisesti on varmaankin tarpeen jakaa tarkastelu osiin aivan kuten kyseisessä esimerkissä).
+\item Ensimmäisessä kohdassa kannattaa aloittaa Lauseesta 12.2 ja yrittää soveltaa Lausetta 11.10 (kohtaa (2)). Toisessa kohdassa kannattaa aloittaa integraalista muuttujan $x_{n-1}$ suhteen ja tehdä siellä muuttujan vaihto $x_{n-1}=(1-\sum_{j=1}^{n-2}x_j)u$. Tämän jälkeen kannattaa katsoa $x_{n-2}$-integraalia ja tehdä siellä muuttujan vastaava muuttujan vaihto (mutta nyt summa päättyykin indeksillä $n-3$) jne. Jos haluat olla todella tarkka, tee tämä induktiolla, mutta pisteitä pitäisi voida saada ilmankin. (3) Tässä kannattaa katsella tuota Kappaletta 9.2.1. Erityisesti sieltä pitäisi löytyä esimerkiksi tieto 
+\[
+\int_0^1 u^{\alpha-1}(1-u)^{\beta-1}du=\frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}.
+\]
+Yhdistämällä tämä edelliseen kohtaan pitäisi johtaa haluttuun tulokseen.
+\end{enumerate}
+\end{Solution}
+
+\end{document}

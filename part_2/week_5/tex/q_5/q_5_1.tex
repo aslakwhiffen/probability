@@ -1,0 +1,29 @@
+
+By the definition of a symmetric positive semi definite matrix we have that 
+
+\[
+    x^{T} \Sigma_{1} x \geq 0
+\] 
+and 
+\[
+    x^{T}  \Sigma_{2} x \geq 0 
+\] 
+for all $ x \in \R^{n} $. Let's consider the matrix $ \Sigma_1 + \Sigma_2$
+
+\begin{align*}
+   x^{T} ( \Sigma_{1} + \Sigma_2) x &= x^{T} (\Sigma_1 x + \Sigma_2 x)\\
+				    &= x^{T} \Sigma_{1} x + x^{T} \Sigma_2 x\\
+				    &\geq 0 + 0 = 0
+\end{align*}
+where in the first and second steps we used the linearity property of matrix multiplication and in
+the third step we used the assumption that $ \Sigma_1$ and $ \Sigma_2$ are semi positive definite
+matrices. Thus, we see that the matrix $ \Sigma_1 + \Sigma_2$ is a semi definite matrix and it is
+also symmetric since taking any element $ c_{ij} $ ($ i< j$) in the top right half of the matrix $
+\Sigma_1 + \Sigma_2$ we get
+
+\[
+    c_{ij} = a_{ij} + b_{ij} = a_{ji} + b_{ji} = c_{ji}  
+\] 
+where $ a_{ij} $ and $ b_{ij} $ are elements in the $ i$th row and $ j$th column in $ \Sigma_1$ and
+$ \Sigma_2$ respectively. Thus we have shown that $ \Sigma_1 + \Sigma_2$ is a symmetric postive semi
+definite matrix.

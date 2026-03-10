@@ -1,0 +1,63 @@
+
+Using Theorem 12.7 (where we have $ f_{X} (x) = 0$ when $ x\notin E$) we see that the cumulative
+distribution function of $ X$ is 
+
+\begin{align*}
+    F_{X} (x_0, y_0) &= \int_{[-\infty,x_0] \times [-\infty, y_0]}^{} f_{X} (x,y) dx dy\\
+		     &= \int_{[-\infty,x_0] } \int_{[-\infty, y_0]}^{} f_{X} (x,y) dy dx\\
+\end{align*}
+So for $ x_0 < 0 $, $ y_0 < 0$ we have that 
+
+\[
+    f_{X} (x,y) = f_{X} (x,y) 1_{y \leq y_0} = f_{X} (x,y) 1_{y < 0} = 0
+\] 
+meaning that integrating over we find that $ F_{X} (x_0,y_0) = 0$.
+
+For $ 0 \leq x_0 \leq 1$, $ 0 \leq y_0 \leq 1$
+
+\begin{align*}
+    f_{X} (x,y) &= f_{X} (x,y) 1_{ \{ 0 \leq y \leq y_0 \} \cap \{ 0 \leq x \leq x_0 \} }\\
+		&= f_{X} (x,y) 1_{ \{ 0, \leq y \leq y_0 \} } \cdot 1_{ \{ 0 \leq x \leq x_0 \} } \\
+\end{align*}
+and so computing the integral we get that
+
+\begin{align*}
+    F_{X} (x_0, y_0) &= \int_{[-\infty,x_0]}^{} \int_{0}^{y_0} (x+3/2 y^2) 1_{ \{ 0 \leq x \leq x_0
+    \} } dy dx\\
+		     &= \int_{0}^{x_0} xy_0 + y_0^{3}/2 dx\\
+		     &= y_0 + x_0^2/2 + y_0^{3} x_0 
+\end{align*}
+
+For $ 0 \leq x_0 \leq 1$, $ 1 < y_0$
+
+\[
+    f_{X} (x,y) = f_{X} (x,y) 1_{ \{ 0 \leq x \leq x_0 \} \cap \{ 0 \leq y \leq 1 \} } 
+\] 
+giving us $ F_{X} (x_0,y_0) = x_0^2/2 + x_0/2$.
+
+For $ 1 < x_0 $, $ 1 < y_0$
+
+\[
+    f_{X} (x,y) = f_{X} (x,y) 1_{0 \leq x \leq 1} 1_{0 \leq y \leq 1} 
+\] 
+which gives $ F_{X} (x_0,y_0) = 1$ 
+
+For $ 1 < x_0$, $ 0\leq y_0 \leq 1$
+
+\[
+    f_{X} (x,y) = f_{X} (x,y) 1_{ \{ 0 \leq x \leq 1 \} } 1_{ \{ 0 \leq y \leq y_0 \} } 
+\] 
+giving us $ F_{X} (x_0,y_0) = y_0/2 + y_0^{3}/2$.
+
+All in all, we have that 
+
+\begin{align*}
+    F_{X} (x_0,y_0) = 
+    \begin{cases}
+	0 &\, x_0< 0, \, y_0< 0\\
+	y_0 x_0^2/2 + y_0^{3} x_0/2 &\, 0 \leq x_0 \leq 1, 0 \leq y_0 \leq 1\\
+	x_0^2/2 + x_0/2 &\, 0 \leq x_0 \leq 1, 1 < y_0\\
+	1 &\, 1 < x_0, 1 < y_0\\
+	y_0/2 + y_0^{3}/2 &\, 1<x_0, 0 \leq y_0 \leq 1
+    \end{cases}
+\end{align*}

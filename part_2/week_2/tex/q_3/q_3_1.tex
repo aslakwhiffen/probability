@@ -1,0 +1,13 @@
+
+\begin{align*}
+    M_{Y_{n} }(t) &= \E e^{t Y_{n} } \, \mbox{by definition} \\
+		  &= \E e^{t/n \sum_{i=1}^{n} X_{i} - t/2} \\
+		  &= e^{-t/2} \E e^{t/n \sum_{i=1}^{n} X_{i} } \\
+		  &= e^{-t/2} \left( \Pi_{i=1}^{n} \E e^{t/n X_{i} }   \right) \, \mbox{by Theorem
+		  8.18 since} \, X_{i} \, \mbox{are independent.} \\
+		  &= e^{-t/2} \left( \E e^{t/n X_{i} }  \right)^{n} \\
+		  &= e^{-t/2} \left( e^{t/n (0)  \P(X_{i} = 0)} + e^{t/n (1)} \P(X_{i} = 1)
+		  \right)^{n} \\
+		  &= \frac{e^{-t/2} }{2^{n} } (1 + e^{t/n} )^{n} \, \mbox{where} \, \P(X_{i} = 0)=
+		  \P(X_{i} = 1)=1/2  
+\end{align*}

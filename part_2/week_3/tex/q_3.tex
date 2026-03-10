@@ -1,0 +1,36 @@
+
+Theorem 11.11 states that if $ f: A \to \R$ is a continuous function and $U:B \to A$ a continuously
+differentiable function with $ A$ and $ B$ being sets that are neat enough, we have that 
+
+\[
+    \int_{A}^{} f(x)dx = \int_{B}^{} f(u(t)) |\det( \frac{\partial u_{j} (t)}{\partial t_{i}
+    })_{i,j=1}^{n} |dt
+.\] 
+In this problem, we see that the integration simplifies if we let $ U$ be the transformation from
+cartesian to polar coordinates. That is $ U = (U_1, U_2): [0,R] \times [0,2\pi)$, where $ B = [0,R]
+\times [0,2\pi)$ and 
+
+\begin{align*}
+    u_1(r,\theta) &= r \cos \theta\\
+    u_2(r, \theta)&= r \sin \theta\\ 
+\end{align*}.
+The determinant term is
+
+\[
+    \det \begin{bmatrix}
+	\cos \theta & -r \sin \theta \\
+	\sin\theta & r \cos \theta
+    \end{bmatrix} = r
+.\] 
+
+So the integral is then
+
+\begin{align*}
+    \int_{ \{ X_1^2 + X_2^2 \leq R^2 \} }^{} f_{X} (x,y) dx dy&= \int_{[0,R] \times [0,2\pi]}^{} r
+    f_{X} ( U(r, \theta)) dr d\theta \\
+							      &= \int_{[0,R]}^{} \int_{[0,2\pi]}^{}
+							      r \frac{1}{\pi} e^{-r^2/2} d\theta
+							      dr\\
+							      &= \int_{[0,R]}^{} re^{-r^2/2} dr \\
+							      &= e^{-R^2/2} 
+\end{align*}

@@ -1,0 +1,23 @@
+
+By Theorem 12.2, since (1) $ f(x,y) \geq 0$ for all $ x,y \in \R^{2} $ and (2) $ \int_{\R^{2} } f(x)
+dx = 1$ we have that there exists a unique probability distribution $ \P$ on the set $ \R^{2} $, for
+which 
+\[
+     \P(A) = \int_{A} f(x) dx
+\]
+for every (neat enough) set $ A \subset \R^{2} $.
+
+\begin{align*}
+    f(x,y) = 2 e^{-x} e^{-y} 1_{0 \leq x \leq y} \geq 0
+\end{align*}
+and 
+\begin{align*}
+    \int_{\R^{2} } f(x,y) dx &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} 2 e^{-x} e^{-y} 1_{0
+    \leq x \leq y} dy dx\\
+			     &= \int_{-\infty}^{\infty} \int_{x}^{\infty} 2 e^{-x} e^{-y} 1_{0 \leq
+			     x} dy dx \\
+			     &= \int_{-\infty}^{\infty} 2 e^{-x} 1_{0 \leq x} [-e^{-y}
+			     ]_{x}^{\infty} \\
+			     &= \int_{0}^{\infty} 2 e^{-2x} dx = 1
+\end{align*}
+

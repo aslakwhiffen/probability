@@ -1,0 +1,25 @@
+
+The main idea behind the formula is the towering property of the conditional expectation value
+(Theorem 13.14). Let's prove the formula from right to left, that is expanding the right hand side
+of the formula and showing that it is equal to the left hand side.
+The first term on the right hand side (RHS) is 
+
+\begin{align*}
+    \E \left[ \mathrm{Var}(g(X,Y) | X) \right]  &= \E  \left[  \E(g(X,Y)^2|X) - (E(g(X,Y)|X))^2 \right] \\
+					&= \E( \E (g(X,Y)^2|X))- \E( \E(g(X,Y))|X)^2\\
+					&= \E(g(X,Y)^2) - \E (\E(g(X,Y)|X))^2\\
+\end{align*}
+where in the last line we used the towering property, that is integrating over the whole domain of
+the random variable $ X$ eliminates the condition.
+The second term on the RHS is
+
+\begin{align*}
+    \mathrm{Var}( \E(g(X,Y)|X)) &= \E(\E(g(X,Y)|X))^2 - (\E(\E(g(X,Y)|X)))^2\\
+			&= \E(\E(g(X,Y)|X))^2 - (\E (g(X,Y)))^2.
+\end{align*}
+Adding up these two terms on the RHS we get 
+
+\begin{align*}
+    \E \left[ \mathrm{Var}(g(X,Y) | X) \right] + \mathrm{Var}( \E(g(X,Y)|X)) &= \E(g(X,Y)^2) - (\E (g(X,Y)))^2\\
+							     &= \mathrm{Var}(g(X,Y))
+\end{align*}

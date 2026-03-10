@@ -1,0 +1,43 @@
+
+Based on Theorem 14.9, if $ \Sigma$ is a strictly positive definite symmetric matrix then there
+exists a continuous distribution for every $ \mu \in \R^{n} $. 
+
+$ \N(\mu, \Sigma_1)$ is continuous since the identity matrix satisfies
+
+\[
+    x^{T} \begin{bmatrix}
+	1 & 0 \\
+	0 & 1
+    \end{bmatrix} x = x^{T} x = |x|^2
+\] 
+which is positive whenever $ x \neq 0$ and it is also symmetric.
+
+The distribution $ \N (\mu, \Sigma_2)$ is not continuous since for $ x^{T}  = (4,4)$ we see that
+
+\[
+    (4 \, 4) \begin{bmatrix}
+	1 & -1 \\
+	-1 & 1
+    \end{bmatrix} \begin{bmatrix}
+    4 \\
+    4
+    \end{bmatrix} = (4 \, 4) \begin{bmatrix}
+    0 \\
+    0
+    \end{bmatrix} = 0
+\] 
+so $ \Sigma_2$ is not strictly positive and so Theorem 14.9 does not hold.
+
+The last distribution $ \N(\mu, \Sigma_1 + \Sigma_2)$ turns out to be a continuous distribution even
+though $ \Sigma_2$ is only positive semi definite. This is because
+
+\[
+    x^{T} (\Sigma_1 + \Sigma_2) x = x^{T} \Sigma_1 x + x^{T} \Sigma_2 x \geq x^{T} \Sigma_1 x + 0 >
+    0 + 0
+\] 
+and so $ \Sigma_1 + \Sigma_2$ is a strictly positive definite matrix and using the same reasoning as
+in the first part of this exercise we see that the sum of the two 
+symmetric matrices $ \Sigma_1 + \Sigma_2$ is symmetric. Thus, $ \Sigma_1 + \Sigma_2$ is a strictly
+positive semi definite symmetric matrix and Theorem 14.9 holds.
+
+

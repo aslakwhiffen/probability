@@ -1,0 +1,11 @@
+
+The idea is to use Hölder's inequality. We see that $ \E (|X|^{r} )^{s/r} $exists since $ \E
+|X|^{s} $ exists and $ \E (|1|)^{s/(s-r)} $ exists it is equal to 1. Thus, using Hölder's
+inequality we get that
+
+\begin{align*}
+    \E ||X|^{r} \cdot 1| &\leq (\E| ||X|^{r} |^{s/r})^{r/s} \cdot (\E |1|^{s/(s-r)} )^{1-r/s}   \\ 
+    \E |X|^{r} &\leq (\E |X|^{s})^{r/s} \cdot 1\\ 
+    (\E |X|^{r})^{1/r} &\leq (\E |X|^{s} )^{1/s}  
+\end{align*}
+

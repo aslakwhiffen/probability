@@ -1,0 +1,302 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath} \usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Vihjeitä}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Vihjeitä:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Todennäköisyyslaskenta II b, 2022 -- Viikon 2 harjoitukset}
+
+%\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+
+
+\begin{document}
+
+\maketitle
+
+
+Muista kysyä neuvoa ohjauksissa, telegramissa, luennoilla tai kavereilta, jos tehtävät tuntuvat haastavilta. Pisteitä voi saada, vaikka ratkaisut eivät olisikaan täydellisiä.  Muista palauttaa tehtävät Moodlessa (Viikon 2 Digest työpajaan) pe 18.11 klo 23.59 mennessä.
+
+\medskip 
+
+Tämän viikon harjoituksissa pohditaan todennäköisyyslaskennallisia epäyhtälöitä (Chernoff, Cauchy-Schwarz ja Hölder) sekä useamman muuttujan integraalilaskentaa. Epäyhtälöihin liittyvät tehtävät ovat hieman teoreettisia, mutta toivottavasti niissä pääsee kuitenkin liikkeelle. Jotkut integraalilaskennan tehtävät saattavat olla hieman työläitä. Tässä on tarkoituksena se, että kartutettaisiin hieman rutiinia useamman muuttujan integraalilaskennassa ennen kuin siirrytään useamman muuttujan jatkuviin jakaumiin. Tiedoston lopussa on taas vihjeitä.
+
+Aloitetaan kertaamalla viikon keskeisiä asioita.
+\begin{Exercises}{Keskeisten asioiden kertaus}{1}
+Mitkä seuraavista väitteistä pitävät paikkansa? Anna yhden virkkeen perustelu -- esim. `Totta koska Lauseessa X.X. sanotaan ...". Pisteeseen riittää kuitenkin oikea vastaus. 
+\begin{enumerate}
+\item Chernoffin estimaatin nojalla, jos $X$ on satunnaisluku ja $t>0$ on luku, jolla $\E e^{tX}$ on olemassa,  niin jokaisella $a\in \R$ pätee
+\[
+\P(X\geq a)\leq e^{-ta}\E e^{tX}.
+\]
+True. $ \E e^{tX} $ exists for all $ t \in [0, t_0]$ if $ \E e^{t_0 X} $ exists where $ t_0 > 0$.
+\item Cauchyn-Schwarzin epäyhtälöstä seuraa, että satunnaisluvulle, jolle $\E |X|$ ja $\E X^2$ ovat olemassa pätee $\E |X|\leq \sqrt{\E X^2}$.
+    False. It should be $ \E |X^2|$ instead of $ \E |X|$.
+\item Cauchyn-Schwarzin epäyhtälön avulla voi näyttää, että jos $a_1,...,a_n$ ja $b_1,...,b_n$ ovat mielivaltaisia reaalilukuja, niin 
+
+\[
+\sum_{j=1}^n |a_j b_j|\leq \sqrt{\sum_{j=1}^n a_j^2\sum_{k=1}^n b_k^2}.
+\]
+True. One can prove by induction using the case for two numbers as a base.
+\item Olkoon $C\in \R$ vakio, $a_1<b_1$, $a_2<b_2$ ja $f:[a_1,b_1]\times [a_2,b_2]\to \R$, $f(x,y)=C$ kaikilla $(x,y)\in [a_1,b_1]\times [a_2,b_2]$. Tällöin pätee
+\[
+ \int_{[a_1,b_1]\times [a_2,b_2]}f(x,y)dxdy=C(b_1-a_1)(b_2-a_2).
+\]
+True. The function $ f$ is continuous so 
+\[
+    \int_{[a_1,b_1] \times [a_2, b_2]}^{} f(X,Y) dx dy = \int_{[a_1, b_1]}^{} \int_{[a_2, b_2]}^{} C
+    dy dx = C (b_2- a_2)(b_1 - a_1)
+.\] 
+\item Olkoon $f:[a_1,b_1]\times [a_2,b_2]\to \R$ jatkuva funktiolle, jolle $f(x,y)\geq 0$ kaikilla $(x,y)\in [a_1,b_1]\times [a_2,b_2]$. Tällöin 
+\[
+\int_{[a_1,b_1]\times [a_2,b_2]}f(x,y)dxdy\geq 0.
+\]
+True, since integrals follow the monotonicity property.
+\item Jos $f:[0,1]^2\to \R$, $f(x,y)=g(x)g(y)$ jollakin $g:[0,1]\to \R$, niin 
+\[
+\int_{[0,1]^2}f(x,y)dxdy=\left(\int_0^1 g(x)dx\right)^2.
+\]
+Not sure.
+\end{enumerate}
+\end{Exercises}
+
+Seuraava tehtävä on hieman teoreettinen luonteeltaan, mutta siihen pitäisi (ainakin vihjeiden avulla) päästä liikkeelle varsin nopeasti luennolta tuttujen epäyhtälöiden avulla.
+
+
+\begin{Exercises}{Lyapunovin epäyhtälö}{2}
+Olkoon $0<r<s$, $X$ jokin satunnaisluku, jolle $\E |X|^r$ ja $\E |X|^s$ ovat olemassa. Osoita Hölderin epäyhtälön avulla, että 
+\[
+\left(\E |X|^r\right)^{1/r}\leq \left(\E |X|^{s}\right)^{1/s}.
+\]
+\input{./tex/q_2.tex}
+\end{Exercises}
+
+Seuraavan tehtävän tarkoitus on harjoitella hieman Chernoffin estimaatin käyttöä. Viimeinen kohta tehtävässä on ajateltu vapaaehtoiseksi. Sen tarkoitus on antaa melko hyvä arvio vaikkapa sille, että kuinka epätodennäköistä on, että jos heitämme (reilua) kolikkoa tuhat kertaa, niin saisimme yli 600 kruunaa (valitse $\delta=0.1$ ja $n=1000$, jolloin tämä yläraja antaa noin $2\cdot 10^{-9}$ -- näin hyvän arvion saaminen näin nopeasti muilla keinoilla vaikuttaa hankalalta). 
+
+\begin{Exercises}{Chernoff-harjoitus}{3}
+Olkoon $X_1,...,X_n$ riippumattomia, samoin jakautuneita satunnaislukuja, joille kunkin jakauma on joukon $\{0,1\}$ tasajakauma, eli 
+\[
+\P(X_i=1)=\frac{1}{2}=\P(X_i=0).
+\] 
+\begin{enumerate}
+\item Osoita, että satunnaismuuttujan 
+\[
+Y_n=\frac{1}{n}\sum_{i=1}^n X_i-\frac{1}{2}
+\]
+momentit generoiva funktio on (kaikilla $t\in \R$)
+\[
+M_{Y_n}(t)=\frac{1}{2^n}e^{-\frac{t}{2}}(1+e^{\frac{t}{n}})^n.
+\]
+\input{./tex/q_3/q_3_1.tex}
+\item Olkoon $\delta>0$. Etsi funktion $t\mapsto e^{-\delta t}M_{Y_n}(t)$ derivaatan nollakohdat.
+
+\input{./tex/q_3/q_3_2.tex}
+\item ({\bf Haastava -- voit saada täydet pisteet ilmankin tätä}) Osoita Chernoffin estimaatin avulla, että kullakin $\delta\in(0,\frac{1}{2})$ pätee 
+\[
+\P\left(\frac{1}{n}\sum_{i=1}^n X_i\geq \frac{1}{2}+\delta\right)\leq e^{-2n\delta^2}.
+\]
+\input{./tex/q_3/q_3_3.tex}
+\end{enumerate}
+\end{Exercises}
+
+Seuraavassa tehtävässä lasketaan eräs kolmiulotteinen integraali. Tehtävällä ei ole sen syvempää pointtia kuin, että varmistetaan, että kaikki osaavat laskea tämän tyyppisiä integraaleja. Funktio ei ole aivan optimaalisesti valittu, joten saatat nähdä hieman ikäviä murtolukuja laskuissasi.
+
+
+\begin{Exercises}{Useampiulotteinen integraali}{4}
+Olkoon $f:[0,2]\times[1,2]\times[2,3]\to \R$, $f(x_1,x_2,x_3)=x_1^2x_2x_3+x_2^2$. Laske 
+\[
+\int_{[0,2]\times[1,2]\times[2,3]}f(x_1,x_2,x_3)dx_1dx_2dx_3.
+\]
+\input{./tex/q_4.tex}
+\end{Exercises}
+
+Seuraavan tehtävän tarkoitus on harjoitella, että miten lasketaan integraaleja, kun integroimisalue ei ole suorakulmio. Erityisesti nähdään, että kuinka integraali liittyy pinta-alaan.
+
+\begin{Exercises}{Ellipsin ala}{5}
+Olkoon $a,b>0$ ja $A=\{(x,y)\in \R^2: \frac{x^2}{a^2}+\frac{y^2}{b^2}\leq 1\}$. Laske 
+\[
+\int_A 1 dxdy.
+\]
+\input{./tex/q_5.tex}
+\end{Exercises}
+
+Viimeisen tehtävän pointti on varsin samanlainen kuin edellisenkin, mutta nyt integroitava funktio on hieman monimutkaisemman näköinen.
+
+\begin{Exercises}{Lisää integroimista}{6}
+Olkoon $A=\{(x,y)\in \R^2: 0\leq x\leq 1, 0\leq y\leq x\}$ ja $f:A\to \R$, $f(x,y)=x^2\sin (\pi x y)$. Laske 
+\[
+\int_A f(x,y)dxdy.
+\]
+Vaikka se ei tehtävän ratkaisuun juurikaan vaikuta, huomaa, että integroimisalue on nyt kolmio.
+\input{./tex/q_6.tex}
+\end{Exercises}
+
+\begin{Solution}
+\begin{enumerate}
+\item 1. Kannattaa tarkistaa Chernoffin estimaatti materiaalista (Lause 10.9). 2 Mitä Cauchy-Schwarz (Lause 10.11) sanoo, jos valitset $Y=1$? 3. Mieti, että mitä Cauchy-Schwarz sanoo, jos valitset perusjoukoksi $\Omega=\{1,...,n\}$ ja varustat tämän diskreetillä tasajakaumalla, sekä määrittelet satunnaismuuttujat $X(i)=a_i$, $Y(i)=b_i$? 4. Kannattaa katsoa Esimerkkiä 11.3. 5. Kannattaa miettiä 2-ulotteisen integraalin määritelmää  (Määritelmä 11.1) ja hyödyntää 1-ulotteisen integraalin ominaisuuksia. 6. Tässä saattaa auttaa Esimerkki 11.3.
+\item Tässä kannattaa tosiaan käyttää Hölderin epäyhtälöä (Lause 10.13) $\E|UV|\leq (\E |U|^p)^{1/p} (\E |V[^q)^{1/q}$, missä $\frac{1}{p}+\frac{1}{q}=1$. Erityisesti, kannattaa mitä tapahtuu kun $U=|X|^r$ ja $V=1$, sekä $p=\frac{s}{r}$.
+\item 1. Tässä kannatta kerrata momentit generoivan funktion määritelmä (Määritelmä 8.15), ja kuinka riippumattomuus liittyy siihen (Lause 8.19). Myös Esimerkistä 9.7 saattaa olla apua.  2. Tämä on hieman haastavampi derivointiharjoitus. Kannattaa ehkä yrittää näyttää (tavallisia derivointisääntöjä käyttämällä), että jos $f(t)=e^{-\delta t}M_{Y_n}(t)$, niin 
+\[
+f'(t)=\left(-\left(\frac{1}{2}+\delta\right)+\frac{e^{\frac{t}{n}}}{1+e^{\frac{t}{n}}} \right)f(t),
+\]
+ja koska $f(t)\neq 0$ (miksi?), niin nollakohdat löytyvät etutekijän nollakohdista. 3. Tässä kannattaa ensin osoittaa, että $f(0)=1$ ja $\lim_{t\to\infty}f(t)=\infty$, joten minimi on mahdollisesti siellä derivaatan nollakohdassa. Laskuistasi saattaa seurata, että tämä potentiaalinen minimiarvo on
+\[
+e^{-\frac{n}{2}((1-2\delta)\log(1-2\delta)+(1+2\delta)\log(1+2\delta))}.
+\]
+Maaliin pääsemiseksi kannattaa käyttää epäyhtälöä
+\[
+(1-x)\log(1-x)+(1+x)\log (1+x)\geq x^2 \qquad \text{kun} \qquad x\in (-1,1)
+\]
+Tämän todistamista varten voi esimerkiksi yrittää päätellä derivoimalla sopivasti, tai käyttää logaritmin sarjakehitelmää, tai voit vain ottaa tämän epäyhtälön annettuna.  
+\item Tässä kannattaa käyttää määritelmää (Määritelmä 11.4). Myöskin Esimerkistä 11.3 saattaa olla apua. 
+\item Tämä on melko analoginen Esimerkin 11.9 kanssa. Tosin nyt saatat päätyä integraaliin 
+\[
+\int_{-a}^a\sqrt{b^2-b^2\frac{x^2}{a^2}}dx.
+\]
+Tässä kannattaa ottaa $b$ ulos neliöjuuresta ja integraalista, ja tehdä muuttujan vaihto $x=au$ (jolloin pitäisi päätyä Esimerkin 11.9 integraaliin, jonka arvon saat ottaa kyseisestä esimerkistä).
+\item Tässä on hieman tekemistä, mutta edelleen ajatus on palauttaa yksiulotteisiin integraaleihin. Kannattaa siis käyttää vain määritelmiä (Määritelmä 11.8 ja Määritelmä 11.1). Kannattaa muistaa trigonometristen funktioiden sekä yhdistettyjen funktioiden derivointi/integrointisäännöt.
+\end{enumerate}
+\end{Solution}
+
+\end{document}

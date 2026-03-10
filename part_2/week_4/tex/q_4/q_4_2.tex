@@ -1,0 +1,17 @@
+
+Let's calculate the moment generating function of the random vector $ (X,Y)$.
+
+\begin{align*}
+    M_{(X,Y)} (t,s) &= \E e^{tX + sY} \\
+		    &= \int_{\R^2 e^{tx + sy} f_{(X,Y)} (x,y) dx dy }\\
+		    &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{tx + sy} 2 e^{-x} e^{-y}
+		    1_{0 \leq x \leq y} dy dx\\
+		    &= \int_{-\infty}^{\infty} \int_{x}^{\infty} e^{tx + sy} 2e^{-x} e^{-y}  1_{0
+		    \leq x} dy dx\\
+		    &= \int_{0}^{\infty} 2 e^{x(t-1)}  \left[ \frac{1}{s-1} e^{y(s-1)}
+		    \right]_{x}^{\infty} dx\\
+		    &= -\frac{2}{s-1} \int_{0}^{\infty} e^{x (t+s-2)} dx\\
+		    &= \frac{2}{(s-1)(t+s-2)} 
+\end{align*}
+where we used the fact that $ 1_{0 \leq x \leq y} = 1_{0 \leq x} 1_{x\leq y} $ and that since $ s,t
+\in (-1,1)$ we have that $ (t+s-2) < 0$ meaning that $ e^{-x} = 0 $ when $ x = \infty$.

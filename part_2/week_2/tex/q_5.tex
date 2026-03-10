@@ -1,0 +1,27 @@
+
+Using definition 11.8, let's define a function $ g(x)$ such that
+
+\[
+    g(x) = \begin{cases}
+	f(x), & x\in A \\
+	0, & x \notin A\\
+    \end{cases}
+\] 
+so 
+
+\[
+    \int_{A}^{} f(x) dx = \int_{\Pi_{j=1}^{n} [a_{j} , b_{j} }^{} g(x) dx
+.\] 
+We are allowed to do this since the particular set $ A $ can be written as the cartesian product of
+sets, namely $ [a_{1}, b_1] \times [a_2, b_2] $, so 
+
+\begin{align*}
+    \int_{A}^{} 1 dx dy &= \int_{[-a, a]}^{} \int_{[-b/a \sqrt{a^2-x^2}, b/a \sqrt{a^2 - x^2}]}^{} 1
+    dy dx\\
+			&= \int_{[-a,a]}^{} \frac{2b}{a} \sqrt{a^2 - x^2} dx\\
+			&= \frac{2b}{a} \int_{-a}^{a} \sqrt{a^2-x^2} dx\\
+			&= \frac{2b}{a} \cdot a^2 \frac{\pi}{2} = ab \pi
+\end{align*}
+where in the second last line we see that the integral is computing half the area of a circle with
+radius $ a$.
+

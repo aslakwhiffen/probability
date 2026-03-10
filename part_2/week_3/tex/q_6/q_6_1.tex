@@ -1,0 +1,28 @@
+
+
+We need to show that the conditions of Theorem 12.2, namely (1) $ f(x) \geq 0$ for all $ x \in
+\Omega$ and (2) $ \int_{\Omega}^{} f(x) dx = 1$. 
+
+(1). Take $ x \in \Omega \subset \R^{n-1} $. It suffices
+to show that 
+\[
+    1- \sum_{j=1}^{n-1} x_{j} \geq 0
+\] 
+because then $ f(x) \geq 0$ . Since $ x_{n-1} \in [0,1-x_1-\dots-x_{n-2} $, we have that $ (1-x_{n-2}
+- \dots - x_1) \geq x_{n-1} $  and so $ (1- \sum_{j=1}^{n-1} x_{j}  \geq 0$. 
+
+(2). Now we need to show that the second condition holds as well, that is we want to show that 
+
+\[
+    \frac{1}{Z(\alpha_1, \dots, \alpha_{n} } \int_{\Omega}^{} g(x_1, \dots, x_{n-1} ) dx
+.\] 
+Since $ g$ is continuous and $ \Omega$ can be written in the form as in Theorem 11.10 (2), namely
+that $ \{ x_1, \dots, x_{n-1}  \} \in \R^{n-1} : x_1 \in [a_1,b_1], \dots, x_{n-1} \in
+[a_{n(x_1,\dots, x_{n-2}, b_{n}(x_1, \dots, x_{n-2} ] }  $ we have that 
+
+\begin{align*}
+    \int_{\Omega}^{} g(x_1, \dots, x_{n-1} )dx &= \int_{a_1}^{b_1} \dots \int_{a_{n-1} (x_1, \dots,
+    x_{n-2} )}^{b_{n-1}(x_1,\dots, x_{n-2} ) } g(x_1, \dots, x_{n-1} ) dx_{n-1} \dots dx_1\\
+					       &= Z(\alpha_1, \dots, \alpha_{n} )
+\end{align*}
+and so $ \int_{\Omega}^{} f(x) dx = 1$.

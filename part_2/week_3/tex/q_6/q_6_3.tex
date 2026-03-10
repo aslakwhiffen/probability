@@ -1,0 +1,22 @@
+
+Using the formula obtained in part (2), we see that 
+
+\[
+.\] 
+
+\begin{align*}
+    Z(\alpha_1, .., \alpha_{n}) &= \Pi_{j=1}^{n-1} \int_{0}^{1} u^{\alpha_{j} -1} (1-u)^{\beta - 1}
+    du \\
+				&=\Pi_{j=1}^{n-1}  \frac{\Gamma(\alpha_{j} ) \Gamma(
+				\sum_{k=j+1}^{n} \alpha_{k} }{\Gamma(\alpha_{j} + \sum_{k=j+1}^{n}
+			    \alpha_{k}	)} \\
+				&= \Pi_{j=1}^{n-1} \Gamma(\alpha_{j} ) \frac{\Gamma(
+				\sum_{k=j+1}^{n})}{\Gamma( \sum_{k=j}^{n} \alpha_{k}) } \\
+				&= \Pi_{j=1}^{n-1} \Gamma(\alpha_{j} ) \Pi_{j=1}^{n-1} \frac{
+				\Gamma(\sum_{k=j+1}^{n} \alpha_{k}) }{\Gamma( \sum_{k=j}^{n}
+			\alpha_{k})}\, \mbox{telescoping product} \\
+			&= (\Pi_{j=1}^{n-1} \Gamma(\alpha_{j} )) \cdot \frac{1}{\Gamma_{k=1}^{n}
+			\alpha_{k}} \cdot \frac{\Gamma( \sum_{n}^{n} \alpha_{k} ) }{1}  \\
+			&= \frac{\Pi_{j=1}^{n} \Gamma(\alpha_{j} )}{ \Gamma( \sum_{j=1}^{n}
+			\alpha_{j} )}. 
+\end{align*}

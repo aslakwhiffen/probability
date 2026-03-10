@@ -1,0 +1,29 @@
+
+$ \Sigma_1$ is not symmetric so it cannot be a covariance matrix. $ \Sigma_2$ is symmetric and
+satisfies $ x^{T} \Sigma_2 x \geq 0 $ since 
+\[
+    (v_1 \, v_2) \begin{bmatrix}
+	1 & -1 \\
+	-1 & 1
+    \end{bmatrix} \begin{bmatrix}
+    v_1\\
+    v_2
+    \end{bmatrix} = (v_1 \, v_2) \begin{bmatrix}
+    v_1 - v_2\\
+    -v_1 + v_2	    
+    \end{bmatrix} = (v_1 - v_2)^2 \geq 0
+.\] 
+$ \Sigma_3$, although symmetric, is not positive semi
+definite since 
+
+\[
+    (v_1 \, v_2) \begin{bmatrix}
+	1 & 2 \\
+	2 & 1
+    \end{bmatrix} \begin{bmatrix}
+    v_1 \\
+    v_2	    
+    \end{bmatrix} = (v_1 + v_2)^2 + 2v_1 v_2
+\] 
+and letting $ v_1 = 0$ and $ v_2 = -1$ get that the term on the right is equal to $ -1$, and
+therefore $ \Sigma_3$ is not positive semi definite.

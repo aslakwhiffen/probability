@@ -1,0 +1,15 @@
+
+The covariance matrix $ \mathrm{Cov}((X,Y))$ of the random vector $ (X,Y)$ by definition is 
+
+\[
+    \mathrm{Cov}((X,Y)) = \begin{bmatrix}
+	\mathrm{Var}(X) & \mathrm{Cov}(X,Y) \\
+        \mathrm{Cov}(Y,X)& \mathrm{Var}(Y)
+    \end{bmatrix}
+\] 
+so for the matrix $ \Sigma_2$ which we showed to be symmetric and positive semi definite we see that 
+$ \mathrm{Var}(X) = 1$, $ \mathrm{Var}(Y) = 1$, $ \mathrm{Cov}(X,Y) = -1$ and using the variance of a sum of random
+variables identity we get that 
+\[
+    \mathrm{Var}(X+Y) = \mathrm{Var}(X) + \mathrm{Var}(Y) +2 \mathrm{Cov}(X,Y) = 1 +1 + 2(-1) = 0
+.\] 

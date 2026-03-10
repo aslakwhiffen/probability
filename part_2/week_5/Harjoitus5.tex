@@ -1,0 +1,320 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Esimerkki}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Vihjeitä:}
+\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Todennäköisyyslaskenta II b, 2022 -- Viikon 5 harjoitustehtävät}
+
+%\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+
+
+\begin{document}
+
+\maketitle
+
+Muista kysyä neuvoa ohjauksissa, telegramissa, luennoilla tai kavereilta, jos tehtävät tuntuvat haastavilta. Pisteitä voi saada, vaikka ratkaisut eivät olisikaan täydellisiä.  Muista palauttaa tehtävät Moodlessa (Viikon 5 Digest työpajaan) pe 9.12 klo 23.59 mennessä.
+
+\medskip 
+
+Tämän viikon harjoituksissa tutkitaan ehdollista odotusarvoa ja moniulotteista normaalijakaumaa.
+
+ {\bf Tiedoston lopussa on taas vihjeitä.}
+\medskip 
+
+Aloitetaan kertaamalla viikon keskeisiä asioita.
+\begin{Exercises}{Keskeisten asioiden kertaus}{1}
+Mitkä seuraavista väitteistä pitävät paikkansa? Anna yhden virkkeen perustelu -- esim. ``Totta koska Lauseessa X.X. sanotaan ...". Pisteeseen riittää kuitenkin oikea vastaus. 
+\begin{enumerate}
+\item Olkoon $(X,Y)$ jatkuva satunnaisvektori. Tällöin pätee $\E(X^2|X=x)=x^2$.
+\item Olkoon $(X,Y)$ jatkuva satunnaisvektori, jolle pätee $\E(Y|X=x)=e^x$. Tällöin $\E(Y|X)=e^X$.
+\item Olkoon $(X,Y)$ jatkuva satunnaisvektori ja $g(X,Y)$ jokin sen muunnos. Mikäli $\E(g(X,Y)|X=x)=0$ jokaisella $x$, niin $\E(g(X,Y))=0$.
+\item On olemassa kaksiulotteinen normaalijakauma, jonka odotusarvovektori on $(0, 0)$ ja kovarianssimatriisi 
+\[
+\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}.
+\]
+\item Jos $X\sim \mathcal N_n(0,\Sigma)$, niin $\E \sum_{j=1}^n X_j^2=\mathrm{Tr}(\Sigma)$. 
+\item Jokainen moniulotteinen normaalijakauma $\mathcal N(\mu,\Sigma)$ on jatkuva jakauma.
+\end{enumerate}
+\end{Exercises}
+
+Seuraavassa tehtävässä on tarkoituksena muistella ehdollisen odotusarvon määritelmää.
+
+\begin{Exercises}{Ehdollisia odotusarvoja}{2}
+Olkoon $(X,Y)$ 2-ulotteinen satunnaisvektori, jonka jakauman tiheysfunktio on 
+\[
+f_{(X,Y)}(x,y)=\begin{cases}
+x^2 y+\frac{1}{12}y^3, & (x,y)\in [0,1]\times [0,2]\\
+0, & \text{muuten}
+\end{cases}.
+\]
+Tämä osoitettiin tiheysfunktioksi pari viikkoa sitten. 
+
+\begin{enumerate}
+\item Laske kullakin $x\in [0,1]$
+\[
+\E (Y|X=x).
+\]
+\input{./tex/q_2/q_2_1.tex}
+\item Laske 
+\[
+\E (Y|X).
+\]
+\input{./tex/q_2/q_2_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+Viimeinen ehdollinen tehtävä koskee varianssin laskemista ehdollistamisen avulla.
+
+\begin{Exercises}{Ehdollinen ja ehdoton varianssi}{3}
+Olkoon $(X,Y)=(X_1,...,X_n,Y_1,...,Y_m)$ jatkuva satunnaisvektori ja olkoon $g:\R^{n+m}\to \R$ riittävän mukava funktio. Määritellään satunnaisluvun $g(X,Y)$ \emph{ehdollinen varianssi ehdolla $X$}:
+\[
+\mathrm{Var}(g(X,Y)|X)=\E (g(X,Y)^2|X)-(\E(g(X,Y)|X))^2.
+\]
+Osoita, että 
+\[
+\mathrm{Var}(g(X,Y))=\E[\mathrm{Var}(g(X,Y)|X)]+\mathrm{Var}(\E(g(X,Y)|X)).
+\]
+\input{./tex/q_3.tex}
+\end{Exercises}
+
+Seuraavassa tehtävässä on tarkoitus miettiä, että millaiset matriisit voivat olla kovarianssimatriiseja sekä harjoitella informaation lukemista kovarianssimatriisista. 
+
+\begin{Exercises}{Etsi kovarianssimatriisi}{covsear}
+\begin{enumerate}
+\item Mikä/mitkä seuraavista voivat olla jonkin satunnaisvektorin $(X,Y)$ kovarianssimatriiseja (eli symmetrisiä ja positiivisemidefiniittejä\footnote{Luentomateriaalista poiketen, näissä harjoituksissa käytetään termejä ``positiivisemidefiniitti'' ja ``positiividefiniitti'' sen sijaan, että käytettääisiin termejä ``positiividefiniiitti'' ja ``aidosti positiividefiniitti''}): 
+\[
+\Sigma_1=\begin{pmatrix}
+1 & 2\\
+0 & 1
+\end{pmatrix}, \qquad \Sigma_2=\begin{pmatrix}
+1 & -1\\
+-1 & 1
+\end{pmatrix} \qquad \text{ja} \qquad \Sigma_3=\begin{pmatrix}
+1 & 2\\
+2 & 1
+\end{pmatrix}?
+\]
+\input{./tex/q_4/q_4_1.tex}
+\item Siinä tapauksessa/niissä tapauksissa, joissa $\Sigma_i$ on kovarianssimatriisi (eli symmetrinen ja positiivisemidefiniitti), laske 
+\[
+\mathrm{Var}(X), \qquad \mathrm{Var}(Y), \qquad \mathrm{Cov}(X,Y), \qquad \text{ja} \qquad \mathrm{Var}(X+Y).
+\]
+\input{./tex/q_4/q_4_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+Seuraavassakin tehtävässä pohditaan lisää kovarianssimatriiseja, mutta nyt mietitään mitä ne sanovat vastaavasta normaalijakaumasta -- erityisesti, että millaisille kovarianssimatriiseille jakauma on jatkuva.
+
+\begin{Exercises}{Lisää kovarianssimatriiseja sekä normaalijakaumaa}{kovnorm}
+\begin{enumerate}
+\item Osoita, että jos $\Sigma_1$ ja $\Sigma_2$ ovat kovarianssimatriiseja (symmetrisiä ja positiivisemidefiniittejä), niin myös $\Sigma_1+\Sigma_2$ on kovarianssimatriisi (symmetrinen ja positiivisemidefiniitti).
+\input{./tex/q_5/q_5_1.tex}
+\item Olkoon 
+\[
+\Sigma_1=\mathrm{Id}_2=\begin{pmatrix}
+1 & 0\\
+0 & 1
+\end{pmatrix}
+\]
+ja $\Sigma_2$ edellisen tehtävän $\Sigma_2$. Olkoon $\mu\in \R^2$ mikä tahansa vektori. Mitkä seuraavista jakaumista ovat jatkuvia jakaumia
+\[
+\mathcal N(\mu,\Sigma_1), \qquad \mathcal N(\mu,\Sigma_2) \qquad \text{ja} \qquad \mathcal N(\mu,\Sigma_1+\Sigma_2).
+\]
+\input{./tex/q_5/q_5_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+Lopuksi vielä harjoitellaan hieman (jatkuvan) normaalijakauman tiheysfunktioon liittyviä ominaisuuksia.
+
+\begin{Exercises}{Normaalijakauman ominaisuuksia}{6}
+Olkoon $h:\R^2\to \R$, 
+\[
+h(x,y)=e^{-(x^2+y^2+xy)}.
+\]
+\begin{enumerate}
+\item Määritä vakio $C$ niin, että $f:\R^2\to \R$
+\[
+f(x,y)=C h(x,y)
+\]
+on jonkin jatkuvan (normaali)jakauman tiheysfunktio.
+\input{./tex/q_6/q_6_1.tex}
+\item Olkoon $(X,Y)$ 2-ulotteinen satunnaisvektori, jolla on tämä jakauma. Laske $\E(XY)$.
+\input{./tex/q_6/q_6_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+
+
+\begin{Solution}
+\begin{enumerate}
+\item 1. Kannattaa ehkä katsoa Määritelmää 13.8 ja Huomautusta 13.11. 2. Tässä saattaa kannattaa katsoa Määritelmää 13.12. 3. Lauseesta 13.14 saattaa olla apua. 4. Kyseinen matriisi on symmetrinen, mutta onko se positiivi definiitti? Yksi mahdollisuus tämän tutkimiseen on laskea vaikkapa matriisin determinanntti. Jos se on negatiivinen, ei matriisi voi olla positiividefiniitti. 5. Muista, että matriisin $\Sigma$ jälki on $\mathrm{Tr}(\Sigma)=\sum_{i=1}^n \Sigma_{ii}$. 6. Lauseesta 14.9 ja Huomautuksesta 14.10 saattaa olla apua tässä. 
+\item Tässä kannattaa palauttaa mieleen ehdollisen jakauman määritelmä (Määritelmä 13.2) sekä ehdollisen odotusarvon määritelmä (Määritelmä 13.8 ja Määritelmä 13.12).
+\item Tässä on keskeisenä työkaluna odotusarvon torniominaisuus, eli Lause 13.14. Eli kannattaa pitää pää kylmänä, kirjoittaa väitteen oikea puoli auki määritelmiä käyttäen, huomata että jotkut termit kumoutuvat, ja lopulta käyttää tuota Lausetta 13.14.
+\item Tässä kannattaa muistuttaa mieleen symmetrisyyden ja positiivisemidefiniittisyyden määritelmät. Saattaa olla hyödyllistä myös laskea determinantteja (ainakin, jos onnistuu osoittamaan, että determinantti on negatiivinen, niin sitten ei voi olla positiivisemidefiniiitti). Toista kohtaa varten, kannattaa muistaa miten nämä tunnusluvut liittyvät kovarianssimatriisiin. Myöskin kannattaa ehkä huomata, että yleisesti $\mathrm{Var}(X+Y)=\mathrm{Var}(X)+\mathrm{Var}(Y)+2\mathrm{Cov}(X,Y)$. 
+\item Ensimmäisessä kohdassa pitäisi pärjätä hyvin määritelmällä. Toisessa kohdassa kannattaa vilkaista Lausetta 14.9 ja Huomautusta 14.10.
+\item Tässä on olennaisesti tehtävänä löytää symmetrinen positiividefiniitti matriisi $\Sigma$ ja vektori $\mu$ niin, että 
+\[
+x^2+y^2+xy =\frac{1}{2}\begin{pmatrix} x-\mu_1 & y-\mu_2\end{pmatrix} \Sigma^{-1}\begin{pmatrix} x-\mu_1\\
+y-\mu_2\end{pmatrix}.
+\]
+Huomaa, että vasemmalla puolella ei ole yhtään ensimmäisen asteen termejä. Mitä tämä sanoo $\mu$:stä? Tämän jälkeen, yritä miettiä, mitä matriisin $\Sigma^{-1}$ pitää olla. Lopuksi käännä tämä matriisi, jotta saat $\Sigma$:n laskettua. Normalisaatiovakio löytyy sitten Lauseesta 14.9. Muista, että $2\times 2$ matriisi on helppo kääntää
+\[
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}=\frac{1}{ad-bc}\begin{pmatrix}
+d & -b\\
+-c & a
+\end{pmatrix}.
+\]
+\end{enumerate}
+\end{Solution}
+
+\end{document}

@@ -1,0 +1,36 @@
+
+We observe that we have an affine transformation on a random variable $ (X,Y)$ with a standard
+normal distribution
+
+\[
+    \begin{bmatrix}
+    U \\
+    V
+    \end{bmatrix} = A \begin{bmatrix}
+    X \\
+    Y	
+    \end{bmatrix} + 0
+\] 
+meaning that according to Definition 14.5 
+
+\[
+    \begin{bmatrix}
+    U \\
+    V
+    \end{bmatrix} \sim \mathcal N(\mu, \Sigma)
+\] 
+where $ \Sigma = A A^{T} $ and $ \mu = 0$. Theorem 14.14 provides a sufficient and necessary
+criteria for $ X$ and $ Y$ to be independent, that is $ \Sigma_{UV} = 0$ if and only if $U $ and $
+V$ are independent. Let's calculate the covariance matrix $ \Sigma$
+\[
+    \Sigma = A A^{T} = \begin{pmatrix}
+	\cos \theta & - \sin\theta \\
+	\sin \theta & \cos \theta
+    \end{pmatrix} \begin{pmatrix}
+	\cos \theta & \sin \theta\\
+	-\sin\theta & \cos \theta
+    \end{pmatrix} = \mbox{Id}_{2} 
+\] 
+so we see that $ \Sigma_{UV} = 0$ and $ U$ and $ V$ are independent.
+
+    

@@ -1,0 +1,17 @@
+
+If we can show that $ f(x,y) \geq 0$ for all $ (x,y) \in \Omega$ and that $ \int_{\Omega}^{} f(x,y)
+dx dy = 1$, then Theorem 12.2 tells us that there exists a continuous probability distribution whose
+density function is $ f$.
+
+For $ x,y \in [0,1]$
+\begin{align*}
+    f(x,y) &= x + 3/2 y^2 \geq 0 + 3/2 (0)^2 = 0 
+\end{align*}
+so the first condition holds. Now we check that the integral over $ \Omega$ is equal to $ 1$.
+
+\begin{align*}
+    \int_{\Omega}^{} f(x,y) dx dy &= \int_{[0,1]}^{} \int_{[0,1]}^{} x + \frac{3}{2} y^2 dy dx \,
+    \mbox{by definition 11.1} \\
+				  &= \int_{0}^{1} \int_{0}^{1} x + \frac{3}{2} y^2 dy dx\\
+				  &= [x^2/2]_{0}^{1} + 1/2 = 1
+\end{align*}

@@ -1,0 +1,37 @@
+
+Using Theorem 8.17, since $ (X,Y)$ is a continuous 2-dimensional random vector, we have that $ X$ is
+independent of $ Y$ if and only if 
+
+\[
+    f_{Y|X} (y|x) = f_{Y} (y)
+\] 
+for every $ y \in \R $ and every $ x \in \R$, for which $ f_{X} (x) > 0$.
+
+From the first part (i) of this exercise we found that 
+
+\[
+    f_{Y|X} (y|x) = e^{x-y} 1_{0 \leq x \leq y} 
+.\] 
+
+
+Let's calculate $ f_{Y} (y)$ 
+
+\begin{align*}
+    f_{Y} (y) &= \int_{\R} f_{(X,Y)} (x,y) dx \\
+	      &= \int_{\R} 2e^{-x} e^{-y} 1_{0 \leq x \leq y} dx  \\
+	      &= 2 e^{-y} \int_{0}^{y} e^{-x} dx\\
+	      &= 2 e^{-y} [1 - e^{-y}]1_{0 \leq y}  
+\end{align*}
+($ 1_{0 \leq x \leq y} = 1_{0 \leq y} \cdot 1_{0 \leq x \leq y} $). In actual fact, for $ y =0$, we
+have that $ f_{Y} (y) = 0$ so 
+
+\[
+    f_{Y} (y) = 2e^{-y} [1-e^{-y} ] 1_{0 < y} 
+.\] 
+For some $ 0 < y$ and all $ 0 \leq x \leq y $, we see that 
+\[
+    f_{Y|X} (y|x) = e^{x-y} \neq 2 e^{-y} [1-e^{-y} ] = f_{Y} (y) 
+\] 
+and so Theorem 8.17 implies that $ X$ and $ Y$ cannot be independent.
+
+

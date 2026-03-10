@@ -1,0 +1,25 @@
+
+Let's take the derivative first
+
+\begin{align*}
+    f(t) &= e^{-\delta t} M_{Y_{n} } (t) \\
+	 &=  e^{-\delta t} \frac{e^{-t/2} }{2^{n} } (1+ e^{t/n} )^{n} \\
+    f'(t) &= 1/2^{n} (-(\delta + 1/2)) e^{-(\delta + 1/2)t} (1+ e^{t/n})^{n} \\
+	  &+ 1/2^{n} e^{-(\delta + 1/2) t} n (1+ e^{t/n} )^{n-1} (1/n e^{t/n} \\
+\end{align*}
+
+We see that $ (1 + e^{t/n} )^{n-1} \neq 0$ and $ e^{-(\delta + 1/2)t} \neq 0$ so equating $ f'(t)$
+to zero and dividing on both sides we get
+
+\begin{align*}
+    (\delta + 1/2)(1 + e^{t/n} ) &= e^{t/n}\\ 
+\end{align*}
+which simplifies to 
+
+\[
+    e^{t/n} = \frac{1/2 + \delta}{1/2- \delta} 
+\] 
+giving us 
+\[
+    t = n \ln \left( \frac{1/2 + \delta}{1/2 - \delta} \right)  
+.\] 
