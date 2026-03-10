@@ -1,0 +1,288 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\RequirePackage[hyphens]{url}
+
+\RequirePackage[OT1]{fontenc}
+\RequirePackage{amsthm,amsmath}
+\RequirePackage[numbers]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{cleveref}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{nameref}
+\usepackage{enumitem}
+\usepackage{randomwalk}
+\usepackage{geometry}
+
+
+\usetikzlibrary{arrows,calc}
+
+
+\usetikzlibrary{automata, positioning}
+
+
+\tcbuselibrary{theorems}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem*{fact*}{Fact}
+
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{Definitions}{Määritelmä}{breakable,code={\edef\@currentlabelname{#2}},colframe=green!45!black,fonttitle=\bfseries}{Definitions}
+\newtcbtheorem[number within=section]{Examples}{Vihjeitä}{breakable,code={\edef\@currentlabelname{#2}},colframe=orange!85!black,fonttitle=\bfseries}{Examples}
+\newtcbtheorem[number within=section]{Theorems}{Lause}{breakable,code={\edef\@currentlabelname{#2}},colframe=blue!85!black,fonttitle=\bfseries}{Theorems}
+\newtcbtheorem[number within=section]{Propositions}{Propositio}{breakable,code={\edef\@currentlabelname{#2}},colframe=teal!85!black,fonttitle=\bfseries}{Propositions}
+\newtcbtheorem[number within=section]{Lemmas}{Lemma}{breakable,code={\edef\@currentlabelname{#2}},colframe=cyan!85!black,fonttitle=\bfseries}{Lemmas}
+\newtcbtheorem{Comments}{Huomautus}{breakable,code={\edef\@currentlabelname{#2}},colframe=pink!85!black,fonttitle=\bfseries}{Comments}
+\newtcbtheorem{Exercises}{Harjoitustehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!55!black,fonttitle=\bfseries}{Exercises}
+\newtcbtheorem[number within=section]{Warnings}{Varoitus}{breakable,code={\edef\@currentlabelname{#2}},colframe=red!65!black,fonttitle=\bfseries}{Warnings}
+\newtcolorbox{Proof}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Todistus:}
+\newtcolorbox{Solution}{breakable,colframe=gray!55!black,fonttitle=\bfseries,title=Vihjeitä:}\newtcbtheorem[number within=section]{HExercises}{Teoreettinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!35!black,fonttitle=\bfseries}{HExercises}
+
+\newtcbtheorem[number within=section]{CExercises}{Laskennallinen lisätehtävä}{breakable,code={\edef\@currentlabelname{#2}},colframe=yellow!75!black,fonttitle=\bfseries}{HExercises}
+
+
+\usetikzlibrary{decorations.markings}
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={->}, % arrows on the axis
+                    ymajorticks=false,
+                    %xlabel={$x$},          % default put x on x-axis
+                    %ylabel={$y$},          % default put y on y-axis
+                    xtick={-1,1},                     
+                    }}
+% arrows as stealth fighters
+\tikzset{>=stealth}
+
+
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Tr}{\mathrm{Tr}}
+\newcommand{\M}{\mathrm{Markov}}
+\newcommand{\1}{\mathbf{1}}
+\newcommand{\red}{\color{red}}
+\newcommand{\Exp}{\mathrm{Exp}}
+\newcommand{\Poi}{\mathrm{Poi}}
+\newcommand{\Unif}{\mathrm{Unif}}
+
+\renewcommand{\P}{\mathbb P}
+\renewcommand{\S}{\mathcal S}
+\renewcommand{\Re}{\mathrm{Re} \,}
+\renewcommand{\Im}{\mathrm{Im} \,}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+%\numberwithin{equation}{section}
+%\numberwithin{theorem}{section}
+%\numberwithin{figure}{section}
+
+\usepackage{eurosym}
+
+
+\usepackage{fullpage}
+%\usepackage[notref, notcite]{showkeys} %Comment to hide all the labels in the file
+
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Sisällysluettelo}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\figurename}%
+    {Kuva}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\abstractname}%
+    {Abstrakti}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\refname}%
+    {Viitteet}%
+}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+  \renewcommand{\appendixname}%
+    {Liite}%
+}
+
+
+
+	
+\setcounter{tocdepth}{1}
+
+\title{Todennäköisyyslaskenta II b, 2022 -- Viikon 1 harjoitustehtävät}
+
+%\author{Christian Webb}
+
+\email{christian.webb@helsinki.fi}
+
+
+\begin{document}
+
+\maketitle
+
+
+Varoituksena, tämän erityisesti tämän viikon tehtävät ovat enemmän teoria- kuin laskupainotteiset. Tämä muuttuu kunhan päästään korkeampiulotteisiin jatkuviin jakaumiin. Monet tehtävät ovat varsin suoraviivaisia kunhan niissä pääsee alkuun. Muista kysyä neuvoa ohjauksissa, telegramissa, luennoilla tai kavereilta, jos tehtävät tuntuvat haastavilta. Muista myös, että tehtävistä voi saada pisteitä, vaikka ratkaisut eivät olisikaan ``täydellisiä''.
+
+Muista palauttaa Moodlessa viikon 1 DIGEST-työpajaan pe 11.11 klo 23.59 mennessä.
+
+\medskip 
+
+Tämän viikon harjoituksissa (6 tehtävää) harjoitellaan Markovin ja T\v{s}eby\v{s}ovin epäyhtälöihin liittyviä asioita. Tehtävät 5 ja 6 saattavat joillekin olla haastellisempia kuin muut, kannattaa siis ehkä tehdä muut ensin. Tehtäväpaperin lopusta löytyy myös vinkkejä.
+
+Aloitetaan kertaamalla viikon keskeisiä asioita.
+\begin{Exercises}{Keskeisten asioiden kertaus}{1}
+Mitkä seuraavista väitteistä pitävät paikkansa? Anna yhden virkkeen perustelu -- esim. `Totta koska Lauseessa X.X. sanotaan ...". Pisteeseen riittää kuitenkin oikea vastaus. 
+\begin{enumerate}
+\item Olkoon $X$ on normaalijakautunut satunnaisluku odotusarvolla $\mu\in \R$ ja varianssilla $\sigma^2$. Markovin epäyhtälön nojalla pätee 
+\[
+\P(X\geq a)\leq \frac{\mu}{a}
+\]
+jokaisella $a>0$.
+\input{./tex/q_1/q_1_1.tex}
+\item Olkoon $X,Y:\Omega\to [0,\infty)$ mitä tahansa epänegatiivisia satunnaislukuja, joille $\E X=\E Y=1$. Tällöin mille tahansa $a>0$ pätee 
+\[
+\P(X+Y\geq a)\leq \frac{2}{a}.
+\]
+\input{./tex/q_1/q_1_2.tex}
+\item  Olkoon $X$ jokin satunnaisluku, jonka odotusarvo $\E X$ ja varianssi $\mathrm{Var}(X)$ ovat olemassa. Tällöin mille tahansa $a>0$ pätee
+\[
+\P(X\geq \E X+a)\leq \frac{\mathrm{Var}(X)}{a^2}.
+\]
+\input{./tex/q_1/q_1_3.tex}
+\item Olkoon $X_1,...,X_n$ riippumattomia satunnaismuuttujia, joilla on kaikilla sama jakauma, ja olkoon $\mu=\E X_i$ (kullakin $i=1,...,n$) olemassa. Heikosta suurten lukujen laista seuraa, että jollakin $n\geq 1$ pätee
+\[
+\P\left(\frac{1}{n}\sum_{j=1}^nX_j=\mu\right)=1.
+\]
+\input{./tex/q_1/q_1_4.tex}
+\item Suurten lukujen laki voi päteä vaikka satunnaismuuttujat eivät olisikaan samoin jakautuneita.
+\input{./tex/q_1/q_1_5.tex}
+\item Todennäköisyyden frekventistinen tulkinta perustuu suurten lukujen lakiin.
+\input{./tex/q_1/q_1_6.tex}
+\end{enumerate}
+\end{Exercises}
+
+Seuraavaksi olisi tarkoitus harjoitella hieman Markovin epäyhtälön käyttämistä.
+
+\begin{Exercises}{Markov-harjoitus}{2}
+Olkoon $X$ normaalijakautunut satunnaisluku odotusarvolla nolla ja varianssilla $1$, ja olkoon $Y$ riippumaton exponenttijakautunut satunnaisluku parametrilla $1$. Osoita, että kullakin $a>0$ pätee 
+\[
+\P(|X+Y|\geq a)\leq \frac{1+\sqrt{\frac{2}{\pi}}}{a}.
+\]
+\input{./tex/q_2.tex}
+\end{Exercises}
+
+
+Seuraava tehtävä taas osoittaa melko konkreettisessa tapauksessa, että kuinka T\v{s}eby\v{s}ovin epäyhtälöä voi soveltaa. 
+
+
+\begin{Exercises}{T\v{s}eby\v{s}ov-harjoitus}{3}
+Olkoon $X$ jokin satunnaisluku, jonka on odotusarvo on $5$ ja varianssi on $1$. Osoita, että 
+\[
+\P(X\leq 3 \text{ tai } X\geq 7)\leq \frac{1}{4}.
+\]
+\input{./tex/q_3.tex}
+\end{Exercises}
+
+
+Seuraavan tehtävän pointti on kartuttaa hieman intuitiota siitä, että milloin suurten lukujen laki ei päde.
+
+\begin{Exercises}{Esimerkki riippuvista satunnaisluvuista, joilla ei päde suurten lukujen laki}{4}
+Anna esimerkki satunnaisluvuista $X_1,...,X_n$‚ jotka ovat kaikki samoin jakautuneet, ja joiden odotusarvot $\E X_i$ sekä varianssit $\mathrm{Var}(X_i)$ ovat olemassa, mutta satunnaismuuttujat eivät ole riippumattomat ja ei päde
+\[
+\lim_{n\to\infty}\P\left(\left|\frac{1}{n}\sum_{j=1}^n (X_j-\E X_j)\right|\geq \epsilon\right)=0.
+\]  
+\input{./tex/q_4.tex}
+\end{Exercises}
+
+Seuraava tehtävä on hieman teoreettisempi, ja sen on tarkoitus näyttää, että on muitakin vähän vastaavia tuloksia kuin T\v{s}eby\v{s}ovin epäyhtälö, jotka saattavat joskus olla hieman parempia jollain tapaa. 
+
+\begin{Exercises}{Cantellin epäyhtälö}{5}
+Olkoon $X$ jokin satunnaisluku, jonka odotusarvo $\E X$ ja varianssi $\mathrm{Var}(X)$ ovat olemassa. \begin{enumerate}
+\item Osoita, että kullakin $a>0$ ja kullakin $u\geq 0$ pätee
+\[
+\P(X-\E X\geq a)\leq \frac{\mathrm{Var}(X)+u^2}{(a+u)^2}.
+\]
+\input{./tex/q_5/q_5_1.tex}
+\item Osoita, että tämän epäyhtälön oikea puoli saa pienimmän arvonsa kun $u=\frac{\mathrm{Var}(X)}{a}$, ja tämä pienin arvo on $\frac{\mathrm{Var}(X)}{\mathrm{Var}(X)+a^2}$. 
+\input{./tex/q_5/q_5_2.tex}
+\end{enumerate}
+\end{Exercises}
+
+Lopuksi on tehtävä, joka osoittaa, että kuinka todennäköisyyslaskennallisia epäyhtälöitä voi käyttää todistamaan joitakin ``nyrkkisääntöjä'', jotka voivat olla ihan hyödyllisiä muistaa.
+
+\begin{Exercises}{Mediaanin ja odotusarvon etäisyys}{6}
+Olkoon $X$ jatkuva satunnaisluku, jonka jakauman tiheysfunktio on kaikkialla positiivinen: $f_X(x)>0$ kaikilla $x\in \R$. Oletetaan myös, että odotusarvo $\E X$ ja varianssi $\mathrm{Var}(X)>0$ olemassa. Olkoon $m\in \R$ jakauman mediaani: tämä on luku, joka määritellään ehdosta 
+\[
+\int_{-\infty}^m f_X(x)dx=\int_m^\infty f_X(x)dx=\frac{1}{2}.
+\]
+Osoita, että tällöin
+\[
+|m-\E X|\leq \sqrt{\mathrm{Var}(X)},
+\] 
+(eli mediaani on korkeintaan yhden keskihajonnan päässä odotusarvosta).
+\input{./tex/q_6.tex}
+\end{Exercises}
+
+\begin{Solution}
+\begin{enumerate}
+\item Kohdassa (1), kannattaa miettiä tarkkaan mitkä ehdot piti toteutua, että Markovin epäyhtälöä voi käyttää (eli katso Lausetta 10.1). Kohdassa (2) kannattaa ehkä miettiä, että onko tällä jotain tekemistä Markovin epäyhtälön kanssa (taas Lause 10.1). Kohta (3) muistuttanee paljon T\v{s}eby\v{s}ovin epäyhtälöä, mutta vasen puoli ei olekaan aivan sama. Olisiko mahdollista sanoa, että $\P(X\geq \E X+a)\leq \P(|X-\E X|\geq a)$? Tällöin väite seurasi T\v{s}eby\v{s}ovista (Lause 10.4). Kohdassa (4) kannattaa miettiä, että mitä suurten lukujen laki sanoikaan (Lause 10.6). Erityisesti, jollekulle saattaa olla hyödyllistä miettiä, että mitä jos satunnaisluvuilla $X_j$ olisi jatkuva jakauma? Kohdassa (5) kannattaa ehkä selailla Huomautusta 10.7. Kohdassa (6), Esimerkki 10.8 taas saattaa olla avuksi.
+\item Kuten nimi vihjaa, Markov saattaa olla tässä avuksi (Lause 10.1). Myöskin saattaa olla avuksi muistuttaa mieliin kolmioepäyhtälö: kullakin $a,b\in \R$, $|a+b|\leq |a|+|b|$, sekä joitakin odotusarvon perusominaisuuksia (vaikkapa Propositio 7.5). Saatat joutua lopulta laskemaan integraalin 
+\[
+\int_{-\infty}^\infty |x| \frac{e^{-x^2/2}}{\sqrt{2\pi}}dx.
+\]
+Tässä saattaa olla kätevää kirjoittaa se muodossa 
+\[
+2\int_0^\infty x \frac{e^{-x^2/2}}{\sqrt{2\pi}}dx,
+\]
+ja huomata, että 
+\[
+x e^{-x^2/2}=-\frac{d}{dx} e^{-x^2/2}.
+\]
+Myöskin saattaa olla kätevä tietää, että parametrilla 1 eksponenttijakautuneen satunnaismuuttujan odotusarvo on 1 (saat tietää tämän -- se laskettiin a-osalla).
+\item Tässä nimi ehkä kertoo kaiken olennaisen -- katso Lause 10.4 ja yritä kirjoittaa haluttu todennäköisyys kyseisen lauseen muodossa.
+\item Jos suurten lukujen laki pätee tapauksessa, jossa satunnaisluvut ovat riippumattomia, ja halutaan esimerkkiä, jossa suurten lukujen laki ei päde, kannattaa ehkä yrittää esimerkkiä, jossa satunnaisluvut ovat jossain mielessä maksimaalisen riippuvia.
+\item Kannattaa ehkä aloittaa huomaamalla, että jokaisella $u\geq 0$, 
+\[
+\P(X-\E X\geq a)=\P(X-\E X+u\geq a+u).
+\]
+Tämä ei aivan johtaisi T\v{s}eby\v{s}ovilla haluttuun tulokseen, mutta Markov saattaa auttaa. Kannattaa tätä varten miettiä, että millä tavalla $\P(X-\E X+u\geq a+u)$ liittyy todennäköisyyteen. $\P((X-\E X+u)^2\geq (a+u)^2)$. Tätä jälkimmäistä todennäköisyyttä voi arvioida Markovin avulla, ja siitä pitäisi päästä maaliin. Toisessa kohdassa pitäisi toimia perinteinen derivaatan nollakohta-analyysi, käyttäytyminen $u=\infty$:ssä, sekä $u=0$:ssa.
+\item Tässä kannattaa käyttää 5-tehtävää. Erityisesti, mitä 5-tehtävän kohta (2) sanoo, jos valitset $a=\sqrt{\mathrm{Var}(X)}$ (tästä pitäisi kyetä päättelemään, että jos $m>\E X+\sqrt{\mathrm{Var}(X)}$, niin $\frac{1}{2}=\int_m^\infty f_X(x)dx<\P(X\geq \E X+\sqrt{\mathrm{Var}(X)})$, mistä tuo edellinen tehtävä pitäisi johtaa ristiriitaan -- tapausta $m<\E X-\sqrt{\mathrm{Var}(X)}$ varten kannattaa edellisessä tehtävässä korvata $X$ satunnaisluvulla $-X$ ja yrittää päätellä jotain samanlaista). 
+\end{enumerate}
+\end{Solution}
+
+\end{document}

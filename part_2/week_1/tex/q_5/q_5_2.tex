@@ -1,0 +1,28 @@
+
+
+Let's find the minimum of the right hand side of the inequality. Either it is at the endpoints i.e.
+when $ u = \infty$ or $ u = 0$ or it is one the roots of derivative function.
+
+We find that the root of the derivative function is $ u = \mathrm{Var(X)}/a$ and plugging into the right hand side of
+the inequality we find that 
+
+\begin{align*}
+    \frac{ \mathrm{Var}(X)  + \mathrm{Var}(X)^2/a^2}{(a + \mathrm{Var}(X)/a)^2} &= \frac{ \mathrm{Var}(X)(a^2 +
+    \mathrm{Var}(X) )}{(a^2 + \mathrm{Var}(X) )^2} \\
+								       &= \frac{ \mathrm{Var}(X) }{a^2
+								       + \mathrm{Var}(X) } 
+\end{align*}
+
+Now comparing with the value of the (RHS) at $ u = 0$ and $ u = \infty$ we see that 
+
+\begin{align*}
+    \mathrm{Var}(X)/a \geq \frac{ \mathrm{Var}(X)}{ \mathrm{Var}(X) + a^2} \, u=0
+\end{align*}
+and
+
+\begin{align*}
+    1 \geq \frac{ \mathrm{Var}(X)}{ \mathrm{Var}(X) + a^2} \, u = \infty 
+\end{align*}
+
+so yes, $ u = \frac{ \mathrm{Var}(X)}{a} $ is the point of $ u$ where the (RHS) achieves its minimum
+$ \frac{ \mathrm{Var}(X)}{a^2 + \mathrm{Var}(X)} $ 

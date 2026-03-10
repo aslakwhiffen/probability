@@ -1,0 +1,27 @@
+
+Let's assume for contradiction that $ |m - \E X| > \sqrt{ \mathrm{Var}(X)}$. In the case that $ m >
+\E X + \sqrt{ \mathrm{Var}(X)}$, we have that 
+
+\begin{align*}
+    \frac{1}{2} = \int_{m}^{\infty} f_{X} (x) dx &< \int_{\E X + \sqrt{ \mathrm{Var}(X)}}^{\infty}
+    f_{X} (x) dx\\
+						 &= \P(X \geq \E X + \sqrt{ \mathrm{Var}(X)})\\
+\end{align*}
+But Cantelli's inequality states that
+
+\begin{align*}
+    \P( X- \E X \geq \sqrt{ \mathrm{Var}(X) }) &\leq \frac{ \mathrm{Var}(X)}{ \mathrm{Var}(X) +
+    \mathrm{Var}(X)} \\
+					       &= 1/2 
+\end{align*}
+which is a contradiction.
+In the other case that $ -m > - \E X + \sqrt{ \mathrm{Var}(X)}$, we see that $ -m$ is in fact the
+median of the random variable $ -X$ and so the condition $ -m > - \E X + \sqrt{ \mathrm{Var}(X)}$
+can be transformed into $ m' > \E X' + \sqrt{ \mathrm{Var}(X')}$, where $ m' = -m$ and $ X' = -X$.
+Thus, using the same argument before, we get a contradiction.
+
+This means that
+
+\begin{align*}
+    |m - \E X| \leq \sqrt{ \mathrm{Var}(X)}
+\end{align*}

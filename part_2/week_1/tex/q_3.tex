@@ -1,0 +1,15 @@
+
+The set $ \{ X \leq a  \} \cup \{ X \geq b \}  $ can be represented as
+
+\begin{align*}
+    \{ X \leq a \} \cup \{ X \geq b \} = \{ |X - (a+b)/2| \geq (b-a)/2\} 
+\end{align*}
+
+Thus, 
+
+\begin{align*}
+    \P (X \leq 3 \cup X \geq 7) &= \P( |X - (3+7)/2| \geq (7-3)/2)\\
+				&= \P( |X - \E X| \geq 2)\\
+				&< \frac{\mathrm{Var}(X)}{2^2} \, \mbox{Markov's Inequality} \\
+				&= \frac{1}{4} 
+\end{align*}

@@ -1,0 +1,11 @@
+
+Let $ X_{1} = \dots X_{n} $ and let each $ X_{i} $ be normally distributed with mean equal to zero
+and variance to 1. Then 
+
+\begin{align*}
+    \P( | \frac{1}{n} \sum_{j=1}^{n} (X_{j} - \E X_{j} ) |  \geq \epsilon) &= \P( |X_{j}
+    - \mu| \geq \epsilon) \\
+										      &= \int_{\epsilon}^{\infty}
+										      \frac{e^{-x^2/2}}{\sqrt{2\pi}}dx\\
+										      &> 0
+\end{align*}

@@ -1,0 +1,8 @@
+
+\begin{align*}
+    \P(X - \E X \geq a) &= \P( X - \E X + \geq a+ u)\\
+			&= \P( (X- \E X + u)^2 \geq (a+u)^2)\\
+			&\leq \frac{\E (X - \E X + u)^2}{(a+u)^2} \, \mbox{Markov's inequality} \\
+			&= \frac{\E( (X - \E X)^2 + 2(X - \E X)u + u^2)}{(a+u)^2} \\
+			&= \frac{\mathrm{Var}(X) + u^2}{(a+u)^2} 
+\end{align*}
