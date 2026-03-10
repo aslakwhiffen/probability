@@ -1,0 +1,26 @@
+global !p
+def math():
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1' 
+def comment():
+    return vim.eval('vimtex#syntax#in_comment()') == '1' 
+def env(name):
+    [x,y] = vim.eval("vimtex#env#is_inside('" + name + "')")
+    return x != '0' and x != '0' 
+endglobal
+
+context "math()"
+snippet sum "summation" 
+\sum_{${1:i=1}}^{${2:\infty}}
+endsnippet
+
+
+context "math()"
+snippet cup "union" 
+\cup_{${1:i=1}}^{${2:\infty}}
+endsnippet
+
+context "math()"
+snippet int "integral"
+\int_{${1:-\infty}}^{${2:\infty}}
+endsnippet
+
