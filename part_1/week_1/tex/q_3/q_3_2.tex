@@ -1,0 +1,15 @@
+The event $ A = \{ \omega \in \Omega: \omega_1 + \omega_2 + \dots + \omega_{N} = N \} $  admits only
+one elementary event, namely,
+\[
+\omega_{1}, \dots, \omega_{N} = 1 
+.\] 
+The probability of this event is 
+\begin{align*}
+    \P(A) = \P(\omega) &= q^{ \sum_{i=1}^{N} \frac{1+ \omega_{i} }{2} } (1-q)^{ \sum_{i=1}^{N}
+\frac{1-\omega_{i} }{2} } \\
+		       &= q^{ \sum_{i=1}^{N} \frac{1+1}{2} } (1-q)^{ \sum_{i=1}^{N} \frac{1-1}{2} }
+		       \\
+		       &= q^{ \sum_{i=1}^{N} 1 } (1-q)^{ \sum_{i=1}^{N} 0 } \\
+		       &= q^{N} (1-q)^{0} = q^{N} 
+\end{align*}
+

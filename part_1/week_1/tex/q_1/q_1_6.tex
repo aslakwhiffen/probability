@@ -1,0 +1,15 @@
+Although the point mass function sequence $ p_i$ would be equal for all  elementary events 
+$\omega_i \in \Omega$, the elementary events themselves might not be disjoint. For example, 
+for an event $ A = \{ \omega_1, \{\omega_1, \omega_2 \}  $, where $ \omega_1 \cap   \{\omega_1, \omega_2 \} \neq \empty$, 
+we have that $ A = \omega_1 \cup  \{\omega_1, \omega_2 \} $ so by lemma 3.1 (3) we see
+\begin{align}
+    \P(A) = \P(\omega_1 \cup  \{\omega_1, \omega_2 \} ) &= \P(\omega_1) + \P( \{\omega_1, \omega_2
+    \} )\\ 
+							&- \P(\omega_1 \cap  \{\omega_1, \omega_2 \} ) \\					    
+							&= 1/N + 1/N -  \P(\omega_1 \cap \omega_2)
+							\\
+						       &= 1/N + 1/N - (1/N + 1/N) \\
+						       &= 0 
+\end{align}
+which is not equal to the number of elements inside $ A \subset \Omega$.
+

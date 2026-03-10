@@ -1,0 +1,20 @@
+Let's assume for contradiction that $ p_\omega$ can be the point mass function of some distribution.
+We will use lemma 2.14 from the lecture notes to arrive to a contradiction.
+Since $ \Z$ is countable, we can assign every element $ \omega \in \Omega = \Z$ to a natural number
+$ i$ and so our basic set $ \Omega = \{ \omega_1, \omega_2, \omega_3,  \dots\} $ has corresponding
+probabilities $ \{ p_1, p_2, p_3,\dots \} $ which are equal to 
+\begin{equation}
+    \label{eq:1}
+    p_i = \frac{1}{1 + \omega_i} 
+\end{equation}
+So far so good. All $ p_i$ are non-negative so the first condition of lemma 2.14 is satisfied.
+However as we will see, the second condition, which is the total sum of the probabilities equaling
+to 1, will not be satisfied. Assuming that the second condition holds, then 
+\begin{align}
+    \sum_{i=1}^{\infty} p_i &= \sum_{i=1}^{\infty} \frac{1}{1 + |\omega_i|} \\
+			    &= \frac{1}{1+|0|} + \frac{1}{1+|1|} + \frac{1}{1+ |-1|} + \frac{1}{1+|2|} + \frac{1}{1 + |-2|} + \dots \\
+			    &= \frac{1}{1 + 0} + 2 \cdot \sum_{i=1}^{\infty} \frac{1}{1+i}. \label{eq:3} 
+\end{align}
+In the last equation \ref{eq:3} the infinite sum $ \sum_{i=1}^{\infty}$ term diverges, hence 
+we get a contradiction to the existence of the sum $ \sum_{i=1}^{\infty} p_i$ meaning that $ p_i$
+cannot form the point mass function of some distribution.

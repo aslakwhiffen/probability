@@ -1,0 +1,113 @@
+Before solving the exercise, I would like to note that the set $ \Omega$ is 
+finite countable meaning that we can use Theorem 2.14 (it is only valid for
+finite countable sets $ \Omega $). 
+
+\begin{enumerate}
+\item Let's first show that $ p_{\omega} \leq 0$ for all $\omega \in \Omega$. 
+Since $ q \in [0,1]$, $ q$ and $ 1-q$ are both non-negative, we have that 
+\[
+q^{\sum_{i=1}^{N} \frac{1+\omega_{i}}{2}} \geq 0 \mbox{ and } (1-q)^{ \sum_{i=1}^{N}
+\frac{1-\omega_{i}}{2}} \geq 0 
+.\] 
+The product of two non-negative numbers is also non-negative so in the end $ p_{\omega} $ is
+non-negative.
+
+\item Let's now show that the sum over all the events is equal to 1, that is 
+$\sum_{\omega \in \Omega}  p_{\omega} =1 $. We want to show that
+\[
+\sum_{\omega \in \Omega} p_{\omega} = 1
+.\] 
+For any event $ \omega  = (\omega_{1}, \omega_{2} , \omega_{3} ,\dots, \omega_{N}  ) $
+we have that each $ \omega_{i} $ can take either of the values $ 1$ or $ -1$. 
+The sum over all $ p_{\omega} $ can be written as follows:
+\[
+\sum_{\omega \in \Omega}^{} p_{\omega}  = \sum_{\omega_{1} \in \{ -1,1 \}, \dots, \omega_{N} \in \{ -1,1 \}
+}^{} p_{\omega} 
+\] 
+which can also be expanded 
+\[
+\sum_{\omega \in \Omega}^{} p_{\omega}  = \sum_{\omega_{1} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{N}  \in \{
+-1,1 \} }^{} p_{\omega} 
+.\] 
+This expansion can be proven inductively. For $ N=1$ it is of course true. \textit{Inductive
+assumption}. Let's assume that the expansion is true for $ N =K$, that is 
+\begin{align*}
+    \sum_{\omega \in \Omega}^{} p_{\omega}  &= \sum_{\omega \in \Omega}^{} q^{
+    \sum_{i=1}^{K}\frac{1+ \omega_{i} }{2} } (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2} } \\
+					    &=\sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \} }^{} p_{\omega} \\
+.
+\end{align*}
+Now, let's consider the case $ N= K+1$. 
+\begin{align*}
+\sum_{\omega \in \Omega}^{} p_{\omega} &= \sum_{\omega \in \Omega}^{} p_{\omega} \\
+&= \sum_{\omega \in \Omega}^{}  q^{ \sum_{i=1}^{K+1}\frac{1+ \omega_{i} }{2} } (1-q)^{ \sum_{i=1}^{K+1} \frac{1-\omega_{i}}{2} }\\
+&= \sum_{\omega_{K} \in \{ -1,1 \} \dots \omega_{1} \in \{ -1,1 \}  }^{} q^{
+\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2} + \frac{1+1}{2}  } (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2}
+\frac{1-1}{2} } \\
+&+  \sum_{\omega_{K} \in \{ -1,1 \} \dots \omega_{1} \in \{ -1,1 \}  }^{} q^{
+\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2} + \frac{1-1}{2}  } (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2}
+\frac{1-(-1)}{2} } \\
+&= q \cdot \sum_{\omega \in \Omega }^{} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} \\
+&+ (1-q) \cdot \sum_{\omega_{K} \in \{ -1,1 \} \dots \omega_{1} \in \{ -1,1 \}  }^{} q^{
+\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} \\
+&= q\sum_{\omega \in \Omega}^{} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} \\
+&+ (1-q) \sum_{\omega \in \Omega}^{} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{
+\sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} \\
+\end{align*}
+using the assumption for $ N=K$
+\begin{align*}
+&= q\sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \} }^{} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{
+\sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} \\
+&+ (1-q) \sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \} }^{} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{
+\sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} \\
+&= \sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \} }q^{
+\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2} + 1 } (1-q)^{ \sum_{i=1}^{K}
+\frac{1-\omega_{i}}{2} + 0 } \\
+&+ \sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \} }q^{
+\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2} + 0 } (1-q)^{ \sum_{i=1}^{K}
+\frac{1-\omega_{i}}{2}+ 1 } \\
+&= \sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \}} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2} + \frac{1+1}{2}  } (1-q)^{ \sum_{i=1}^{K}\frac{1-\omega_{i}}{2} + \frac{1-1}{2}} \\
+&+ \sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \}} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2} + \frac{1-1}{2}  } (1-q)^{ \sum_{i=1}^{K}\frac{1-\omega_{i}}{2} + \frac{1-(-1)}{2}} \\
+&= \sum_{\omega_{K} \in \{ -1,1 \} }^{} \dots \sum_{\omega_{1}  \in \{
+-1,1 \}}  q^{
+\sum_{i=1}^{K+1}\frac{1+ \omega_{i} }{2}} (1-q)^{ \sum_{i=1}^{K+1}
+\frac{1-\omega_{i}}{2}}.
+\end{align*}
+Thus, the result  $ \sum_{\omega \in \Omega}^{} p_{\omega} = \sum_{\omega_{1} \in \{ -1,1 \}} \dots
+\sum_{\omega_{N} \in \{ -1,1 \}}  p_{\omega} $ is true for all $ N \in \N$ by induction. 
+Something nice I noticed was that during the proof we obtained the equation 
+\begin{align*}
+\
+&q \cdot \sum_{\omega \in \Omega }^{}  q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{
+\sum_{i=1}^{K} \frac{1-\omega_{i}}{2}}\\
+&+ (1-q) \cdot \sum_{\omega \in \Omega}^{} q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} \\
+&= \sum_{\omega\in \Omega}^{} q^{
+\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{ \sum_{i=1}^{K} \frac{1-\omega_{i}}{2}} 
+\end{align*}
+
+which means that 
+\[
+\sum_{\omega \in \Omega }^{}  q^{\sum_{i=1}^{K+1}\frac{1+ \omega_{i} }{2}} (1-q)^{
+\sum_{i=1}^{K+1} \frac{1-\omega_{i}}{2}}
+= \sum_{\omega \in \Omega }^{}  q^{\sum_{i=1}^{K}\frac{1+ \omega_{i} }{2}} (1-q)^{
+\sum_{i=1}^{K} \frac{1-\omega_{i}}{2}}
+\] 
+and if we keep on for $ K-1,K-2,\dots, 1 $, we see that for any $ \omega = (\omega_{1}, \dots,
+\omega_{n}  )$ we can reduce to 
+\begin{align*}
+    \sum_{\omega \in \Omega}^{} p_{\omega} &= \sum_{\omega_{1}
+    \in \{ -1,1 \} }^{} p_{\omega} \\
+&= \sum_{\omega_{1} \in \{ -1,1 \}  }^{} q^{ \frac{1+\omega_{1} }{2} } (1-q)^{
+\frac{1-\omega_{1} }{2} }\\
+&= q(1-q)^{0} + q^{0} (1-q) \\
+&= 1.
+\end{align*}
+\end{enumerate}
+
